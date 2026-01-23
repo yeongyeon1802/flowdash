@@ -15,7 +15,9 @@ function setTodos(todos) {
   return localStorage.setItem("flowdash.todos", JSON.stringify(todos));
 }
 
-function rendor() {}
+function rendor() {
+  const todos = getTodos();
+}
 
 function saveTodo() {
   const todos = getTodos();
