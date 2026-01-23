@@ -1,8 +1,6 @@
 const savebtn = document.querySelector(".popup-save-button");
 const title = document.querySelector("#popup-todo-title");
 const content = document.querySelector("#popup-todo-description");
-const priority = document.querySelector("input[name='priority']:checked");
-const statusvalue = document.querySelector("input[name='status']:checked");
 const dimmed = document.querySelector(".popup-modal");
 let count = 1;
 
@@ -20,6 +18,8 @@ function rendor() {
 }
 
 function saveTodo() {
+  const priority = document.querySelector("input[name='priority']:checked");
+  const statusvalue = document.querySelector("input[name='status']:checked");
   const todos = getTodos();
 
   if (!title.value.trim()) {

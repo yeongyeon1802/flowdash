@@ -10,14 +10,12 @@ function getTodos() {
 function clickNewBtn() {
   dimmed.classList.toggle("hidden");
   maintitle.textContent = "새 할 일";
-  console.log("openmodal");
 }
 
 function clickTodoList() {
   const todos = getTodos();
   dimmed.classList.toggle("hidden");
   maintitle.textContent = "할 일 수정";
-  console.log("openmodal");
 }
 
 todolist.forEach((n) =>
