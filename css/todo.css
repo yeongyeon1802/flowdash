@@ -3,7 +3,6 @@
 .todo-container {
   width: 100%;
   max-width: 1200px;
-  padding: 0 32px;
 }
 
 .todo-arrange-box {
@@ -149,7 +148,6 @@
   .todo-container {
     width: 100%;
     max-width: 1199px;
-    padding: 0 24px;
   }
 
   .todo-arrange-box {
@@ -169,7 +167,6 @@
   .todo-container {
     width: 100%;
     max-width: 767px;
-    padding: 0 16px;
   }
 
   .todo-arrange-box {
