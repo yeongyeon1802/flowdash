@@ -2,72 +2,63 @@
 
 @font-face {
   font-family: "Pretendard";
-  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Thin.woff2")
-    format("woff2");
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Thin.woff2") format("woff2");
   font-weight: 100;
   font-display: swap;
 }
 
 @font-face {
   font-family: "Pretendard";
-  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-ExtraLight.woff2")
-    format("woff2");
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-ExtraLight.woff2") format("woff2");
   font-weight: 200;
   font-display: swap;
 }
 
 @font-face {
   font-family: "Pretendard";
-  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Light.woff2")
-    format("woff2");
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Light.woff2") format("woff2");
   font-weight: 300;
   font-display: swap;
 }
 
 @font-face {
   font-family: "Pretendard";
-  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Regular.woff2")
-    format("woff2");
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Regular.woff2") format("woff2");
   font-weight: 400;
   font-display: swap;
 }
 
 @font-face {
   font-family: "Pretendard";
-  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Medium.woff2")
-    format("woff2");
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Medium.woff2") format("woff2");
   font-weight: 500;
   font-display: swap;
 }
 
 @font-face {
   font-family: "Pretendard";
-  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-SemiBold.woff2")
-    format("woff2");
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-SemiBold.woff2") format("woff2");
   font-weight: 600;
   font-display: swap;
 }
 
 @font-face {
   font-family: "Pretendard";
-  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Bold.woff2")
-    format("woff2");
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Bold.woff2") format("woff2");
   font-weight: 700;
   font-display: swap;
 }
 
 @font-face {
   font-family: "Pretendard";
-  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-ExtraBold.woff2")
-    format("woff2");
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-ExtraBold.woff2") format("woff2");
   font-weight: 800;
   font-display: swap;
 }
 
 @font-face {
   font-family: "Pretendard";
-  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Black.woff2")
-    format("woff2");
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Black.woff2") format("woff2");
   font-weight: 900;
   font-display: swap;
 }
@@ -82,7 +73,6 @@
 
 .popup-modal {
   position: fixed;
-  display: none;
   top: 0;
   left: 0;
   width: 100%;
@@ -112,8 +102,8 @@
   font-weight: 700;
 }
 
-.popup-content-title > h3,
-.popup-description > h3 {
+.popup-content-title>h3,
+.popup-description>h3 {
   font-size: 0.9rem;
   font-weight: 500;
 }
@@ -177,13 +167,13 @@
   gap: 8px;
 }
 
-.priority-item > input,
-.status-item > input {
+.priority-item>input,
+.status-item>input {
   display: none;
 }
 
-.priority-item > label,
-.status-item > label {
+.priority-item>label,
+.status-item>label {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -233,42 +223,42 @@ label[for="done"] {
   color: #495057;
 }
 
-#high:checked + label {
+#high:checked+label {
   font-weight: 700;
   background-color: #f25a5a;
   color: #4e0000;
   border: none;
 }
 
-#medium:checked + label {
+#medium:checked+label {
   font-weight: 700;
   background-color: #f49d25;
   color: #4a3b00;
   border: none;
 }
 
-#low:checked + label {
+#low:checked+label {
   font-weight: 700;
   background-color: #29a366;
   color: #00331a;
   border: none;
 }
 
-#todo:checked + label {
+#todo:checked+label {
   font-weight: 700;
   background-color: #8b78f5;
   color: #0a052e;
   border: none;
 }
 
-#doing:checked + label {
+#doing:checked+label {
   font-weight: 700;
   background-color: #3f2ab0;
   color: #f8f7ff;
   border: none;
 }
 
-#done:checked + label {
+#done:checked+label {
   font-weight: 700;
   background-color: #495057;
   color: #eee;
@@ -323,8 +313,7 @@ label[for="done"] {
   overflow: hidden;
 }
 
-@media (max-width: 1199px) and (min-width: 768px) {
-}
+@media (max-width: 1199px) and (min-width: 768px) {}
 
 @media (max-width: 767px) and (min-width: 320px) {
   .popup {
