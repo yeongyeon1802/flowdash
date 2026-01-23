@@ -6,8 +6,11 @@
     <meta name="author" content="이영연, 박준현" />
     <meta name="description" content="2차 프로젝트" />
     <title>2차 프로젝트</title>
-    <link rel="stylesheet" href="./css/reset.css" />
     <link rel="stylesheet" href="./css/body-header.css" />
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/todo.css" />
+    <link rel="stylesheet" href="./css/footer.css" />
+    <link rel="stylesheet" href="./css/modal.css" />
   </head>
   <body>
     <!-- 전체를 감싸는 박스 -->
@@ -135,10 +138,12 @@
                 </ul>
               </div>
 
-              <button type="button" class="asc-desc-button">오름차순 ↑</button>
+              <button type="button" class="asc-desc-button">
+                정렬: 오름차순 ↑
+              </button>
             </div>
             <div class="add-todo-box">
-              <button type="button" class="add-todo-button">새 할 일</button>
+              <button type="button" class="add-todo-button">새 할일</button>
             </div>
           </form>
         </section>
@@ -153,32 +158,103 @@
         </section>
         <!-- 추가된 할일 및 진행 상태(할일, 진행 중, 완료) 영역 -->
         <section class="todo-container">
-          <ul>
+          <ul class="todo-arrange-box">
             <!-- 할일 칸 -->
-            <li class="todo-box">
+            <li class="todo-list-box todo-box">
               <!-- 상단 상태창 및 갯수 표시 -->
               <div class="list-title">
                 <h3>할 일</h3>
-                <span class="todo-items">0</span>
+                <span class="items-count todo-items">0</span>
               </div>
               <!-- 하단 실제 요소, JS로 추가 예정 -->
-              <ul class="todo-list"></ul>
+              <ul class="element-list todo-list"></ul>
             </li>
             <!-- 진행 중 칸 -->
-            <li class="doing-box">
+            <li class="todo-list-box doing-box">
               <div class="list-title">
                 <h3>진행 중</h3>
-                <span class="doing-items">0</span>
+                <span class="items-count doing-items">0</span>
               </div>
-              <ul class="doing-list"></ul>
+              <ul class="element-list doing-list">
+                <!-- <li class="todo-element element-doing">
+                  <h3 class="element-priority">중간</h3>
+                  <div class="elements-box">
+                    <h4 class="element-title">할 일 예시</h4>
+                    <span class="element-description">할 일 내용 입니다.</span>
+                  </div>
+                  <span class="added-date">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      fill="currentColor"
+                      class="bi bi-calendar-date"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        d="M6.445 11.688V6.354h-.633A13 13 0 0 0 4.5 7.16v.695c.375-.257.969-.62 1.258-.777h.012v4.61zm1.188-1.305c.047.64.594 1.406 1.703 1.406 1.258 0 2-1.066 2-2.871 0-1.934-.781-2.668-1.953-2.668-.926 0-1.797.672-1.797 1.809 0 1.16.824 1.77 1.676 1.77.746 0 1.23-.376 1.383-.79h.027c-.004 1.316-.461 2.164-1.305 2.164-.664 0-1.008-.45-1.05-.82zm2.953-2.317c0 .696-.559 1.18-1.184 1.18-.601 0-1.144-.383-1.144-1.2 0-.823.582-1.21 1.168-1.21.633 0 1.16.398 1.16 1.23"
+                      />
+                      <path
+                        d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5M1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4z"
+                      />
+                    </svg>
+                  </span>
+                </li> -->
+              </ul>
             </li>
             <!-- 완료 칸 -->
-            <li class="done-box">
+            <li class="todo-list-box done-box">
               <div class="list-title">
                 <h3>완료</h3>
-                <span class="done-items">0</span>
+                <span class="items-count done-items">0</span>
               </div>
-              <ul class="done-list"></ul>
+              <ul class="element-list done-list">
+                <!-- <li class="todo-element element-done">
+                  <h3 class="element-priority">중간</h3>
+                  <div class="elements-box">
+                    <h4 class="element-title done-title">할 일 완료 예시</h4>
+                    <span class="element-description done-description"
+                      >완료된 아이템 예시 입니다.</span
+                    >
+                  </div>
+                  <div class="date-box">
+                    <span class="added-date">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        fill="currentColor"
+                        class="bi bi-calendar-date"
+                        viewBox="0 0 16 16"
+                      >
+                        <path
+                          d="M6.445 11.688V6.354h-.633A13 13 0 0 0 4.5 7.16v.695c.375-.257.969-.62 1.258-.777h.012v4.61zm1.188-1.305c.047.64.594 1.406 1.703 1.406 1.258 0 2-1.066 2-2.871 0-1.934-.781-2.668-1.953-2.668-.926 0-1.797.672-1.797 1.809 0 1.16.824 1.77 1.676 1.77.746 0 1.23-.376 1.383-.79h.027c-.004 1.316-.461 2.164-1.305 2.164-.664 0-1.008-.45-1.05-.82zm2.953-2.317c0 .696-.559 1.18-1.184 1.18-.601 0-1.144-.383-1.144-1.2 0-.823.582-1.21 1.168-1.21.633 0 1.16.398 1.16 1.23"
+                        />
+                        <path
+                          d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5M1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4z"
+                        />
+                      </svg>
+                    </span>
+                    <span class="done-date">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        fill="currentColor"
+                        class="bi bi-check2-square"
+                        viewBox="0 0 16 16"
+                      >
+                        <path
+                          d="M3 14.5A1.5 1.5 0 0 1 1.5 13V3A1.5 1.5 0 0 1 3 1.5h8a.5.5 0 0 1 0 1H3a.5.5 0 0 0-.5.5v10a.5.5 0 0 0 .5.5h10a.5.5 0 0 0 .5-.5V8a.5.5 0 0 1 1 0v5a1.5 1.5 0 0 1-1.5 1.5z"
+                        />
+                        <path
+                          d="m8.354 10.354 7-7a.5.5 0 0 0-.708-.708L8 9.293 5.354 6.646a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0"
+                        />
+                      </svg>
+                    </span>
+                  </div>
+                </li> -->
+              </ul>
             </li>
           </ul>
         </section>
@@ -219,13 +295,12 @@
           <section class="popup-description">
             <h3>내용</h3>
             <label for="popup-todo-description">할일 내용 입력</label>
-            <input
-              type="text"
+            <textarea
               name="popup-todo-description"
               id="popup-todo-description"
               autocomplete="off"
               placeholder="상세 내용을 입력하세요..."
-            />
+            ></textarea>
           </section>
           <!-- 우선순위 및 진행 상태 -->
           <section class="popup-utlities">
@@ -235,15 +310,31 @@
               <legend>우선순위</legend>
               <div class="priority-buttons">
                 <div class="priority-item">
-                  <input type="radio" name="priority" id="high" />
+                  <input
+                    type="radio"
+                    name="priority"
+                    id="high"
+                    class="priority"
+                  />
                   <label for="high">높음</label>
                 </div>
                 <div class="priority-item">
-                  <input type="radio" name="priority" id="medium" checked />
+                  <input
+                    type="radio"
+                    name="priority"
+                    id="medium"
+                    class="priority"
+                    checked
+                  />
                   <label for="medium">중간</label>
                 </div>
                 <div class="priority-item">
-                  <input type="radio" name="priority" id="low" />
+                  <input
+                    type="radio"
+                    name="priority"
+                    id="low"
+                    class="priority"
+                  />
                   <label for="low">낮음</label>
                 </div>
               </div>
@@ -253,30 +344,43 @@
               <legend>상태</legend>
               <div class="status-buttons">
                 <div class="status-item">
-                  <input type="radio" name="status" id="todo" checked />
+                  <input
+                    type="radio"
+                    name="status"
+                    id="todo"
+                    class="button-status"
+                    checked
+                  />
                   <label for="todo">할 일</label>
                 </div>
                 <div class="status-item">
-                  <input type="radio" name="status" id="doing" />
+                  <input
+                    type="radio"
+                    name="status"
+                    id="doing"
+                    class="button-status"
+                  />
                   <label for="doing">진행 중</label>
                 </div>
                 <div class="status-item">
-                  <input type="radio" name="status" id="done" />
+                  <input
+                    type="radio"
+                    name="status"
+                    id="done"
+                    class="button-status"
+                  />
                   <label for="done">완료</label>
                 </div>
               </div>
             </fieldset>
+            <!-- 취소 및 저장하기 버튼 -->
+            <div class="popup-footer">
+              <button type="button" class="popup-cancel-button">취소</button>
+              <button type="button" class="popup-save-button">저장하기</button>
+            </div>
           </section>
         </div>
-        <!-- 취소 및 저장하기 버튼 -->
-        <footer class="popup-footer">
-          <button type="button" class="popup-cancel-button">취소</button>
-          <button type="button" class="popup-save-button">저장하기</button>
-        </footer>
       </section>
     </div>
-
-    <script src="./js/savebtnfunction.js"></script>
-    <script src="./js/openmodalfunction.js"></script>
   </body>
 </html>
