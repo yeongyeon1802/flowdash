@@ -76,10 +76,6 @@
   font-family: "Pretendard";
 }
 
-.invisible-heading {
-  display: none;
-}
-
 .popup-modal {
   position: fixed;
   display: none;

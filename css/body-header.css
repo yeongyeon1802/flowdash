@@ -1,209 +1,211 @@
 .hidden {
-    display: none;
+  display: none;
 }
 
 .invisible-heading {
-    display: none;
+  display: none;
 }
 
 .whole-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 32px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 32px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 32px;
 }
 
 .todo-header {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .greeting-container {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .greeting-box {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .greeting {
-    font-size: 28px;
+  font-size: 28px;
 }
 
 .nickname {
-    color: #5F42F0;
+  color: #5f42f0;
 }
 
 .theme-btn {
-    width: 40px;
-    height: 40px;
-    border: 1px solid #ddd;
-    border-radius: 50%;
-
+  width: 40px;
+  height: 40px;
+  border: 1px solid #ddd;
+  border-radius: 50%;
 }
 
-.theme-btn>svg {
-    width: 50%;
-    height: 50%;
+.theme-btn > svg {
+  width: 50%;
+  height: 50%;
 }
 
 .todo-main {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 32px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
 }
 
 .realtime-status {
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 16px;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 16px;
 }
 
 .status {
-    flex: 1 180px;
-    padding: 20px;
-    border: 1px solid;
-    border-radius: 12px;
+  flex: 1 180px;
+  padding: 20px;
+  border: 1px solid;
+  border-radius: 12px;
 }
 
-.status>span {
-    font-size: 32px;
+.status > span {
+  font-size: 32px;
 }
 
 .todo-utlitity-box {
-    width: 100%;
+  width: 100%;
 }
 
 form {
-    width: 100%;
-    padding: 20px;
-    border: 1px solid #ddd;
-    border-radius: 16px;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 10px;
+  width: 100%;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 16px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
 }
 
 .search-box {
-    display: flex;
-    flex: 1 200px;
-    align-items: center;
-    position: relative;
+  display: flex;
+  flex: 1 200px;
+  align-items: center;
+  position: relative;
 }
 
 #search-todo {
-    width: 100%;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    position: relative;
-    padding: 10px 40px 10px 10px;
+  width: 100%;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  position: relative;
+  padding: 10px 40px 10px 10px;
 }
 
 .bi-search {
-    position: absolute;
-    right: 10px;
-    z-index: 1;
-    cursor: pointer;
+  position: absolute;
+  right: 10px;
+  z-index: 1;
+  cursor: pointer;
 }
 
-.search-box>label {
-    display: none;
+.search-box > label {
+  display: none;
 }
 
 .sort-filter-box {
-    display: flex;
-    flex: 2 200px;
-    gap: 10px;
-    height: 40px;
-    word-break: keep-all;
-    font-size: clamp(12px, 2vw, 16px);
+  display: flex;
+  flex: 2 200px;
+  gap: 10px;
+  height: 40px;
+  word-break: keep-all;
+  font-size: clamp(12px, 2vw, 16px);
 }
 
-.sort-filter-box>div {
-    text-align: center;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    display: flex;
-    justify-content: center;
-    cursor: pointer;
+.sort-filter-box > div {
+  text-align: center;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
 }
 
 .date-filter-box {
-    flex: 0.8;
-    position: relative;
+  flex: 0.8;
+  position: relative;
 }
 
-.date-filter, .priority-filter {
-    position: absolute;
-    width: 100%;
-    top: 120%;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    background-color: #fff;
-    z-index: 1;
+.date-filter,
+.priority-filter {
+  position: absolute;
+  width: 100%;
+  top: 120%;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #fff;
+  z-index: 1;
 }
 
-.date-filter>li, .priority-filter>li {
-    padding: 10px;
+.date-filter > li,
+.priority-filter > li {
+  padding: 10px;
 }
 
-.date-filter>li:not(:last-child), .priority-filter>li:not(:last-child) {
-    border-bottom: 1px solid;
+.date-filter > li:not(:last-child),
+.priority-filter > li:not(:last-child) {
+  border-bottom: 1px solid;
 }
 
 .priority-filter-box {
-    flex: 0.8;
-    position: relative;
+  flex: 0.8;
+  position: relative;
 }
 
 .asc-desc-button {
-    flex: 1;
-    border: 1px solid #ddd;
-    border-radius: 8px;
+  flex: 1;
+  border: 1px solid #ddd;
+  border-radius: 8px;
 }
 
 .add-todo-box {
-    width: 100%;
-    height: 40px;
-    flex: 1 200px;
-    background-color: #5F42F0;
-    border-radius: 8px;
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    cursor: pointer;
+  width: 100%;
+  height: 40px;
+  flex: 1 200px;
+  background-color: #5f42f0;
+  border-radius: 8px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
 }
 
 .add-todo-button {
-    width: 100%;
-    color: white;
-    font-weight: 600;
+  width: 100%;
+  color: white;
+  font-weight: 600;
 }
 
 .sort-container {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
 }
 
 .reset-button {
-    font-size: clamp(12px, 2vw, 16px);
-    color: red;
+  font-size: clamp(12px, 2vw, 16px);
+  color: red;
 }
