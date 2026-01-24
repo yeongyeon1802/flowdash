@@ -6,6 +6,10 @@
   display: none;
 }
 
+body {
+  background-color: #f3f3ff;
+}
+
 .whole-container {
   max-width: 1200px;
   margin: 0 auto;
@@ -20,6 +24,10 @@
 .todo-header {
   width: 100%;
   display: flex;
+  padding: 24px 32px;
+  border: 1px solid #E0E5EB;
+  border-radius: 16px;
+  background-color: rgba(255, 255, 255, 0.6);
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -37,6 +45,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 4px;
 }
 
 .greeting {
@@ -50,11 +59,11 @@
 .theme-btn {
   width: 40px;
   height: 40px;
-  border: 1px solid #ddd;
+  border: 1px solid #E0E5EB;
   border-radius: 50%;
 }
 
-.theme-btn > svg {
+.theme-btn>svg {
   width: 50%;
   height: 50%;
 }
@@ -77,11 +86,17 @@
 .status {
   flex: 1 180px;
   padding: 20px;
-  border: 1px solid;
+  background-color: rgba(255, 255, 255, 0.6);
+  border: 1px solid #E0E5EB;
   border-radius: 12px;
 }
 
-.status > span {
+.status>h3 {
+  color: #555;
+  font-weight: 600;
+}
+
+.status>span {
   font-size: 32px;
 }
 
@@ -92,7 +107,8 @@
 form {
   width: 100%;
   padding: 20px;
-  border: 1px solid #ddd;
+  background-color: rgba(255, 255, 255, 0.6);
+  border: 1px solid #E0E5EB;
   border-radius: 16px;
   display: flex;
   flex-wrap: wrap;
@@ -102,14 +118,14 @@ form {
 
 .search-box {
   display: flex;
-  flex: 1 200px;
+  flex: 1 150px;
   align-items: center;
   position: relative;
 }
 
 #search-todo {
   width: 100%;
-  border: 1px solid #ddd;
+  border: 1px solid #E0E5EB;
   border-radius: 8px;
   position: relative;
   padding: 10px 40px 10px 10px;
@@ -122,31 +138,41 @@ form {
   cursor: pointer;
 }
 
-.search-box > label {
+.search-box>label {
   display: none;
 }
 
 .sort-filter-box {
+  flex: 2 0 150px;
   display: flex;
-  flex: 2 200px;
   gap: 10px;
-  height: 40px;
+  height: 41px;
   word-break: keep-all;
-  font-size: clamp(12px, 2vw, 16px);
 }
 
-.sort-filter-box > div {
+.sort-filter-box>div,
+.sort-filter-box>button {
+  flex-basis: 120px;
   text-align: center;
-  border: 1px solid #ddd;
+  border: 1px solid #E0E5EB;
   border-radius: 8px;
+  padding: 10px 15px;
+  background-color: #fff;
   display: flex;
-  justify-content: center;
   cursor: pointer;
 }
 
 .date-filter-box {
-  flex: 0.8;
+  flex: 1;
   position: relative;
+}
+
+.date-filter-button,
+.priority-filter-button {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .date-filter,
@@ -154,30 +180,47 @@ form {
   position: absolute;
   width: 100%;
   top: 120%;
-  border: 1px solid #ddd;
+  left: 0;
+  border: 1px solid #E0E5EB;
   border-radius: 8px;
-  background-color: #fff;
+  background-color: rgba(255, 255, 255, 0.6);
   z-index: 1;
 }
 
-.date-filter > li,
-.priority-filter > li {
+.date-filter>li,
+.priority-filter>li {
   padding: 10px;
+  position: relative;
+  border-radius: 8px;
 }
 
-.date-filter > li:not(:last-child),
-.priority-filter > li:not(:last-child) {
-  border-bottom: 1px solid;
+.date-filter>li:not(:last-child)::after,
+.priority-filter>li:not(:last-child)::after {
+  content: '';
+  width: 90%;
+  height: 1px;
+  top: 100%;
+  left: 5%;
+  background-color: #e0e5eb;
+  position: absolute;
+}
+
+.date-filter>li:hover,
+.priority-filter>li:hover {
+  background-color: #5f42f0;
+  color: white;
 }
 
 .priority-filter-box {
-  flex: 0.8;
+  flex: 2;
   position: relative;
 }
 
 .asc-desc-button {
+  display: flex;
+  justify-content: center;
   flex: 1;
-  border: 1px solid #ddd;
+  border: 1px solid #E0E5EB;
   border-radius: 8px;
 }
 
@@ -208,4 +251,86 @@ form {
 .reset-button {
   font-size: clamp(12px, 2vw, 16px);
   color: red;
+}
+
+@media (max-width: 1199px) and (min-width: 768px) {
+  .whole-container {
+    padding: 24px;
+  }
+}
+
+@media (max-width: 767px) {
+  .whole-container {
+    padding: 16px;
+  }
+
+  form {
+    padding: 10px;
+    border-radius: 12px;
+    flex-direction: column;
+    height: 300px;
+    overflow: hidden;
+    justify-content: space-evenly;
+  }
+
+  .search-box {
+    width: 100%;
+    height: 41px;
+    flex: 0;
+  }
+
+  .sort-filter-box {
+    gap: 20px;
+    width: 100%;
+    flex: 0;
+  }
+
+  .sort-filter-box>div,
+  .sort-filter-box>button {
+    height: 41px;
+    text-align: center;
+    border: 1px solid #E0E5EB;
+    border-radius: 8px;
+    padding: 10px 15px;
+    display: flex;
+    cursor: pointer;
+  }
+
+  .date-filter-box {
+    position: relative;
+  }
+
+  .date-filter-button,
+  .priority-filter-button {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .priority-filter-box {
+    position: relative;
+  }
+
+  .asc-desc-button {
+    display: flex;
+    justify-content: center;
+    border: 1px solid #E0E5EB;
+    border-radius: 8px;
+  }
+
+  .add-todo-box {
+    width: 100%;
+    height: 41px;
+    display: flex;
+    align-items: center;
+    flex: 0;
+  }
+
+  .add-todo-button {
+    width: 100%;
+    color: white;
+    font-weight: 600;
+    height: 41px;
+  }
 }

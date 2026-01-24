@@ -118,7 +118,26 @@
             <div class="sort-filter-box">
               <div class="date-filter-box">
                 <button type="button" class="date-filter-button">
-                  기간 선택
+                  <p>전체 기간</p>
+                  <span
+                    ><svg
+                      class="arrow bi-chevron-down"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="12"
+                      height="12"
+                      viewBox="0 0 16 16"
+                      fill="currentColor"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"
+                      />
+                    </svg>
+                  </span>
                 </button>
                 <ul class="date-filter hidden">
                   <li class="whole-date">전체 기간</li>
@@ -129,18 +148,36 @@
 
               <div class="priority-filter-box">
                 <button type="button" class="priority-filter-button">
-                  전체 우선순위
+                  <p>전체 우선순위</p>
+                  <span
+                    ><svg
+                      class="arrow bi-chevron-down"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="12"
+                      height="12"
+                      viewBox="0 0 16 16"
+                      fill="currentColor"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"
+                      />
+                    </svg>
+                  </span>
                 </button>
                 <ul class="priority-filter hidden">
+                  <li class="priority-all">전체 우선순위</li>
                   <li class="priority-high">높음</li>
                   <li class="priority-mid">중간</li>
                   <li class="priority-low">낮음</li>
                 </ul>
               </div>
 
-              <button type="button" class="asc-desc-button">
-                정렬: 오름차순 ↑
-              </button>
+              <button type="button" class="asc-desc-button">오름차순</button>
             </div>
             <div class="add-todo-box">
               <button type="button" class="add-todo-button">새 할일</button>
@@ -158,9 +195,9 @@
         </section>
         <!-- 추가된 할일 및 진행 상태(할일, 진행 중, 완료) 영역 -->
         <section class="todo-container">
-          <ul class="todo-arrange-box">
+          <div class="todo-arrange-box">
             <!-- 할일 칸 -->
-            <li class="todo-list-box todo-box">
+            <div class="todo-list-box todo-box">
               <!-- 상단 상태창 및 갯수 표시 -->
               <div class="list-title">
                 <h3>할 일</h3>
@@ -168,42 +205,17 @@
               </div>
               <!-- 하단 실제 요소, JS로 추가 예정 -->
               <ul class="element-list todo-list"></ul>
-            </li>
+            </div>
             <!-- 진행 중 칸 -->
-            <li class="todo-list-box doing-box">
+            <div class="todo-list-box doing-box">
               <div class="list-title">
                 <h3>진행 중</h3>
                 <span class="items-count doing-items">0</span>
               </div>
-              <ul class="element-list doing-list">
-                <!-- <li class="todo-element element-doing">
-                  <h3 class="element-priority">중간</h3>
-                  <div class="elements-box">
-                    <h4 class="element-title">할 일 예시</h4>
-                    <span class="element-description">할 일 내용 입니다.</span>
-                  </div>
-                  <span class="added-date">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="16"
-                      height="16"
-                      fill="currentColor"
-                      class="bi bi-calendar-date"
-                      viewBox="0 0 16 16"
-                    >
-                      <path
-                        d="M6.445 11.688V6.354h-.633A13 13 0 0 0 4.5 7.16v.695c.375-.257.969-.62 1.258-.777h.012v4.61zm1.188-1.305c.047.64.594 1.406 1.703 1.406 1.258 0 2-1.066 2-2.871 0-1.934-.781-2.668-1.953-2.668-.926 0-1.797.672-1.797 1.809 0 1.16.824 1.77 1.676 1.77.746 0 1.23-.376 1.383-.79h.027c-.004 1.316-.461 2.164-1.305 2.164-.664 0-1.008-.45-1.05-.82zm2.953-2.317c0 .696-.559 1.18-1.184 1.18-.601 0-1.144-.383-1.144-1.2 0-.823.582-1.21 1.168-1.21.633 0 1.16.398 1.16 1.23"
-                      />
-                      <path
-                        d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5M1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4z"
-                      />
-                    </svg>
-                  </span>
-                </li> -->
-              </ul>
-            </li>
+              <ul class="element-list doing-list"></ul>
+            </div>
             <!-- 완료 칸 -->
-            <li class="todo-list-box done-box">
+            <div class="todo-list-box done-box">
               <div class="list-title">
                 <h3>완료</h3>
                 <span class="items-count done-items">0</span>
@@ -255,8 +267,8 @@
                   </div>
                 </li>
               </ul>
-            </li>
-          </ul>
+            </div>
+          </div>
         </section>
       </main>
       <!-- 푸터 영역 -->
@@ -388,7 +400,9 @@
         </div>
       </section>
     </div>
-    <script src="./js/savebtnfunction.js"></script>
+    <script src="./js/main.js"></script>
+    <script src="./js/modalbtnfunction.js"></script>
     <script src="./js/openmodalfunction.js"></script>
+    <script src="./js/clickevent.js"></script>
   </body>
 </html>
