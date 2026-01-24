@@ -1,21 +1,10 @@
-const savebtn = document.querySelector(".popup-save-button");
-const cancelbtn = document.querySelector(".popup-cancel-button");
-const title = document.querySelector("#popup-todo-title");
-const content = document.querySelector("#popup-todo-description");
-const dimmed = document.querySelector(".popup-modal");
-const priority = document.querySelector("input[name='priority']:checked");
-const statusvalue = document.querySelector("input[name='status']:checked");
-const timestamp = Date.now();
-
-function rendor() {
-  const todos = getStorage(FLOWDASH_TODOS);
-}
-
 function createCard() {
   const todo = getStorage(FLOWDASH_TODOS);
 }
 
 function modalreset() {
+  const title = document.querySelector("#popup-todo-title");
+  const content = document.querySelector("#popup-todo-description");
   title.value = "";
   content.value = "";
   const defaultpriority = document.querySelector("#medium");
@@ -24,19 +13,29 @@ function modalreset() {
   defaultstatus.checked = true;
 }
 
-function saveTodo() {
+function savebtnTodo() {
+  const title = document.querySelector("#popup-todo-title").value.trim();
+  const content = document
+    .querySelector("#popup-todo-description")
+    .value.trim();
+  const priority = document.querySelector(
+    "input[name='priority']:checked",
+  ).value;
+  const statusvalue = document.querySelector(
+    "input[name='status']:checked",
+  ).value;
   const todos = getStorage(FLOWDASH_TODOS);
 
-  if (!title.value.trim()) {
+  if (!title) {
     return;
   }
 
   const todo = {
     id: timestamp,
-    title: title.value.trim(),
-    content: content.value.trim(),
-    priority: priority.value,
-    statusvalue: statusvalue.value,
+    title,
+    content,
+    priority,
+    statusvalue,
     createAt: timestamp,
     updateAt: 123,
     completeAt: 123,
@@ -47,14 +46,15 @@ function saveTodo() {
 
   dimmed.classList.toggle("hidden");
   modalreset();
+  countTasks();
   createCard();
-  rendor();
+  render();
 }
 
-function cancelTodo() {
+function cancelbtnTodo() {
   dimmed.classList.toggle("hidden");
   modalreset();
 }
 
-savebtn.addEventListener("click", saveTodo);
-cancelbtn.addEventListener("click", cancelTodo);
+savebtn.addEventListener("click", savebtnTodo);
+cancelbtn.addEventListener("click", cancelbtnTodo);

@@ -3,6 +3,31 @@ const FLOWDASH_TODOS = "flowdash.todos";
 const FLOWDASH_NICKNAME = "flowdash.nickname";
 const FLOWDASH_THEME = "flowdash.theme";
 const FLOWDASH_FILTER = "flowdash.filter";
+const totalTask = document.querySelector(".total-tasks");
+const todoItems = document.querySelectorAll(".todo-items");
+const doingItems = document.querySelectorAll(".doing-items");
+const doneItems = document.querySelectorAll(".done-items");
+const achivement = document.querySelector(".todo-achivement");
+const dateFilter = document.querySelector(".date-filter-box");
+const dateFilterList = document.querySelector(".date-filter");
+const dateFilterItem = document.querySelectorAll(".date-filter>li");
+const priorityFilter = document.querySelector(".priority-filter-box");
+const priorityFilterList = document.querySelector(".priority-filter");
+const priorityFilterItem = document.querySelectorAll(".priority-filter>li");
+const ascbtn = document.querySelector(".asc-desc-button");
+const savebtn = document.querySelector(".popup-save-button");
+const cancelbtn = document.querySelector(".popup-cancel-button");
+const title = document.querySelector("#popup-todo-title").value.trim();
+const content = document.querySelector("#popup-todo-description").value.trim();
+const dimmed = document.querySelector(".popup-modal");
+const priority = document.querySelector("input[name='priority']:checked").value;
+const statusvalue = document.querySelector(
+  "input[name='status']:checked",
+).value;
+const timestamp = Date.now();
+const todolist = document.querySelectorAll(".element-list");
+const createbtn = document.querySelector(".add-todo-button");
+const maintitle = document.querySelector(".popup-main-title");
 
 function getStorage(strKey) {
   const data = localStorage.getItem(strKey);
@@ -13,7 +38,9 @@ function getStorage(strKey) {
 
   if (strKey === FLOWDASH_NICKNAME) return data ? data : "FlowDash";
 
-  return data || "light";
+  if (strKey === FLOWDASH_THEME) return data || "light";
+
+  return null;
 }
 
 function setStorage(strKey, data) {
@@ -23,3 +50,10 @@ function setStorage(strKey, data) {
     localStorage.setItem(strKey, data);
   }
 }
+
+function render() {
+  const todos = getStorage(FLOWDASH_TODOS);
+  countTasks();
+}
+
+document.addEventListener("DOMContentLoaded", render);
