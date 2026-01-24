@@ -28,6 +28,9 @@ const timestamp = Date.now();
 const todolist = document.querySelectorAll(".element-list");
 const createbtn = document.querySelector(".add-todo-button");
 const maintitle = document.querySelector(".popup-main-title");
+const hour = document.querySelector(".now-time-zone");
+const date = document.querySelector(".now-date");
+const nickName = document.querySelector(".nickname");
 
 function getStorage(strKey) {
   const data = localStorage.getItem(strKey);
