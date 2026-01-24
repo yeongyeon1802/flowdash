@@ -35,7 +35,7 @@ function nowDate() {
 let nickNameStorage = "";
 
 function savedNickname() {
-  const saved = localStorage.getItem("nickNameStorage");
+  const saved = localStorage.getItem("flowdash.nickname");
   nickNameStorage = saved ? saved : "FlowDash";
   nickName.textContent = nickNameStorage;
 }
@@ -61,7 +61,7 @@ function inputEvent() {
       currentNickName = nickNameStorage ? nickNameStorage : "FlowDash";
     } else {
       nickNameStorage = currentNickName;
-      localStorage.setItem("nickNameStorage", currentNickName);
+      localStorage.setItem("flowdash.nickname", currentNickName);
     }
     nickName.textContent = currentNickName;
     nickName.removeAttribute("contenteditable");
