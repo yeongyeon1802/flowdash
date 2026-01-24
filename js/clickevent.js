@@ -1,11 +1,3 @@
-const dateFilter = document.querySelector(".date-filter-box");
-const dateFilterList = document.querySelector(".date-filter");
-const dateFilterItem = document.querySelectorAll(".date-filter>li");
-const priorityFilter = document.querySelector(".priority-filter-box");
-const priorityFilterList = document.querySelector(".priority-filter");
-const priorityFilterItem = document.querySelectorAll(".priority-filter>li");
-const ascbtn = document.querySelector(".asc-desc-button");
-
 dateFilter.addEventListener("click", (e) => {
   e.stopPropagation();
   priorityFilterList.classList.add("hidden");

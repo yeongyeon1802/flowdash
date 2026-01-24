@@ -1,7 +1,3 @@
-const todolist = document.querySelectorAll(".element-list");
-const createbtn = document.querySelector(".add-todo-button");
-const maintitle = document.querySelector(".popup-main-title");
-
 function clickNewBtn() {
   dimmed.classList.toggle("hidden");
   maintitle.textContent = "새 할 일";
