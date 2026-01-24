@@ -190,7 +190,11 @@
           <h2 class="invisible-heading">정렬 상태 표시 및 초기화 버튼 영역</h2>
           <div class="sort-box">
             <!-- 현재 적용된 정렬 필터 목록, JS로 제어 예정 -->
-            <ul class="sort-list"></ul>
+            <ul class="sort-list">
+              <li class="sort-list-badge date">
+                <p>정렬 : <span>오름차순</span></p>
+              </li>
+            </ul>
           </div>
           <button type="button" class="reset-button">전체 데이터 초기화</button>
         </section>
@@ -363,5 +367,6 @@
     <script src="./js/header.js"></script>
     <script src="./js/createCard.js"></script>
     <script src="./js/dakrmode.js"></script>
+    <script src="./js/createFilterBadge.js"></script>
   </body>
 </html>

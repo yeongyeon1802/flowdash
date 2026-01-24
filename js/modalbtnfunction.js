@@ -39,7 +39,7 @@ function savebtnTodo() {
   };
 
   if (todo.statusvalue === "done") {
-    todo.completeAt = doneParsingDate(todo.id);
+    todo.completeAt = parsingDate(todo.id);
   } else todo.completeAt = null;
 
   todos.push(todo);
