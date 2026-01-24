@@ -63,7 +63,7 @@ body {
   border-radius: 50%;
 }
 
-.theme-btn > svg {
+.theme-btn>svg {
   width: 50%;
   height: 50%;
 }
@@ -91,12 +91,12 @@ body {
   border-radius: 12px;
 }
 
-.status > h3 {
+.status>h3 {
   color: #555;
   font-weight: 600;
 }
 
-.status > span {
+.status>span {
   font-size: 32px;
 }
 
@@ -138,7 +138,7 @@ form {
   cursor: pointer;
 }
 
-.search-box > label {
+.search-box>label {
   display: none;
 }
 
@@ -150,8 +150,8 @@ form {
   word-break: keep-all;
 }
 
-.sort-filter-box > div,
-.sort-filter-box > button {
+.sort-filter-box>div,
+.sort-filter-box>button {
   flex-basis: 120px;
   text-align: center;
   border: 1px solid #e0e5eb;
@@ -187,15 +187,16 @@ form {
   z-index: 1;
 }
 
-.date-filter > li,
-.priority-filter > li {
+.date-filter>li,
+.priority-filter>li {
   padding: 10px;
   position: relative;
   border-radius: 8px;
+  transition: background-color 0.1s;
 }
 
-.date-filter > li:not(:last-child)::after,
-.priority-filter > li:not(:last-child)::after {
+.date-filter>li:not(:last-child)::after,
+.priority-filter>li:not(:last-child)::after {
   content: "";
   width: 90%;
   height: 1px;
@@ -205,8 +206,9 @@ form {
   position: absolute;
 }
 
-.date-filter > li:hover,
-.priority-filter > li:hover {
+.date-filter>li:hover,
+.priority-filter>li:hover {
+  font-weight: 600;
   background-color: #5f42f0;
   color: white;
 }
@@ -234,12 +236,22 @@ form {
   display: flex;
   justify-content: center;
   cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.add-todo-box:hover {
+  background-color: #3d24bb;
 }
 
 .add-todo-button {
   width: 100%;
   color: white;
   font-weight: 600;
+  transition: font-weigh 0.3s;
+}
+
+.add-todo-button:hover {
+  font-weight: 700;
 }
 
 .sort-container {
@@ -285,8 +297,8 @@ form {
     flex: 0;
   }
 
-  .sort-filter-box > div,
-  .sort-filter-box > button {
+  .sort-filter-box>div,
+  .sort-filter-box>button {
     height: 41px;
     text-align: center;
     border: 1px solid #e0e5eb;

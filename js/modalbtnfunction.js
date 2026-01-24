@@ -1,7 +1,3 @@
-function createCard() {
-  const todo = getStorage(FLOWDASH_TODOS);
-}
-
 function modalreset() {
   const title = document.querySelector("#popup-todo-title");
   const content = document.querySelector("#popup-todo-description");
@@ -14,6 +10,7 @@ function modalreset() {
 }
 
 function savebtnTodo() {
+  const timestamp = Date.now();
   const title = document.querySelector("#popup-todo-title").value.trim();
   const content = document
     .querySelector("#popup-todo-description")
@@ -37,17 +34,22 @@ function savebtnTodo() {
     priority,
     statusvalue,
     createAt: timestamp,
-    updateAt: 123,
-    completeAt: 123,
+    updateAt: null,
+    completeAt: null,
   };
+
+  if (todo.statusvalue === "done") {
+    todo.completeAt = doneParsingDate(todo.id);
+  } else todo.completeAt = null;
 
   todos.push(todo);
   setStorage(FLOWDASH_TODOS, todos);
 
   dimmed.classList.toggle("hidden");
+
   modalreset();
   countTasks();
-  createCard();
+  createCard(todo);
   render();
 }
 
