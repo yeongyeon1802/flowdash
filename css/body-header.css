@@ -231,6 +231,25 @@ form {
   justify-content: space-between;
 }
 
+.sort-list {
+  display: flex;
+  gap: 10px;
+}
+
+.sort-list-badge {
+  padding: 5px 12px;
+  border: 1px solid #e0e5eb;
+  border-radius: 99px;
+}
+
+.sort-list-badge>p {
+  color: #5C6F8A;
+}
+
+.sort-list-badge>p>span {
+  color: #5F42F0;
+}
+
 .reset-button {
   font-size: clamp(12px, 2vw, 16px);
   color: red;

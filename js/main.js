@@ -62,6 +62,7 @@ function setStorage(strKey, data) {
 
 function render() {
   const todos = getStorage(FLOWDASH_TODOS);
+  const filter = getStorage(FLOWDASH_FILTER);
   todolist.forEach((li) => (li.innerHTML = ""));
   todos.forEach((todo) => {
     createCard(todo);
