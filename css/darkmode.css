@@ -1,0 +1,122 @@
+body {
+  background-color: #f6f7f9;
+  transition: background-color 0.3s ease;
+}
+
+.body-darkmode {
+  background-color: #131820;
+}
+
+.big-element {
+  background-color: #fff;
+  border: 1px solid #e0e5eb;
+  transition:
+    background-color 0.3s ease,
+    border 0.3s ease;
+}
+
+body .big-element-darkmode {
+  background-color: #171d26;
+  border: 1px solid #263140;
+}
+
+.big-text {
+  color: #1b2432;
+  transition: color 0.3s ease;
+}
+
+.big-text-darkmode {
+  color: #f1f2f4;
+}
+
+.small-text {
+  color: #5c6f8a;
+  transition: color 0.3s ease;
+}
+
+.small-text-darkmode {
+  color: #abb1ba;
+}
+
+.bi-search {
+  fill: #98a4b3;
+  fill: #98a4b3;
+  transition:
+    fill 0.3s ease,
+    stroke 0.3s ease;
+}
+
+.bi-search-dark {
+  fill: #737D8C;
+  fill: #737D8C;
+}
+
+.bi-chevron-down {
+  fill: #666;
+  stroke: #666;
+  transition:
+    fill 0.3s ease,
+    stroke 0.3s ease;
+}
+
+.bi-chevron-down-darkmode {
+  fill: #f1f2f4;
+  stroke: #f1f2f4;
+}
+
+.asc-desc-button {
+  background-color: #fff;
+  color: #1b2432;
+  border: 1px solid #e0e5eb;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease,
+    border 0.3s ease;
+}
+
+body .asc-desc-button-darkmode {
+  background-color: #171d26;
+  color: #f1f2f4;
+  border: 1px solid #263140;
+}
+
+.todo-list-box {
+  background-color: #00000005;
+  transition: background-color 0.3s ease;
+}
+
+.todo-list-box-darkmode {
+  background-color: #ffffff05;
+}
+
+.items-count {
+  background-color: #fff;
+  color: #1b2432;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+}
+
+.items-count-darkmode {
+  background-color: #1f2733;
+  color: #f1f2f4;
+}
+
+.list-todo::after,
+.list-done::after {
+  background-color: #1b2432;
+}
+
+.list-todo.list-todo-darkmode::after,
+.list-done.list-done-darkmode::after {
+  background-color: #abb1ba;
+}
+
+.todo-footer {
+  border-top: 1px solid #e0e5eb;
+  transition: border-top 0.3s ease;
+}
+
+.todo-footer-darkmode {
+  border-top: 1px solid #263140;
+}
