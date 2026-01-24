@@ -2,18 +2,13 @@ const todolist = document.querySelectorAll(".element-list");
 const createbtn = document.querySelector(".add-todo-button");
 const maintitle = document.querySelector(".popup-main-title");
 
-function getTodos() {
-  const todo = localStorage.getItem("flowdash.todos");
-  return todo ? JSON.parse(todo) : [];
-}
-
 function clickNewBtn() {
   dimmed.classList.toggle("hidden");
   maintitle.textContent = "새 할 일";
 }
 
 function clickTodoList() {
-  const todos = getTodos();
+  const todos = getStorage(FLOWDASH_TODOS);
   dimmed.classList.toggle("hidden");
   maintitle.textContent = "할 일 수정";
 }
