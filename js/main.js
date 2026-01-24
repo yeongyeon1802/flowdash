@@ -24,6 +24,19 @@ const maintitle = document.querySelector(".popup-main-title");
 const hour = document.querySelector(".now-time-zone");
 const date = document.querySelector(".now-date");
 const nickName = document.querySelector(".nickname");
+const darkModeBtn = document.querySelector(".theme-btn");
+const elementDarkMode = document.querySelectorAll(".big-element");
+const bigTextDarkMode = document.querySelectorAll(".big-text");
+const smallTextDarkMode = document.querySelectorAll(".small-text");
+const todoListDakrMode = document.querySelectorAll(".todo-list-box");
+const searchIcon = document.querySelector('.bi-search')
+const arrow = document.querySelectorAll('.bi-chevron-down')
+const itemCountDarkmode = document.querySelectorAll(".items-count");
+const listTodoLineDarkmode = document.querySelectorAll(".list-todo");
+const listDoneLineDarkmode = document.querySelectorAll(".list-done");
+const footerBorderDarkmode = document.querySelector(".todo-footer");
+const brightIcon = document.querySelector(".bright-icon");
+const darkIcon = document.querySelector(".dark-icon");
 
 function getStorage(strKey) {
   const data = localStorage.getItem(strKey);

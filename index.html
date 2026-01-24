@@ -11,18 +11,19 @@
     <link rel="stylesheet" href="./css/todo.css" />
     <link rel="stylesheet" href="./css/footer.css" />
     <link rel="stylesheet" href="./css/modal.css" />
+    <link rel="stylesheet" href="./css/darkmode.css" />
   </head>
   <body>
     <!-- 전체를 감싸는 박스 -->
     <div class="whole-container">
       <!-- 헤더 영역 -->
-      <header class="todo-header">
+      <header class="big-element todo-header">
         <!-- 인사말 및 다크모드 버튼 영역 -->
         <section class="greeting-container">
           <!-- 인사말, 날짜 -->
           <div class="greeting-box">
-            <h1 class="greeting">
-              <span class="now-time-zone">시간대</span>,
+            <h1 class="big-text greeting">
+              <span class="big-text now-time-zone">시간대</span>,
               <span class="nickname">FlowDash</span>님
             </h1>
             <!-- 다크모드 토클 버튼 -->
@@ -59,7 +60,7 @@
               </svg>
             </button>
           </div>
-          <h2 class="now-date">date</h2>
+          <h2 class="small-text now-date">date</h2>
         </section>
       </header>
       <!-- 메인 컨텐츠 영역 -->
@@ -67,37 +68,38 @@
         <!-- 할일 진행도 영역 -->
         <section class="realtime-box">
           <ul class="realtime-status">
-            <li class="status">
-              <h3>Total Tasks</h3>
-              <span class="total-tasks">0</span>
+            <li class="big-element status">
+              <h3 class="small-text">Total Tasks</h3>
+              <span class="big-text total-tasks">0</span>
             </li>
-            <li class="status">
-              <h3>To Do</h3>
-              <span class="todo-items">0</span>
+            <li class="big-element status">
+              <h3 class="small-text">To Do</h3>
+              <span class="big-text todo-items">0</span>
             </li>
-            <li class="status">
-              <h3>In Progress</h3>
-              <span class="doing-items">0</span>
+            <li class="big-element status">
+              <h3 class="small-text">In Progress</h3>
+              <span class="big-text doing-items">0</span>
             </li>
-            <li class="status">
-              <h3>Done</h3>
-              <span class="done-items">0</span>
+            <li class="big-element status">
+              <h3 class="small-text">Done</h3>
+              <span class="big-text done-items">0</span>
             </li>
-            <li class="status">
-              <h3>Achivement</h3>
-              <span class="todo-achivement">-</span>
+            <li class="big-element status">
+              <h3 class="small-text">Achivement</h3>
+              <span class="big-text todo-achivement">-</span>
             </li>
           </ul>
         </section>
         <!-- 할일 추가 등 유틸리티 영역 -->
         <section class="todo-utlitity-box">
           <h2 class="invisible-heading">할일 추가 영역</h2>
-          <form>
+          <form class="big-element">
             <div class="search-box">
               <input
                 type="text"
                 name="search-todo"
                 id="search-todo"
+                class="big-element"
                 autocomplete="off"
                 placeholder="내용을 입력하세요..."
               />
@@ -116,9 +118,9 @@
               </svg>
             </div>
             <div class="sort-filter-box">
-              <div class="date-filter-box">
+              <div class="big-element date-filter-box">
                 <button type="button" class="date-filter-button">
-                  <p>전체 기간</p>
+                  <p class="big-text">전체 기간</p>
                   <span
                     ><svg
                       class="arrow bi-chevron-down"
@@ -140,15 +142,15 @@
                   </span>
                 </button>
                 <ul class="date-filter hidden">
-                  <li class="whole-date">전체 기간</li>
-                  <li class="today">오늘</li>
-                  <li class="seven-days-before">7일 전</li>
+                  <li class="big-text whole-date">전체 기간</li>
+                  <li class="big-text today">오늘</li>
+                  <li class="big-text seven-days-before">7일 전</li>
                 </ul>
               </div>
 
-              <div class="priority-filter-box">
+              <div class="big-element priority-filter-box">
                 <button type="button" class="priority-filter-button">
-                  <p>전체 우선순위</p>
+                  <p class="big-text">전체 우선순위</p>
                   <span
                     ><svg
                       class="arrow bi-chevron-down"
@@ -170,13 +172,12 @@
                   </span>
                 </button>
                 <ul class="priority-filter hidden">
-                  <li class="priority-all">전체 우선순위</li>
-                  <li class="priority-high">높음</li>
-                  <li class="priority-mid">중간</li>
-                  <li class="priority-low">낮음</li>
+                  <li class="big-text priority-all">전체 우선순위</li>
+                  <li class="big-text priority-high">높음</li>
+                  <li class="big-text priority-mid">중간</li>
+                  <li class="big-text priority-low">낮음</li>
                 </ul>
               </div>
-
               <button type="button" class="asc-desc-button">오름차순</button>
             </div>
             <div class="add-todo-box">
@@ -199,8 +200,8 @@
             <!-- 할일 칸 -->
             <div class="todo-list-box todo-box">
               <!-- 상단 상태창 및 갯수 표시 -->
-              <div class="list-title">
-                <h3>할 일</h3>
+              <div class="list-title list-todo">
+                <h3 class="small-text">할 일</h3>
                 <span class="items-count todo-items">0</span>
               </div>
               <!-- 하단 실제 요소, JS로 추가 예정 -->
@@ -208,16 +209,16 @@
             </div>
             <!-- 진행 중 칸 -->
             <div class="todo-list-box doing-box">
-              <div class="list-title">
-                <h3>진행 중</h3>
+              <div class="list-title list-doing">
+                <h3 class="small-text">진행 중</h3>
                 <span class="items-count doing-items">0</span>
               </div>
               <ul class="element-list doing-list"></ul>
             </div>
             <!-- 완료 칸 -->
             <div class="todo-list-box done-box">
-              <div class="list-title">
-                <h3>완료</h3>
+              <div class="list-title list-done">
+                <h3 class="small-text">완료</h3>
                 <span class="items-count done-items">0</span>
               </div>
               <ul class="element-list done-list"></ul>
@@ -228,7 +229,7 @@
       <!-- 푸터 영역 -->
       <footer class="todo-footer">
         <!-- 저작권 표시 -->
-        <span class="copyright"
+        <span class="small-text copyright"
           >&copy; 2026 Flow Dash. All rights reserved.</span
         >
       </footer>
@@ -361,5 +362,6 @@
     <script src="./js/count.js"></script>
     <script src="./js/header.js"></script>
     <script src="./js/createCard.js"></script>
+    <script src="./js/dakrmode.js"></script>
   </body>
 </html>
