@@ -17,14 +17,7 @@ const priorityFilterItem = document.querySelectorAll(".priority-filter>li");
 const ascbtn = document.querySelector(".asc-desc-button");
 const savebtn = document.querySelector(".popup-save-button");
 const cancelbtn = document.querySelector(".popup-cancel-button");
-const title = document.querySelector("#popup-todo-title").value.trim();
-const content = document.querySelector("#popup-todo-description").value.trim();
 const dimmed = document.querySelector(".popup-modal");
-const priority = document.querySelector("input[name='priority']:checked").value;
-const statusvalue = document.querySelector(
-  "input[name='status']:checked",
-).value;
-const timestamp = Date.now();
 const todolist = document.querySelectorAll(".element-list");
 const createbtn = document.querySelector(".add-todo-button");
 const maintitle = document.querySelector(".popup-main-title");
@@ -56,7 +49,12 @@ function setStorage(strKey, data) {
 
 function render() {
   const todos = getStorage(FLOWDASH_TODOS);
+  todolist.forEach((li) => (li.innerHTML = ""));
+  todos.forEach((todo) => {
+    createCard(todo);
+  });
   countTasks();
+  badgeText();
 }
 
 document.addEventListener("DOMContentLoaded", render);
