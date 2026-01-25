@@ -21,6 +21,8 @@ function realTimeHour() {
 }
 
 //현재 날짜 함수
+let lastDate = "";
+
 function nowDate() {
   const now = new Date();
 
@@ -28,50 +30,48 @@ function nowDate() {
   const month = String(now.getMonth() + 1);
   const day = String(now.getDate());
 
-  date.textContent = `${year}년 ${month}월 ${day}일`;
-}
+  const currentDate = `${year}년 ${month}월 ${day}일`
 
-//닉네임 로컬 스토리지 저장 로직
-let nickNameStorage = "";
-
-function savedNickname() {
-  const saved = localStorage.getItem("flowdash.nickname");
-  nickNameStorage = saved ? saved : "FlowDash";
-  nickName.textContent = nickNameStorage;
+  //날짜가 바뀔때마다 업데이트
+  if (currentDate !== lastDate) {
+    date.textContent = `${year}년 ${month}월 ${day}일`;
+    lastDate = currentDate;
+  }
 }
 
 //닉네임 변경 이벤트
 function inputEvent() {
-  nickName.addEventListener("click", function () {
+  nickName.addEventListener("click", () => {
     nickName.setAttribute("contenteditable", true);
     nickName.setAttribute("spellcheck", false);
     nickName.style.outline = "none";
-  });
-
-  nickName.addEventListener("keydown", function (e) {
+  })
+  
+  nickName.addEventListener("keydown", (e) => {
     if (e.key === "Enter" || e.key === "Escape") {
       e.preventDefault();
       nickName.blur();
     }
   });
 
-  nickName.addEventListener("blur", function () {
+  nickName.addEventListener("blur", () => {
     let currentNickName = nickName.textContent.trim();
     if (currentNickName === "") {
-      currentNickName = nickNameStorage ? nickNameStorage : "FlowDash";
+      currentNickName = getStorage(FLOWDASH_NICKNAME);
     } else {
-      nickNameStorage = currentNickName;
-      localStorage.setItem("flowdash.nickname", currentNickName);
+      setStorage(FLOWDASH_NICKNAME, currentNickName);
     }
     nickName.textContent = currentNickName;
     nickName.removeAttribute("contenteditable");
     nickName.removeAttribute("spellcheck");
+    render();
   });
 }
 
 //함수 호출
 setInterval(realTimeHour, 60000);
+setInterval(nowDate, 1000);
+inputEvent();
 realTimeHour();
 nowDate();
-savedNickname();
-inputEvent();
+

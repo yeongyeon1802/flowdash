@@ -7,6 +7,35 @@ body {
   background-color: #131820;
 }
 
+.theme-btn {
+  border: 1px solid #e0e5eb;
+  transition: border 0.3s ease;
+}
+
+.theme-btn-darkmode {
+  border: 1px solid #263140;
+}
+
+.dark-icon {
+  fill: #1b2432;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+.dark-icon-darkmode { 
+  opacity: 0;
+}
+
+.bright-icon {
+  fill: #f1f2f4;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.bright-icon-darkmode {
+  opacity: 1;
+}
+
 .big-element {
   background-color: #fff;
   border: 1px solid #e0e5eb;
@@ -40,15 +69,12 @@ body .big-element-darkmode {
 
 .bi-search {
   fill: #98a4b3;
-  fill: #98a4b3;
   transition:
     fill 0.3s ease,
-    stroke 0.3s ease;
 }
 
 .bi-search-dark {
-  fill: #737D8C;
-  fill: #737D8C;
+  fill: #737d8c;
 }
 
 .bi-chevron-down {
@@ -105,6 +131,7 @@ body .asc-desc-button-darkmode {
 .list-todo::after,
 .list-done::after {
   background-color: #1b2432;
+  transition: background-color 0.3s ease;
 }
 
 .list-todo.list-todo-darkmode::after,
@@ -119,4 +146,72 @@ body .asc-desc-button-darkmode {
 
 .todo-footer-darkmode {
   border-top: 1px solid #263140;
+}
+
+.popup {
+  background-color: #fff;
+  transition: background-color 0.3s ease;
+}
+
+.popup-darkmode {
+  background-color: #171d26;
+}
+
+.popup-content-title>input {
+  background-color: #fff;
+  border: 1px solid #e0e5eb;
+  border-radius: 8px;
+  transition:
+    background-color 0.3s ease,
+    border 0.3s ease;
+}
+
+.popup-content-title-darkmode>input {
+  background-color: #171d26;
+  border: 1px solid #263140;
+  color: #fff;
+  border-radius: 8px;
+  transition:
+    background-color 0.3s ease,
+    border 0.3s ease;
+}
+
+.popup-description>textarea {
+  background-color: #fff;
+  border: 1px solid #e0e5eb;
+  border-radius: 8px;
+}
+
+.popup-description-darkmode>textarea {
+  background-color: #171d26;
+  border: 1px solid #263140;
+  color: #fff;
+  border-radius: 8px;
+}
+
+
+.priority-item>label,
+.status-item>label {
+  background-color: #fff;
+  border: 1px solid #e0e5eb;
+  border-radius: 40px;
+  transition:
+    background-color 0.3s ease,
+    border 0.3s ease;
+}
+
+.priority-item-darkmode>label,
+.status-item-darkmode>label {
+  background-color: #171d26;
+  border: 1px solid #263140;
+  border-radius: 40px;
+}
+
+.popup-cancel-button {
+  background-color: #e0e5eb;
+  transition: background-color 0.3s ease;
+}
+
+.popup-cancel-button-darkmode {
+  background-color: #263140;
 }
