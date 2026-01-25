@@ -119,7 +119,7 @@
             </div>
             <div class="sort-filter-box">
               <div class="big-element date-filter-box">
-                <button type="button" class="date-filter-button">
+                <button type="button" class="date-filter-button filter-button">
                   <p class="big-text">전체 기간</p>
                   <span
                     ><svg
@@ -149,7 +149,10 @@
               </div>
 
               <div class="big-element priority-filter-box">
-                <button type="button" class="priority-filter-button">
+                <button
+                  type="button"
+                  class="priority-filter-button filter-button"
+                >
                   <p class="big-text">전체 우선순위</p>
                   <span
                     ><svg
@@ -178,7 +181,9 @@
                   <li class="big-text priority-low">낮음</li>
                 </ul>
               </div>
-              <button type="button" class="asc-desc-button">오름차순</button>
+              <button type="button" class="asc-desc-button filter-button">
+                오름차순
+              </button>
             </div>
             <div class="add-todo-box">
               <button type="button" class="add-todo-button">새 할일</button>
@@ -190,11 +195,7 @@
           <h2 class="invisible-heading">정렬 상태 표시 및 초기화 버튼 영역</h2>
           <div class="sort-box">
             <!-- 현재 적용된 정렬 필터 목록, JS로 제어 예정 -->
-            <ul class="sort-list">
-              <li class="sort-list-badge date">
-                <p>정렬 : <span>오름차순</span></p>
-              </li>
-            </ul>
+            <ul class="sort-list"></ul>
           </div>
           <button type="button" class="reset-button">전체 데이터 초기화</button>
         </section>

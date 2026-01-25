@@ -1,4 +1,4 @@
-// todo는 객체
+// 매개변수 todo는 객체
 function createCard(todo) {
   const todolist = document.querySelector(".todo-list");
   const doinglist = document.querySelector(".doing-list");
@@ -16,6 +16,8 @@ function createCard(todo) {
 
   const cardTop = document.createElement("div");
   cardTop.className = "card-top";
+  li.append(cardTop);
+
   const h3 = document.createElement("h3");
   h3.classList.add("element-priority");
   const classname =
@@ -31,12 +33,16 @@ function createCard(todo) {
       : todo.priority == "medium"
         ? "중간"
         : "낮음";
+  cardTop.append(h3);
 
+  // 좀 더 손대야함
   const delbtn = document.createElement("button");
   delbtn.type = "button";
   delbtn.className = "element-delete-button";
+  delbtn.textContent = "X";
 
-  li.append(h3);
+  cardTop.append(delbtn);
+  //-----------------------
 
   const elementsBox = document.createElement("div");
   elementsBox.className = "elements-box";
@@ -63,10 +69,16 @@ function createCard(todo) {
   addedDate.textContent = parsingDate(todo.createAt);
   dateBox.append(addedDate);
 
+  if (todo.updateAt && todo.statusvalue !== "done") {
+    const updateDate = document.createElement("p");
+    updateDate.textContent = "수정시간" + parsingDate(todo.updateAt);
+    dateBox.append(updateDate);
+  }
+
   if (todo.statusvalue === "done") {
-    const doneDate = document.createElement("span");
+    const doneDate = document.createElement("p");
     doneDate.classList.add("done-date");
-    doneDate.textContent = todo.completeAt;
+    doneDate.textContent = "완료시간" + parsingDate(todo.completeAt);
     dateBox.append(doneDate);
   }
 }

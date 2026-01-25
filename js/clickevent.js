@@ -40,6 +40,8 @@ dateFilterItem.forEach((n, i) => {
     btntext.textContent = text;
     filter.date = i;
     setStorage(FLOWDASH_FILTER, filter);
+
+    render();
   });
 });
 
@@ -53,6 +55,8 @@ priorityFilterItem.forEach((n, i) => {
     btntext.textContent = text;
     filter.priority = i;
     setStorage(FLOWDASH_FILTER, filter);
+
+    render();
   });
 });
 
