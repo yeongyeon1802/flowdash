@@ -30,11 +30,16 @@ const bigTextDarkMode = document.querySelectorAll(".big-text");
 const smallTextDarkMode = document.querySelectorAll(".small-text");
 const todoListDakrMode = document.querySelectorAll(".todo-list-box");
 const searchIcon = document.querySelector(".bi-search");
+const popupDarkMode = document.querySelector(".popup");
+const popupTitleDarkMode = document.querySelector(".popup-content-title");
+const popupDescDarkMode = document.querySelector(".popup-description");
 const arrow = document.querySelectorAll(".bi-chevron-down");
+const footerBorderDarkmode = document.querySelector(".todo-footer");
 const itemCountDarkmode = document.querySelectorAll(".items-count");
 const listTodoLineDarkmode = document.querySelectorAll(".list-todo");
 const listDoneLineDarkmode = document.querySelectorAll(".list-done");
-const footerBorderDarkmode = document.querySelector(".todo-footer");
+const priorityItemDarkMode = document.querySelectorAll(".priority-item");
+const statusItemDarkMode = document.querySelectorAll(".status-item");
 const brightIcon = document.querySelector(".bright-icon");
 const darkIcon = document.querySelector(".dark-icon");
 const sortList = document.querySelector(".sort-list");
@@ -68,9 +73,17 @@ function render() {
   todos.forEach((todo) => {
     createCard(todo);
   });
+
+  const savedNickNames = getStorage(FLOWDASH_NICKNAME);
+  nickName.textContent = savedNickNames;
+
+  const savedTheme = getStorage(FLOWDASH_THEME);
+  darkMode = savedTheme;
+
   createFilterBadge();
   countTasks();
   badgeText();
+  darkModeUI();
 }
 
 document.addEventListener("DOMContentLoaded", render);
