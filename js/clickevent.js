@@ -68,7 +68,7 @@ function badgeText() {
     ? (datebtntext.textContent = "전체 기간")
     : filter.date === 1
       ? (datebtntext.textContent = "오늘")
-      : (datebtntext.textContent = "7일 전");
+      : (datebtntext.textContent = "최근 7일");
   filter.priority === 0
     ? (prioritybtntext.textContent = "전체 우선순위")
     : filter.priority === 1

@@ -10,7 +10,7 @@ function createFilterBadge() {
   const sortText = document.createElement("p");
   const sorttext = document.createElement("span");
   sortText.textContent = "정렬 : ";
-  sorttext.textContent = filter.sort === 0 ? "오름차순" : "내림차순";
+  sorttext.textContent = ascbtn.textContent;
   list.append(sort);
   sort.append(sortText);
   sortText.append(sorttext);
@@ -21,8 +21,8 @@ function createFilterBadge() {
   const datetext = document.createElement("span");
   if (filter.date === 0) date.className = "hidden";
   dateText.textContent = "기간:";
-  datetext.textContent =
-    filter.date === 0 ? "전체" : filter.date === 1 ? "오늘" : "7일전";
+  datetext.textContent = btntext[0].textContent;
+
   list.append(date);
   date.append(dateText);
   dateText.append(datetext);
@@ -33,14 +33,7 @@ function createFilterBadge() {
   const prioritytext = document.createElement("span");
   if (filter.priority === 0) priority.className = "hidden";
   priorityText.textContent = "우선순위:";
-  prioritytext.textContent =
-    filter.priority === 0
-      ? "전체"
-      : filter.priority === 1
-        ? "높음"
-        : filter.priority === 2
-          ? "중간"
-          : "낮음";
+  prioritytext.textContent = btntext[1].textContent;
   list.append(priority);
   priority.append(priorityText);
   priorityText.append(prioritytext);

@@ -47,6 +47,7 @@ function savebtnTodo() {
     todos.push(todo);
   }
 
+  if (!title) return;
   setStorage(FLOWDASH_TODOS, todos);
   dimmed.classList.toggle("hidden");
   modalreset();

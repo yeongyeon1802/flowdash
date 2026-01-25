@@ -43,6 +43,7 @@ const statusItemDarkMode = document.querySelectorAll(".status-item");
 const brightIcon = document.querySelector(".bright-icon");
 const darkIcon = document.querySelector(".dark-icon");
 const sortList = document.querySelector(".sort-list");
+const btntext = document.querySelectorAll(".filter-button>p");
 let curId = null;
 
 function getStorage(strKey) {
