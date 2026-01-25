@@ -51,6 +51,10 @@
 }
 
 .theme-btn {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 40px;
   height: 40px;
   border-radius: 50%;
@@ -59,6 +63,13 @@
 .theme-btn>svg {
   width: 50%;
   height: 50%;
+}
+
+.bright-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .todo-main {
@@ -229,27 +240,6 @@ form {
   width: 100%;
   display: flex;
   justify-content: space-between;
-}
-
-.sort-list {
-  list-style: none;
-  display: flex;
-  gap: 10px;
-}
-
-.sort-list-badge {
-  list-style: none;
-  padding: 5px 12px;
-  border: 1px solid #e0e5eb;
-  border-radius: 99px;
-}
-
-.sort-list-badge>p {
-  color: #5C6F8A;
-}
-
-.sort-list-badge>p>span {
-  color: #5F42F0;
 }
 
 .reset-button {
