@@ -23,33 +23,33 @@ function savebtnTodo() {
   ).value;
   const todos = getStorage(FLOWDASH_TODOS);
 
-  if (!title) {
-    return;
+  if (curId) {
+    const list = todos.find((todo) => todo.id === curId);
+    list.title = title;
+    list.content = content;
+    list.priority = priority;
+    list.statusvalue = statusvalue;
+    list.updateAt = timestamp;
+    list.completeAt = statusvalue === "done" ? timestamp : null;
+    curId = null;
+  } else {
+    const todo = {
+      id: timestamp,
+      title,
+      content,
+      priority,
+      statusvalue,
+      createAt: timestamp,
+      updateAt: null,
+      completeAt: statusvalue === "done" ? timestamp : null,
+    };
+    if (!title) return;
+    todos.push(todo);
   }
 
-  const todo = {
-    id: timestamp,
-    title,
-    content,
-    priority,
-    statusvalue,
-    createAt: timestamp,
-    updateAt: null,
-    completeAt: null,
-  };
-
-  if (todo.statusvalue === "done") {
-    todo.completeAt = parsingDate(todo.id);
-  } else todo.completeAt = null;
-
-  todos.push(todo);
   setStorage(FLOWDASH_TODOS, todos);
-
   dimmed.classList.toggle("hidden");
-
   modalreset();
-  countTasks();
-  createCard(todo);
   render();
 }
 

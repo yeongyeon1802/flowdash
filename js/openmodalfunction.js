@@ -27,6 +27,8 @@ function clickTodoList(id) {
 
   dimmed.classList.toggle("hidden");
   maintitle.textContent = "할 일 수정";
+  curId = +id;
+
   title.value = list.title;
   content.value = list.content;
 }

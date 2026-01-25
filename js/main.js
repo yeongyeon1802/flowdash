@@ -29,14 +29,16 @@ const elementDarkMode = document.querySelectorAll(".big-element");
 const bigTextDarkMode = document.querySelectorAll(".big-text");
 const smallTextDarkMode = document.querySelectorAll(".small-text");
 const todoListDakrMode = document.querySelectorAll(".todo-list-box");
-const searchIcon = document.querySelector('.bi-search')
-const arrow = document.querySelectorAll('.bi-chevron-down')
+const searchIcon = document.querySelector(".bi-search");
+const arrow = document.querySelectorAll(".bi-chevron-down");
 const itemCountDarkmode = document.querySelectorAll(".items-count");
 const listTodoLineDarkmode = document.querySelectorAll(".list-todo");
 const listDoneLineDarkmode = document.querySelectorAll(".list-done");
 const footerBorderDarkmode = document.querySelector(".todo-footer");
 const brightIcon = document.querySelector(".bright-icon");
 const darkIcon = document.querySelector(".dark-icon");
+const sortList = document.querySelector(".sort-list");
+let curId = null;
 
 function getStorage(strKey) {
   const data = localStorage.getItem(strKey);
@@ -62,11 +64,11 @@ function setStorage(strKey, data) {
 
 function render() {
   const todos = getStorage(FLOWDASH_TODOS);
-  const filter = getStorage(FLOWDASH_FILTER);
   todolist.forEach((li) => (li.innerHTML = ""));
   todos.forEach((todo) => {
     createCard(todo);
   });
+  createFilterBadge();
   countTasks();
   badgeText();
 }
