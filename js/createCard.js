@@ -3,6 +3,7 @@ function createCard(todo) {
   const li = document.createElement("li");
   li.classList.add("todo-element");
   li.dataset.id = todo.id;
+  li.dataset.priority = todo.priority;
   if (todo.statusvalue === "done") li.classList.add("element-done");
 
   if (todo.statusvalue === "todo") todoList.append(li);

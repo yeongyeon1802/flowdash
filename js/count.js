@@ -1,23 +1,19 @@
-function countTasks() {
-  const todos = getStorage(FLOWDASH_TODOS);
-
-  if (!todos) return;
-
+function countTasks(todos) {
   totalTask.textContent = todos.length;
 
   todoItems.forEach(
     (n) =>
-      (n.textContent = todos.filter((n) => n.statusvalue === "todo").length),
+      (n.textContent = todos.filter((m) => m.statusvalue === "todo").length),
   );
 
   doingItems.forEach(
     (n) =>
-      (n.textContent = todos.filter((n) => n.statusvalue === "doing").length),
+      (n.textContent = todos.filter((m) => m.statusvalue === "doing").length),
   );
 
   doneItems.forEach(
     (n) =>
-      (n.textContent = todos.filter((n) => n.statusvalue === "done").length),
+      (n.textContent = todos.filter((m) => m.statusvalue === "done").length),
   );
 
   Number(totalTask.textContent)

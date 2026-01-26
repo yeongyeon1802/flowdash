@@ -1,44 +1,68 @@
 function filterText() {
   const filter = getStorage(FLOWDASH_FILTER);
-  const datebtntext = document.querySelector(".date-filter-button>p");
-  const prioritybtntext = document.querySelector(".priority-filter-button>p");
-  filter.date
-    ? (datebtntext.textContent = periodObj[filter.date])
-    : (datebtntext.textContent = periodObj[filter.date]);
-
-  filter.priority
-    ? (prioritybtntext.textContent = priorityObj[filter.priority])
-    : (prioritybtntext.textContent = priorityObj[filter.priority]);
-
-  filter.sort
-    ? (ascbtn.textContent = sortObj[filter.sort])
-    : (ascbtn.textContent = sortObj[filter.sort]);
+  datebtntext.textContent = periodObj[filter.date];
+  prioritybtntext.textContent = priorityObj[filter.priority];
+  ascbtn.textContent = sortObj[filter.sort];
 }
 
-function filter() {
-  const filter = getStorage(FLOWDASH_FILTER);
-  const todos = getStorage(FLOWDASH_TODOS);
-
-  const textfilter = [...todos].sort((a, b) =>
-    a.title.localeCompare(b.title, "ko", {
-      numeric: true,
-      sensitivity: "base",
-    }),
-  );
-
-  const priorityfilter = [...todos].filter(
-    (todo) => todo.priority === priority[filter.priority],
-  );
-}
-
-function period(todos) {
-  const now = Date.now();
-  const in7days = todos.filter((todo) => {
-    const diff = now - todo.createAt;
-    const diffDays = diff / (1000 * 60 * 60 * 24);
-    return diffDays <= 7;
+function sortTodos(todos, filter) {
+  todos.sort((a, b) => {
+    return filter.sort
+      ? b.title.localeCompare(a.title, "ko", {
+          numeric: true,
+          sensitivity: "base",
+        })
+      : a.title.localeCompare(b.title, "ko", {
+          numeric: true,
+          sensitivity: "base",
+        });
   });
-  return in7days;
 }
 
-function Istoday(todos) {}
+// function priorityfilter(todos, filter) {
+//   const filtered = getStorage(FlowDash_FILTERED_ARR);
+//   const li = document.querySelectorAll(".element-list>li");
+//   if (filter.priority === 0) return todos;
+//   const prfilterlist = todos.filter(
+//     (todo) => todo.priority === priorityfilterObj[filter.priority],
+//   );
+
+//   filtered.push(...prfilterlist);
+//   setAndPrint(filtered, li, prfilterlist);
+// }
+// function setAndPrint(filtered, card, printcard) {
+//   setStorage(FlowDash_FILTERED_ARR, filtered);
+//   card.forEach((list) => list.classList.add("hidden"));
+//   printcard.forEach((li) => createCard(li));
+// }
+
+function getFilteredTodos(todos, filter) {
+  return todos.filter((todo) => {
+    const isWithinDate = filter.date === 0 || checkDate(todo.id, filter.date);
+
+    function checkDate(id, date) {
+      const now = Date.now();
+      const oneDay = 24 * 60 * 60 * 1000;
+      const today = new Date().setHours(0, 0, 0, 0);
+
+      return date == 1 ? id >= today : now - id <= oneDay * 7;
+    }
+
+    const matchesPriority =
+      filter.priority === 0 ||
+      todo.priority === priorityfilterObj[filter.priority];
+
+    return isWithinDate && matchesPriority;
+  });
+}
+
+function filterListNumbers(filteredList) {
+  const todoCount = filteredList.filter((t) => t.statusvalue === "todo").length;
+  const doingCount = filteredList.filter(
+    (t) => t.statusvalue === "doing",
+  ).length;
+  const doneCount = filteredList.filter((t) => t.statusvalue === "done").length;
+  todolistnum.textContent = todoCount;
+  doinglistnum.textContent = doingCount;
+  donelistnum.textContent = doneCount;
+}
