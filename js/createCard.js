@@ -1,18 +1,13 @@
 // 매개변수 todo는 객체
 function createCard(todo) {
-  const todolist = document.querySelector(".todo-list");
-  const doinglist = document.querySelector(".doing-list");
-  const donelist = document.querySelector(".done-list");
-
   const li = document.createElement("li");
   li.classList.add("todo-element");
   li.dataset.id = todo.id;
   if (todo.statusvalue === "done") li.classList.add("element-done");
-  todo.statusvalue === "todo"
-    ? todolist.appendChild(li)
-    : todo.statusvalue === "doing"
-      ? doinglist.appendChild(li)
-      : donelist.appendChild(li);
+
+  if (todo.statusvalue === "todo") todoList.append(li);
+  else if (todo.statusvalue === "doing") doinglist.append(li);
+  else donelist.append(li);
 
   const cardTop = document.createElement("div");
   cardTop.className = "card-top";
@@ -20,19 +15,9 @@ function createCard(todo) {
 
   const h3 = document.createElement("h3");
   h3.classList.add("element-priority");
-  const classname =
-    todo.priority == "high"
-      ? "high"
-      : todo.priority == "medium"
-        ? "medium"
-        : "low";
+  const classname = priorityValueObj[todo.priority];
   h3.classList.add(classname);
-  h3.textContent =
-    todo.priority == "high"
-      ? "높음"
-      : todo.priority == "medium"
-        ? "중간"
-        : "낮음";
+  h3.textContent = prioritytextObj[todo.priority];
   cardTop.append(h3);
 
   // 좀 더 손대야함

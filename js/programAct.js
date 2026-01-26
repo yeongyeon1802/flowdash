@@ -1,3 +1,5 @@
+document.addEventListener("DOMContentLoaded", render);
+
 dateFilter.addEventListener("click", (e) => {
   e.stopPropagation();
   priorityFilterList.classList.add("hidden");
@@ -20,15 +22,17 @@ document.addEventListener("click", (e) => {
 ascbtn.addEventListener("click", () => {
   const filter = getStorage(FLOWDASH_FILTER);
 
-  if (ascbtn.textContent == "오름차순") {
-    ascbtn.textContent = "내림차순";
+  if (filter.sort == 0) {
+    ascbtn.textContent = sortObj["1"];
     filter.sort = 1;
     setStorage(FLOWDASH_FILTER, filter);
   } else {
-    ascbtn.textContent = "오름차순";
+    ascbtn.textContent = sortObj["0"];
     filter.sort = 0;
     setStorage(FLOWDASH_FILTER, filter);
   }
+
+  render();
 });
 
 dateFilterItem.forEach((n, i) => {
@@ -59,21 +63,3 @@ priorityFilterItem.forEach((n, i) => {
     render();
   });
 });
-
-function badgeText() {
-  const filter = getStorage(FLOWDASH_FILTER);
-  const datebtntext = document.querySelector(".date-filter-button>p");
-  const prioritybtntext = document.querySelector(".priority-filter-button>p");
-  filter.date === 0
-    ? (datebtntext.textContent = "전체 기간")
-    : filter.date === 1
-      ? (datebtntext.textContent = "오늘")
-      : (datebtntext.textContent = "최근 7일");
-  filter.priority === 0
-    ? (prioritybtntext.textContent = "전체 우선순위")
-    : filter.priority === 1
-      ? (prioritybtntext.textContent = "높음")
-      : filter.priority === 2
-        ? (prioritybtntext.textContent = "중간")
-        : (prioritybtntext.textContent = "낮음");
-}

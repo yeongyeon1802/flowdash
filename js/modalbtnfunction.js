@@ -1,11 +1,7 @@
 function modalreset() {
-  const title = document.querySelector("#popup-todo-title");
-  const content = document.querySelector("#popup-todo-description");
   title.value = "";
   content.value = "";
-  const defaultpriority = document.querySelector("#medium");
   defaultpriority.checked = true;
-  const defaultstatus = document.querySelector("#todo");
   defaultstatus.checked = true;
 }
 
