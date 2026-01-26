@@ -1,9 +1,7 @@
 function modalreset() {
   title.value = "";
   content.value = "";
-  const defaultpriority = document.querySelector("#medium");
   defaultpriority.checked = true;
-  const defaultstatus = document.querySelector("#todo");
   defaultstatus.checked = true;
 }
 
@@ -45,6 +43,7 @@ function savebtnTodo() {
     todos.push(todo);
   }
 
+  if (!title) return;
   setStorage(FLOWDASH_TODOS, todos);
   dimmed.classList.toggle("hidden");
   modalreset();
