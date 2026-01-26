@@ -1,8 +1,7 @@
 function createFilterBadge() {
   const filter = getStorage(FLOWDASH_FILTER);
-  const list = document.querySelector(".sort-list");
   const filterbtn = document.querySelector(".asc-desc-button");
-  list.innerHTML = "";
+  sortList.innerHTML = "";
   filterbtn.addEventListener("click", render);
 
   const sort = document.createElement("li");
@@ -11,7 +10,7 @@ function createFilterBadge() {
   const sorttext = document.createElement("span");
   sortText.textContent = "정렬: ";
   sorttext.textContent = sortObj[filter.sort];
-  list.append(sort);
+  sortList.append(sort);
   sort.append(sortText);
   sortText.append(sorttext);
 
@@ -22,7 +21,7 @@ function createFilterBadge() {
   if (filter.date === 0) date.className = "hidden";
   dateText.textContent = "기간: ";
   datetext.textContent = periodObj[filter.date];
-  list.append(date);
+  sortList.append(date);
   date.append(dateText);
   dateText.append(datetext);
 
@@ -33,7 +32,7 @@ function createFilterBadge() {
   if (filter.priority === 0) priority.className = "hidden";
   priorityText.textContent = "우선순위: ";
   prioritytext.textContent = priorityObj[filter.priority];
-  list.append(priority);
+  sortList.append(priority);
   priority.append(priorityText);
   priorityText.append(prioritytext);
 }
