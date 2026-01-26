@@ -32,16 +32,16 @@ function setStorage(strKey, data) {
 function render() {
   const todos = getStorage(FLOWDASH_TODOS);
   const filter = getStorage(FLOWDASH_FILTER);
+
   todolist.forEach((li) => (li.innerHTML = ""));
 
   sortTodos(todos, filter);
 
-  todos.forEach((todo) => {
+  const filteredList = getFilteredTodos(todos, filter);
+  filteredList.forEach((todo) => {
     createCard(todo);
   });
-
-  priorityfilter(todos, filter);
-  // datefilter(todos, filter);
+  filterListNumbers(filteredList);
 
   const savedNickNames = getStorage(FLOWDASH_NICKNAME);
   nickName.textContent = savedNickNames;

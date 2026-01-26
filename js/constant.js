@@ -62,7 +62,11 @@ const defaultpriority = document.querySelector("#medium");
 const defaultstatus = document.querySelector("#todo");
 const searchForm = document.querySelector("#search-todo");
 const form = document.querySelector("#filter-form");
-
+const datebtntext = document.querySelector(".date-filter-button>p");
+const prioritybtntext = document.querySelector(".priority-filter-button>p");
+const todolistnum = document.querySelector(".list-todo>.todo-items");
+const doinglistnum = document.querySelector(".list-doing>.doing-items");
+const donelistnum = document.querySelector(".list-done>.done-items");
 const priorityObj = {
   0: "전체 우선순위",
   1: "높음",
