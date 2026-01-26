@@ -4,6 +4,7 @@ const FLOWDASH_NICKNAME = "flowdash.nickname";
 const FLOWDASH_THEME = "flowdash.theme";
 const FLOWDASH_FILTER = "flowdash.filter";
 const FLOWDASH_SEARCH = "flowdash.search";
+const FlowDash_FILTERED_ARR = "flowdash.filteredArray";
 
 const totalTask = document.querySelector(".total-tasks");
 const todoItems = document.querySelectorAll(".todo-items");
@@ -67,6 +68,12 @@ const priorityObj = {
   1: "높음",
   2: "중간",
   3: "낮음",
+};
+const priorityfilterObj = {
+  0: "",
+  1: "high",
+  2: "mid",
+  3: "low",
 };
 const priorityValueObj = {
   high: "high",

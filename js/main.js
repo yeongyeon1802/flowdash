@@ -2,7 +2,8 @@ let curId = null;
 
 function getStorage(strKey) {
   const data = localStorage.getItem(strKey);
-  if (strKey === FLOWDASH_TODOS) return data ? JSON.parse(data) : [];
+  if (strKey === FLOWDASH_TODOS || strKey === FlowDash_FILTERED_ARR)
+    return data ? JSON.parse(data) : [];
 
   if (strKey === FLOWDASH_FILTER)
     return data ? JSON.parse(data) : { date: 0, priority: 0, sort: 0 };
@@ -17,7 +18,11 @@ function getStorage(strKey) {
 }
 
 function setStorage(strKey, data) {
-  if (strKey === FLOWDASH_TODOS || strKey == FLOWDASH_FILTER)
+  if (
+    strKey === FLOWDASH_TODOS ||
+    strKey == FLOWDASH_FILTER ||
+    strKey == FlowDash_FILTERED_ARR
+  )
     localStorage.setItem(strKey, JSON.stringify(data));
   else {
     localStorage.setItem(strKey, data);
@@ -35,6 +40,9 @@ function render() {
     createCard(todo);
   });
 
+  priorityfilter(todos, filter);
+  // datefilter(todos, filter);
+
   const savedNickNames = getStorage(FLOWDASH_NICKNAME);
   nickName.textContent = savedNickNames;
 
@@ -51,6 +59,8 @@ function render() {
     serachBadge(savedSearchFilter);
   }
   sortSearch();
+  countTasks(todos);
+  darkModeUI();
 }
 
 document.addEventListener("DOMContentLoaded", render);
