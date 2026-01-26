@@ -47,3 +47,5 @@ function render() {
   }
   sortSearch();
 }
+
+document.addEventListener('DOMContentLoaded', render);
