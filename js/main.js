@@ -7,9 +7,11 @@ function getStorage(strKey) {
   if (strKey === FLOWDASH_FILTER)
     return data ? JSON.parse(data) : { date: 0, priority: 0, sort: 0 };
 
-  if (strKey === FLOWDASH_NICKNAME) return data ? data : "FlowDash";
+  if (strKey === FLOWDASH_NICKNAME) return data ? data : 'FlowDash';
 
-  if (strKey === FLOWDASH_THEME) return data || "light";
+  if (strKey === FLOWDASH_THEME) return data || 'light';
+
+  if (strKey === FLOWDASH_SEARCH) return data;
 
   return null;
 }
@@ -24,7 +26,7 @@ function setStorage(strKey, data) {
 
 function render() {
   const todos = getStorage(FLOWDASH_TODOS);
-  todolist.forEach((li) => (li.innerHTML = ""));
+  todolist.forEach((li) => (li.innerHTML = ''));
   todos.forEach((todo) => {
     createCard(todo);
   });
@@ -33,11 +35,15 @@ function render() {
   nickName.textContent = savedNickNames;
 
   const savedTheme = getStorage(FLOWDASH_THEME);
-  darkMode = savedTheme;
+
+  const savedSearchFilter = getStorage(FLOWDASH_SEARCH);
 
   createFilterBadge();
   countTasks();
-  badgeText();
-  darkModeUI();
-  filterText();
+  //badgeText();
+  darkModeUI(savedTheme);
+  if (savedSearchFilter) {
+    serachBadge(savedSearchFilter);
+  }
+  sortSearch();
 }
