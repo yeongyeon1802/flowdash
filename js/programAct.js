@@ -37,11 +37,10 @@ ascbtn.addEventListener("click", () => {
 
 dateFilterItem.forEach((n, i) => {
   n.addEventListener("click", () => {
-    const btntext = document.querySelector(".date-filter-button>p");
     const text = n.textContent;
     const filter = getStorage(FLOWDASH_FILTER);
 
-    btntext.textContent = text;
+    datebtntext.textContent = text;
     filter.date = i;
     setStorage(FLOWDASH_FILTER, filter);
 
@@ -51,12 +50,10 @@ dateFilterItem.forEach((n, i) => {
 
 priorityFilterItem.forEach((n, i) => {
   n.addEventListener("click", () => {
-    const btntext = document.querySelector(".priority-filter-button>p");
     const text = n.textContent;
-    btntext.textContent = text;
     const filter = getStorage(FLOWDASH_FILTER);
 
-    btntext.textContent = text;
+    prioritybtntext.textContent = text;
     filter.priority = i;
     setStorage(FLOWDASH_FILTER, filter);
 

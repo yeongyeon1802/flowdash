@@ -15,16 +15,16 @@ let darkMode = getStorage(FLOWDASH_THEME);
 
 //다크모크 토글 이벤트
 function darkModeUI() {
-  const isDark = (darkMode === "dark");
+  const isDark = darkMode === "dark";
 
   //querySelector 요소
   toggleDarkMode(document.body, "body-darkmode", isDark);
   toggleDarkMode(footerBorderDarkMode, "todo-footer-darkmode", isDark);
   toggleDarkMode(ascbtn, "asc-desc-button-darkmode", isDark);
   toggleDarkMode(popupDarkMode, "popup-darkmode", isDark);
-  toggleDarkMode(popupTitleDarkMode, "popup-content-title-darkmode", isDark)
-  toggleDarkMode(popupDescDarkMode, "popup-description-darkmode", isDark)
-  toggleDarkMode(cancelbtn, "popup-cancel-button-darkmode", isDark)
+  toggleDarkMode(popupTitleDarkMode, "popup-content-title-darkmode", isDark);
+  toggleDarkMode(popupDescDarkMode, "popup-description-darkmode", isDark);
+  toggleDarkMode(cancelbtn, "popup-cancel-button-darkmode", isDark);
   //querySelectorAll 요소
   allToggleDarkMode(elementDarkMode, "big-element-darkmode", isDark);
   allToggleDarkMode(bigTextDarkMode, "big-text-darkmode", isDark);
@@ -36,7 +36,7 @@ function darkModeUI() {
   allToggleDarkMode(priorityItemDarkMode, "priority-item-darkmode", isDark);
   allToggleDarkMode(statusItemDarkMode, "status-item-darkmode", isDark);
 
-  if(darkMode === "dark") {
+  if (darkMode === "dark") {
     brightIcon.classList.add("bright-icon-darkmode");
     darkIcon.classList.add("dark-icon-darkmode");
   } else {
@@ -46,7 +46,7 @@ function darkModeUI() {
 }
 
 function toggleButton() {
-  darkMode = (darkMode === "light") ? "dark" : "light";
+  darkMode = darkMode === "light" ? "dark" : "light";
   setStorage(FLOWDASH_THEME, darkMode);
   render();
 }

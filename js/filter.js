@@ -1,18 +1,11 @@
 function filterText() {
   const filter = getStorage(FLOWDASH_FILTER);
-  const datebtntext = document.querySelector(".date-filter-button>p");
-  const prioritybtntext = document.querySelector(".priority-filter-button>p");
-  filter.date
-    ? (datebtntext.textContent = periodObj[filter.date])
-    : (datebtntext.textContent = periodObj[filter.date]);
 
-  filter.priority
-    ? (prioritybtntext.textContent = priorityObj[filter.priority])
-    : (prioritybtntext.textContent = priorityObj[filter.priority]);
+  datebtntext.textContent = periodObj[filter.date] || periodObj[0];
 
-  filter.sort
-    ? (ascbtn.textContent = sortObj[filter.sort])
-    : (ascbtn.textContent = sortObj[filter.sort]);
+  prioritybtntext.textContent = priorityObj[filter.priority] || priorityObj[0];
+
+  ascbtn.textContent = sortObj[filter.sort] || sortObj[0];
 }
 
 function filter() {
