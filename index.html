@@ -144,12 +144,15 @@
                 <ul class="date-filter hidden">
                   <li class="big-text whole-date">전체 기간</li>
                   <li class="big-text today">오늘</li>
-                  <li class="big-text seven-days-before">7일 전</li>
+                  <li class="big-text seven-days-before">최근 7일</li>
                 </ul>
               </div>
 
               <div class="big-element priority-filter-box">
-                <button type="button" class="priority-filter-button">
+                <button
+                  type="button"
+                  class="priority-filter-button filter-button"
+                >
                   <p class="big-text">전체 우선순위</p>
                   <span
                     ><svg
@@ -181,7 +184,7 @@
               <button type="button" class="asc-desc-button">오름차순</button>
             </div>
             <div class="add-todo-box">
-              <button type="button" class="add-todo-button">새 할일</button>
+              <button type="button" class="add-todo-button">새 할 일</button>
             </div>
           </form>
         </section>
@@ -291,7 +294,7 @@
                     type="radio"
                     name="priority"
                     id="medium"
-                    value="medium"
+                    value="mid"
                     class="priority"
                     checked
                   />
@@ -348,21 +351,25 @@
             </fieldset>
             <!-- 취소 및 저장하기 버튼 -->
             <div class="popup-footer">
-              <button type="button" class="popup-cancel-button small-text">취소</button>
+              <button type="button" class="popup-cancel-button small-text">
+                취소
+              </button>
               <button type="button" class="popup-save-button">저장하기</button>
             </div>
           </section>
         </div>
       </section>
     </div>
+    <script src="./js/constant.js"></script>
     <script src="./js/main.js"></script>
     <script src="./js/modalbtnfunction.js"></script>
     <script src="./js/openmodalfunction.js"></script>
-    <script src="./js/clickevent.js"></script>
     <script src="./js/count.js"></script>
     <script src="./js/header.js"></script>
     <script src="./js/createCard.js"></script>
     <script src="./js/dakrmode.js"></script>
     <script src="./js/createFilterBadge.js"></script>
+    <script src="./js/filter.js"></script>
+    <script src="./js/programAct.js"></script>
   </body>
 </html>
