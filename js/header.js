@@ -20,9 +20,6 @@ function realTimeHour() {
   }
 }
 
-//현재 날짜 함수
-let lastDate = "";
-
 function nowDate() {
   const now = new Date();
 
@@ -32,11 +29,7 @@ function nowDate() {
 
   const currentDate = `${year}년 ${month}월 ${day}일`
 
-  //날짜가 바뀔때마다 업데이트
-  if (currentDate !== lastDate) {
-    date.textContent = `${year}년 ${month}월 ${day}일`;
-    lastDate = currentDate;
-  }
+  date.textContent = currentDate;
 }
 
 //닉네임 변경 이벤트
@@ -70,7 +63,7 @@ function inputEvent() {
 
 //함수 호출
 setInterval(realTimeHour, 60000);
-setInterval(nowDate, 1000);
+setInterval(nowDate, 60000);
 inputEvent();
 realTimeHour();
 nowDate();
