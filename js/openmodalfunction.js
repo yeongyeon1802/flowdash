@@ -25,11 +25,18 @@ function clickTodoList(id) {
   curId = +id;
 }
 
-todolist.forEach((n) =>
-  n.addEventListener("click", function (e) {
+todolist.forEach((li) =>
+  li.addEventListener("click", function (e) {
     const card = e.target.closest("li");
     clickTodoList(card.dataset.id);
   }),
 );
+
+Array.from(delbtns).forEach((delbtn) => {
+  delbtn.addEventListener("click", (e) => {
+    const card = e.target.closet("li");
+    deleteCard(card.dataset.id);
+  });
+});
 
 createbtn.addEventListener("click", clickNewBtn);

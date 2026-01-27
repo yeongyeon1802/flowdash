@@ -8,7 +8,7 @@ function removeFilter() {
 
 function serachBadge(text) {
   const search = document.createElement("li");
-  search.className = "sort-list-badge";
+  search.className = "sort-list-badge search";
   search.style.display = "flex";
   const searchTitle = document.createElement("p");
   const searchFilter = document.createElement("span");
@@ -19,7 +19,7 @@ function serachBadge(text) {
   //요소 추가
   sortList.appendChild(search);
   search.appendChild(searchTitle);
-  search.appendChild(searchFilter);
+  searchTitle.appendChild(searchFilter);
 }
 
 //검색어 필터 함수, 애니메이션까진 아직 적용 X
