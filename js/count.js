@@ -11,9 +11,7 @@ function countTasks(todos) {
 
   Number(totalTask.textContent)
     ? (achivement.textContent =
-        Math.round(
-          (+doneItems[0].textContent / +totalTask.textContent) * 10000,
-        ) /
+        Math.round((+doneItems.textContent / +totalTask.textContent) * 10000) /
           100 +
         "%")
     : "-";
