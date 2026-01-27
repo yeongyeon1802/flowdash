@@ -94,94 +94,99 @@
         <section class="todo-utlitity-box">
           <h2 class="invisible-heading">할일 추가 영역</h2>
           <form id="filter-form" class="big-element">
-            <div class="search-box">
-              <input
-                type="text"
-                name="search-todo"
-                id="search-todo"
-                class="big-element"
-                autocomplete="off"
-                placeholder="내용을 입력하세요..."
-              />
-              <label for="search-todo">할일 검색</label>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="16"
-                height="16"
-                fill="currentColor"
-                class="bi bi-search"
-                viewBox="0 0 16 16"
-              >
-                <path
-                  d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"
+            <div class="form-container">
+              <div class="search-box">
+                <input
+                  type="text"
+                  name="search-todo"
+                  id="search-todo"
+                  class="big-element"
+                  autocomplete="off"
+                  placeholder="내용을 입력하세요..."
                 />
-              </svg>
-            </div>
-            <div class="sort-filter-box">
-              <div class="big-element date-filter-box">
-                <button type="button" class="date-filter-button">
-                  <p class="big-text">전체 기간</p>
-                  <span
-                    ><svg
-                      class="arrow bi-chevron-down"
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="12"
-                      height="12"
-                      viewBox="0 0 16 16"
-                      fill="currentColor"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    >
-                      <path
-                        fill-rule="evenodd"
-                        d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"
-                      />
-                    </svg>
-                  </span>
-                </button>
-                <ul class="date-filter hidden">
-                  <li class="big-text whole-date">전체 기간</li>
-                  <li class="big-text today">오늘</li>
-                  <li class="big-text seven-days-before">최근 7일</li>
-                </ul>
+                <label for="search-todo" class="hidden">할일 검색</label>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  class="bi bi-search"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"
+                  />
+                </svg>
               </div>
+              <div class="sort-filter-box">
+                <div class="big-element date-filter-box">
+                  <button type="button" class="date-filter-button">
+                    <p class="big-text">전체 기간</p>
+                    <span
+                      ><svg
+                        class="arrow bi-chevron-down"
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="12"
+                        height="12"
+                        viewBox="0 0 16 16"
+                        fill="currentColor"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"
+                        />
+                      </svg>
+                    </span>
+                  </button>
+                  <ul class="date-filter hidden">
+                    <li class="big-text whole-date">전체 기간</li>
+                    <li class="big-text today">오늘</li>
+                    <li class="big-text seven-days-before">최근 7일</li>
+                  </ul>
+                </div>
 
-              <div class="big-element priority-filter-box">
-                <button type="button" class="priority-filter-button filter-button">
-                  <p class="big-text">전체 우선순위</p>
-                  <span
-                    ><svg
-                      class="arrow bi-chevron-down"
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="12"
-                      height="12"
-                      viewBox="0 0 16 16"
-                      fill="currentColor"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    >
-                      <path
-                        fill-rule="evenodd"
-                        d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"
-                      />
-                    </svg>
-                  </span>
-                </button>
-                <ul class="priority-filter hidden">
-                  <li class="big-text priority-all">전체 우선순위</li>
-                  <li class="big-text priority-high">높음</li>
-                  <li class="big-text priority-mid">중간</li>
-                  <li class="big-text priority-low">낮음</li>
-                </ul>
+                <div class="big-element priority-filter-box">
+                  <button
+                    type="button"
+                    class="priority-filter-button filter-button"
+                  >
+                    <p class="big-text">전체 우선순위</p>
+                    <span
+                      ><svg
+                        class="arrow bi-chevron-down"
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="12"
+                        height="12"
+                        viewBox="0 0 16 16"
+                        fill="currentColor"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"
+                        />
+                      </svg>
+                    </span>
+                  </button>
+                  <ul class="priority-filter hidden">
+                    <li class="big-text priority-all">전체</li>
+                    <li class="big-text priority-high">높음</li>
+                    <li class="big-text priority-mid">중간</li>
+                    <li class="big-text priority-low">낮음</li>
+                  </ul>
+                </div>
+                <button type="button" class="asc-desc-button">오름차순</button>
               </div>
-              <button type="button" class="asc-desc-button">오름차순</button>
-            </div>
-            <div class="add-todo-box">
-              <button type="button" class="add-todo-button">새 할 일</button>
+              <div class="add-todo-box">
+                <button type="button" class="add-todo-button">새 할 일</button>
+              </div>
             </div>
           </form>
         </section>
@@ -229,7 +234,9 @@
       <!-- 푸터 영역 -->
       <footer class="todo-footer">
         <!-- 저작권 표시 -->
-        <span class="small-text copyright">&copy; 2026 Flow Dash. All rights reserved.</span>
+        <span class="small-text copyright"
+          >&copy; 2026 Flow Dash. All rights reserved.</span
+        >
       </footer>
     </div>
     <!-- 새할일 추가 모달 팝업 -->
@@ -246,7 +253,7 @@
           <!-- 할일 제목 -->
           <section class="popup-content-title">
             <h3 class="big-text">제목 *</h3>
-            <label for="popup-todo-title">할일 제목 입력</label>
+            <label for="popup-todo-title" class="hidden">할일 제목 입력</label>
             <input
               type="text"
               name="popup-todo-title"
@@ -260,7 +267,9 @@
           <!-- 할일 내용 -->
           <section class="popup-description">
             <h3 class="big-text">내용</h3>
-            <label for="popup-todo-description">할일 내용 입력</label>
+            <label for="popup-todo-description" class="hidden"
+              >할일 내용 입력</label
+            >
             <textarea
               name="popup-todo-description"
               id="popup-todo-description"
@@ -276,7 +285,13 @@
               <legend class="big-text">우선순위</legend>
               <div class="priority-buttons">
                 <div class="priority-item">
-                  <input type="radio" name="priority" id="high" value="high" class="priority" />
+                  <input
+                    type="radio"
+                    name="priority"
+                    id="high"
+                    value="high"
+                    class="priority"
+                  />
                   <label for="high">높음</label>
                 </div>
                 <div class="priority-item">
@@ -291,7 +306,13 @@
                   <label for="medium">중간</label>
                 </div>
                 <div class="priority-item">
-                  <input type="radio" name="priority" id="low" value="low" class="priority" />
+                  <input
+                    type="radio"
+                    name="priority"
+                    id="low"
+                    value="low"
+                    class="priority"
+                  />
                   <label for="low">낮음</label>
                 </div>
               </div>
@@ -322,14 +343,22 @@
                   <label for="doing">진행 중</label>
                 </div>
                 <div class="status-item">
-                  <input type="radio" name="status" id="done" value="done" class="button-status" />
+                  <input
+                    type="radio"
+                    name="status"
+                    id="done"
+                    value="done"
+                    class="button-status"
+                  />
                   <label for="done">완료</label>
                 </div>
               </div>
             </fieldset>
             <!-- 취소 및 저장하기 버튼 -->
             <div class="popup-footer">
-              <button type="button" class="popup-cancel-button small-text">취소</button>
+              <button type="button" class="popup-cancel-button small-text">
+                취소
+              </button>
               <button type="button" class="popup-save-button">저장하기</button>
             </div>
           </section>

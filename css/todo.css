@@ -11,11 +11,17 @@
   justify-content: space-between;
 }
 
-.todo-list-box {
+.todo-arrange-box>.todo-list-box {
   width: 360px;
   min-height: 400px;
   padding: 16px;
   border-radius: 16px;
+  box-shadow: 0 0 30px #fff;
+  transition: box-shadow 0.3s;
+}
+
+.todo-arrange-box>.todo-list-box:hover {
+  box-shadow: 0 0 10px #000;
 }
 
 .list-title {
@@ -69,12 +75,12 @@
   cursor: pointer;
   position: relative;
   z-index: 1;
-  transform: scale(1);
+  transform: translateY(0);
   transition: transform 0.3s;
 }
 
 .element-list>li:hover {
-  transform: scale(1.05);
+  transform: translateY(-3%);
   box-shadow: 0 0 10px #5f42f0a6;
 }
 
@@ -208,9 +214,41 @@
   align-items: center;
 }
 
+.date-box>div:hover svg {
+  fill: #5f42f0a6;
+  stroke: #5f42f0a6;
+}
+
+.date-box>div:hover .bi-calendar-date path,
+.date-box>div:hover .bi-check2-square path {
+  fill: #5f42f0a6;
+
+}
+
+.date-box>div:hover>span,
+.date-box>div:hover>span.done-date {
+  color: #5f42f0a6;
+  font-weight: bold;
+}
+
+.check-box:hover>.done-date {
+  color: #5f42f0a6;
+  font-weight: bold;
+}
+
 .date-box>div>span, .done-date {
   font-size: 12px;
   color: #aaa;
+}
+
+.todo-list-box:hover>.list-title>h3 {
+  color: #4d3bac;
+}
+
+.todo-list-box:hover>.list-title>span {
+  border: 1px solid #5f42f0a6;
+  background-color: #5f42f0a6;
+  color: white;
 }
 
 @media (max-width: 1199px) and (min-width: 768px) {
