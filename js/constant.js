@@ -6,9 +6,9 @@ const FLOWDASH_FILTER = "flowdash.filter";
 const FLOWDASH_SEARCH = "flowdash.search";
 
 const totalTask = document.querySelector(".total-tasks");
-const todoItems = document.querySelectorAll(".todo-items");
-const doingItems = document.querySelectorAll(".doing-items");
-const doneItems = document.querySelectorAll(".done-items");
+const todoItems = document.querySelector(".todo-items");
+const doingItems = document.querySelector(".doing-items");
+const doneItems = document.querySelector(".done-items");
 const achivement = document.querySelector(".todo-achivement");
 const dateFilter = document.querySelector(".date-filter-box");
 const dateFilterList = document.querySelector(".date-filter");
@@ -64,6 +64,7 @@ const form = document.querySelector("#filter-form");
 const datebtntext = document.querySelector(".date-filter-button>p");
 const prioritybtntext = document.querySelector(".priority-filter-button>p");
 const warning = document.querySelector(".warning");
+
 const priorityObj = {
   0: "전체 우선순위",
   1: "높음",
