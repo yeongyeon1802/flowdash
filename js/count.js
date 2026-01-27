@@ -1,20 +1,13 @@
 function countTasks(todos) {
   totalTask.textContent = todos.length;
 
-  todoItems.forEach(
-    (n) =>
-      (n.textContent = todos.filter((m) => m.statusvalue === "todo").length),
-  );
+  todoItems.textContent = todos.filter((m) => m.statusvalue === "todo").length;
 
-  doingItems.forEach(
-    (n) =>
-      (n.textContent = todos.filter((m) => m.statusvalue === "doing").length),
-  );
+  doingItems.textContent = todos.filter(
+    (m) => m.statusvalue === "doing",
+  ).length;
 
-  doneItems.forEach(
-    (n) =>
-      (n.textContent = todos.filter((m) => m.statusvalue === "done").length),
-  );
+  doneItems.textContent = todos.filter((m) => m.statusvalue === "done").length;
 
   Number(totalTask.textContent)
     ? (achivement.textContent =
