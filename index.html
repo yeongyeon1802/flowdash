@@ -149,7 +149,10 @@
               </div>
 
               <div class="big-element priority-filter-box">
-                <button type="button" class="priority-filter-button filter-button">
+                <button
+                  type="button"
+                  class="priority-filter-button filter-button"
+                >
                   <p class="big-text">전체 우선순위</p>
                   <span
                     ><svg
@@ -229,7 +232,9 @@
       <!-- 푸터 영역 -->
       <footer class="todo-footer">
         <!-- 저작권 표시 -->
-        <span class="small-text copyright">&copy; 2026 Flow Dash. All rights reserved.</span>
+        <span class="small-text copyright"
+          >&copy; 2026 Flow Dash. All rights reserved.</span
+        >
       </footer>
     </div>
     <!-- 새할일 추가 모달 팝업 -->
@@ -255,6 +260,7 @@
               autocomplete="off"
               autofocus
             />
+            <p class="warning">할 일을 입력해주세요(필수)</p>
           </section>
           <!-- 할일 내용 -->
           <section class="popup-description">
@@ -275,7 +281,13 @@
               <legend class="big-text">우선순위</legend>
               <div class="priority-buttons">
                 <div class="priority-item">
-                  <input type="radio" name="priority" id="high" value="high" class="priority" />
+                  <input
+                    type="radio"
+                    name="priority"
+                    id="high"
+                    value="high"
+                    class="priority"
+                  />
                   <label for="high">높음</label>
                 </div>
                 <div class="priority-item">
@@ -290,7 +302,13 @@
                   <label for="medium">중간</label>
                 </div>
                 <div class="priority-item">
-                  <input type="radio" name="priority" id="low" value="low" class="priority" />
+                  <input
+                    type="radio"
+                    name="priority"
+                    id="low"
+                    value="low"
+                    class="priority"
+                  />
                   <label for="low">낮음</label>
                 </div>
               </div>
@@ -321,14 +339,22 @@
                   <label for="doing">진행 중</label>
                 </div>
                 <div class="status-item">
-                  <input type="radio" name="status" id="done" value="done" class="button-status" />
+                  <input
+                    type="radio"
+                    name="status"
+                    id="done"
+                    value="done"
+                    class="button-status"
+                  />
                   <label for="done">완료</label>
                 </div>
               </div>
             </fieldset>
             <!-- 취소 및 저장하기 버튼 -->
             <div class="popup-footer">
-              <button type="button" class="popup-cancel-button small-text">취소</button>
+              <button type="button" class="popup-cancel-button small-text">
+                취소
+              </button>
               <button type="button" class="popup-save-button">저장하기</button>
             </div>
           </section>

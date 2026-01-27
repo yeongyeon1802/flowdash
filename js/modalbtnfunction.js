@@ -8,6 +8,8 @@ function modalreset() {
 function savebtnTodo() {
   const timestamp = Date.now();
   const title = document.querySelector("#popup-todo-title").value.trim();
+  const titleevent = document.querySelector("popup-todo-title");
+
   const content = document
     .querySelector("#popup-todo-description")
     .value.trim();
@@ -19,6 +21,11 @@ function savebtnTodo() {
   ).value;
   const todos = getStorage(FLOWDASH_TODOS);
 
+  titleevent.addEventListener("change", () => {
+    warning.classList.toggle(".hidden");
+  });
+
+  if (!title) return;
   if (curId) {
     const list = todos.find((todo) => todo.id === curId);
     list.title = title;
@@ -39,11 +46,9 @@ function savebtnTodo() {
       updateAt: null,
       completeAt: statusvalue === "done" ? timestamp : null,
     };
-    if (!title) return;
     todos.push(todo);
   }
 
-  if (!title) return;
   setStorage(FLOWDASH_TODOS, todos);
   dimmed.classList.toggle("hidden");
   modalreset();
