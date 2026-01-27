@@ -21,9 +21,9 @@ function savebtnTodo() {
   ).value;
   const todos = getStorage(FLOWDASH_TODOS);
 
-  titleevent.addEventListener("change", () => {
-    warning.classList.toggle(".hidden");
-  });
+  // titleevent.addEventListener("change", () => {
+  //   warning.classList.toggle(".hidden");
+  // });
 
   if (!title) return;
   if (curId) {
