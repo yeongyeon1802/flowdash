@@ -213,6 +213,12 @@
   stroke: #5f42f0a6;
 }
 
+.date-box>div:hover .bi-calendar-date path,
+.date-box>div:hover .bi-check2-square path {
+  fill: #5f42f0a6;
+
+}
+
 .date-box>div:hover span {
   color: #5f42f0a6;
 }

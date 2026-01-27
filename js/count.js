@@ -1,6 +1,7 @@
 function countTasks(todos) {
   totalTask.textContent = todos.length;
 
+  const total = todos.filter((m) => m.statusvalue === "todo").length;
   todoItems.textContent = todos.filter((m) => m.statusvalue === "todo").length;
 
   doingItems.textContent = todos.filter(
@@ -9,7 +10,7 @@ function countTasks(todos) {
 
   doneItems.textContent = todos.filter((m) => m.statusvalue === "done").length;
 
-  Number(totalTask.textContent)
+  total
     ? (achivement.textContent =
         Math.round((+doneItems.textContent / +totalTask.textContent) * 10000) /
           100 +
