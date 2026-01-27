@@ -63,7 +63,7 @@ function createCard(todo) {
 
   const checkbox = document.createElement("div");
   if (todo.statusvalue === "done" || todo.updateAt) {
-    checkbox.className = "";
+    checkbox.className = "check-box";
   } else checkbox.className = "hidden";
   dateBox.append(checkbox);
   const check = getCheckIcon();

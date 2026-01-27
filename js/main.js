@@ -7,11 +7,11 @@ function getStorage(strKey) {
   if (strKey === FLOWDASH_FILTER)
     return data ? JSON.parse(data) : { date: 0, priority: 0, sort: 0 };
 
-  if (strKey === FLOWDASH_NICKNAME) return data ? data : 'FlowDash';
+  if (strKey === FLOWDASH_NICKNAME) return data ? data : "FlowDash";
 
-  if (strKey === FLOWDASH_THEME) return data || 'light';
+  if (strKey === FLOWDASH_THEME) return data || "light";
 
-  if (strKey === FLOWDASH_SEARCH) return data || '';
+  if (strKey === FLOWDASH_SEARCH) return data || "";
 
   return null;
 }
@@ -28,7 +28,7 @@ function render() {
   const todos = getStorage(FLOWDASH_TODOS);
   const filter = getStorage(FLOWDASH_FILTER);
 
-  todolist.forEach((li) => (li.innerHTML = ''));
+  todolist.forEach((li) => (li.innerHTML = ""));
 
   sortTodos(todos, filter);
 
@@ -54,4 +54,5 @@ function render() {
   sortSearch();
   darkModeUI();
   filterListNumbers(filteredList);
+  countTasks(todos);
 }

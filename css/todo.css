@@ -219,8 +219,15 @@
 
 }
 
-.date-box>div:hover span {
+.date-box>div:hover>span,
+.date-box>div:hover>span.done-date {
   color: #5f42f0a6;
+  font-weight: bold;
+}
+
+.check-box:hover>.done-date {
+  color: #5f42f0a6;
+  font-weight: bold;
 }
 
 .date-box>div>span, .done-date {
@@ -229,7 +236,7 @@
 }
 
 .todo-list-box:hover>.list-title>h3 {
-  color: #5f42f0a6;
+  color: #4d3bac;
 }
 
 .todo-list-box:hover>.list-title>span {

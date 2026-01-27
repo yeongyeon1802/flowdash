@@ -1,0 +1,249 @@
+.greeting-box>h1 {
+  font-size: clamp(16px, 5vw, 28px);
+}
+
+.hidden {
+  display: none !important;
+}
+
+.invisible-heading {
+  display: none;
+}
+
+body {
+  margin-top: 48px;
+}
+
+.whole-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 32px;
+}
+
+.todo-header {
+  width: 100%;
+  display: flex;
+  padding: 24px 32px;
+  border-radius: 16px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+.greeting-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.greeting-box {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 4px;
+}
+
+.greeting {
+  font-size: 28px;
+}
+
+.nickname {
+  color: #5f42f0;
+}
+
+.theme-btn {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.theme-btn>svg {
+  width: 50%;
+  height: 50%;
+}
+
+.bright-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.todo-main {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.realtime-status {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.big-element.status {
+  background-color: rgba(255, 255, 255, 0.7);
+  flex: 1 180px;
+  padding: 20px;
+  border-radius: 12px;
+  transform: translateY(0);
+  transition: transform 0.3s ease-in-out;
+}
+
+.big-element.status:hover {
+  transform: translateY(-5%);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.status>h3 {
+  font-weight: 600;
+}
+
+.status>span {
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.todo-utlitity-box {
+  width: 100%;
+}
+
+form {
+  border-radius: 16px;
+}
+
+.form-container {
+  width: 100%;
+  padding: 24px 20px;
+  border-radius: 16px;
+  background-color: rgba(255, 255, 255, 0.7);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+}
+
+.search-box,
+.big-element.date-filter-box,
+.big-element.priority-filter-box,
+button.asc-desc-button,
+.add-todo-box {
+  transform: translateY(0);
+  transition: transform 0.3s;
+}
+
+.search-box:hover,
+.big-element.date-filter-box:hover,
+.big-element.priority-filter-box:hover,
+button.asc-desc-button:hover,
+.add-todo-box:hover {
+  transform: translateY(-5%);
+  box-shadow: 0 0 15px #5f42f0a4;
+}
+
+.search-box {
+  flex: 1 1 300px;
+  height: 100%;
+  border-radius: 8px;
+}
+
+#search-todo {
+  width: 100%;
+  border-radius: 8px;
+  padding: 10px 30px 10px 10px;
+  position: relative;
+}
+
+.bi-search {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  z-index: 1;
+  cursor: pointer;
+}
+
+.sort-filter-box {
+  flex: 1 1 300px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.big-element.date-filter-box {
+  flex: 1 1 90px;
+  width: 33%;
+  border-radius: 8px;
+  height: 41px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.date-filter-button {
+  width: 100%;
+  padding: 5px 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.big-element.priority-filter-box {
+  flex: 1 1 90px;
+  width: 33%;
+  border-radius: 8px;
+  height: 41px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.priority-filter-button {
+  width: 100%;
+  padding: 5px 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.asc-desc-button {
+  flex: 1 1 90px;
+  width: 33%;
+  border-radius: 8px;
+  height: 41px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.add-todo-box {
+  flex: 1 1 260px;
+  border-radius: 8px;
+  height: 41px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #5f42f0;
+}
+
+.add-todo-button {
+  width: 100%;
+  color: white;
+}

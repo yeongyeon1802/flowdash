@@ -67,7 +67,7 @@ const warning = document.querySelector(".warning");
 const delbtns = document.getElementsByClassName("element-delete-button");
 
 const priorityObj = {
-  0: "전체 우선순위",
+  0: "우선순위",
   1: "높음",
   2: "중간",
   3: "낮음",
