@@ -208,9 +208,28 @@
   align-items: center;
 }
 
+.date-box>div:hover svg {
+  fill: #5f42f0a6;
+  stroke: #5f42f0a6;
+}
+
+.date-box>div:hover span {
+  color: #5f42f0a6;
+}
+
 .date-box>div>span, .done-date {
   font-size: 12px;
   color: #aaa;
+}
+
+.todo-list-box:hover>.list-title>h3 {
+  color: #5f42f0a6;
+}
+
+.todo-list-box:hover>.list-title>span {
+  border: 1px solid #5f42f0a6;
+  background-color: #5f42f0a6;
+  color: white;
 }
 
 @media (max-width: 1199px) and (min-width: 768px) {
