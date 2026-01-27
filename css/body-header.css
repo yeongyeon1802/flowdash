@@ -1,9 +1,17 @@
+.greeting-box>h1 {
+  font-size: clamp(16px, 5vw, 28px);
+}
+
 .hidden {
   display: none !important;
 }
 
 .invisible-heading {
   display: none;
+}
+
+body {
+  margin: 48px;
 }
 
 .whole-container {
@@ -88,12 +96,18 @@
   gap: 16px;
 }
 
-
 .status {
   background-color: rgba(255, 255, 255, 0.7);
   flex: 1 180px;
   padding: 20px;
   border-radius: 12px;
+  transform: scale(1);
+  transition: transform 0.3s ease-in-out;
+}
+
+.status:hover {
+  transform: scale(1.1);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
 }
 
 .status>h3 {
@@ -233,6 +247,11 @@ form.big-element {
   display: flex;
   justify-content: center;
   cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.add-todo-box:hover {
+  background-color: #4128bc;
 }
 
 .add-todo-button {
@@ -261,6 +280,7 @@ form.big-element {
 
 .sort-list-badge>p>span {
   color: #5f42f0;
+  font-weight: 600;
 }
 
 .reset-button {
@@ -277,6 +297,10 @@ form.big-element {
 @media (max-width: 767px) {
   .whole-container {
     padding: 16px;
+  }
+
+  .status {
+    flex: 1 150px;
   }
 
   form {

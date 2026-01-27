@@ -64,6 +64,7 @@ const form = document.querySelector("#filter-form");
 const datebtntext = document.querySelector(".date-filter-button>p");
 const prioritybtntext = document.querySelector(".priority-filter-button>p");
 const warning = document.querySelector(".warning");
+const delbtns = document.getElementsByClassName("element-delete-button");
 
 const priorityObj = {
   0: "전체 우선순위",
