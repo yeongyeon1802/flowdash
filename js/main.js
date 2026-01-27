@@ -44,7 +44,7 @@ function render() {
 
   const savedSearchFilter = getStorage(FLOWDASH_SEARCH);
 
-  countTasks();
+  countTasks(todos);
   filterText();
   createFilterBadge();
   darkModeUI(savedTheme);

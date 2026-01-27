@@ -6,7 +6,7 @@ function resetData() {
   localStorage.removeItem(FLOWDASH_FILTER);
   localStorage.removeItem(FLOWDASH_TODOS);
   searchForm.value = '';
-  render();
+  location.reload();
 }
 
 dataResetBtn.addEventListener('click', () => {
