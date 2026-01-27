@@ -19,23 +19,6 @@ function sortTodos(todos, filter) {
   });
 }
 
-// function priorityfilter(todos, filter) {
-//   const filtered = getStorage(FlowDash_FILTERED_ARR);
-//   const li = document.querySelectorAll(".element-list>li");
-//   if (filter.priority === 0) return todos;
-//   const prfilterlist = todos.filter(
-//     (todo) => todo.priority === priorityfilterObj[filter.priority],
-//   );
-
-//   filtered.push(...prfilterlist);
-//   setAndPrint(filtered, li, prfilterlist);
-// }
-// function setAndPrint(filtered, card, printcard) {
-//   setStorage(FlowDash_FILTERED_ARR, filtered);
-//   card.forEach((list) => list.classList.add("hidden"));
-//   printcard.forEach((li) => createCard(li));
-// }
-
 function getFilteredTodos(todos, filter) {
   return todos.filter((todo) => {
     const isWithinDate = filter.date === 0 || checkDate(todo.id, filter.date);
@@ -57,6 +40,10 @@ function getFilteredTodos(todos, filter) {
 }
 
 function filterListNumbers(filteredList) {
+  const todolistnum = document.querySelector(".list-todo >.todo-items");
+  const doinglistnum = document.querySelector(".list-doing > .doing-items");
+  const donelistnum = document.querySelector(".list-done > .done-items");
+
   const todoCount = filteredList.filter((t) => t.statusvalue === "todo").length;
   const doingCount = filteredList.filter(
     (t) => t.statusvalue === "doing",

@@ -60,3 +60,5 @@ priorityFilterItem.forEach((n, i) => {
     render();
   });
 });
+
+document.addEventListener("DOMContentLoaded", render);
