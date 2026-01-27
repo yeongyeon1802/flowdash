@@ -3,12 +3,12 @@ function modalreset() {
   content.value = "";
   defaultpriority.checked = true;
   defaultstatus.checked = true;
+  warning.classList.add("hidden");
 }
 
 function savebtnTodo() {
   const timestamp = Date.now();
   const title = document.querySelector("#popup-todo-title").value.trim();
-  const titleevent = document.querySelector("popup-todo-title");
 
   const content = document
     .querySelector("#popup-todo-description")
@@ -21,11 +21,20 @@ function savebtnTodo() {
   ).value;
   const todos = getStorage(FLOWDASH_TODOS);
 
-  // titleevent.addEventListener("change", () => {
-  //   warning.classList.toggle(".hidden");
-  // });
+  const titleinputed = document.querySelector("#popup-todo-title");
+  titleinputed.addEventListener("input", (e) => {
+    if (e.target.value.trim()) {
+      warning.classList.add("hidden");
+    } else {
+      warning.classList.remove("hidden");
+    }
+  });
 
-  if (!title) return;
+  if (!title) {
+    warning.classList.remove("hidden");
+    return;
+  }
+
   if (curId) {
     const list = todos.find((todo) => todo.id === curId);
     list.title = title;
