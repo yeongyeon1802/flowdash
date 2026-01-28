@@ -33,7 +33,6 @@ function darkModeUI() {
   toggleDarkMode(popupDescDarkMode, "popup-description-darkmode", isDark);
   toggleDarkMode(cancelbtn, "popup-cancel-button-darkmode", isDark);
   toggleDarkMode(formDarkMode, "form-container-darkmode", isDark);
-  toggleDarkMode(darkModeToggleBtn, "active-darkmode", isDark);
   toggleDarkMode(darkModeBtn, "theme-btn-darkmode", isDark);
   //querySelectorAll 요소
   allToggleDarkMode(elementDarkMode, "big-element-darkmode", isDark);
@@ -55,11 +54,11 @@ function darkModeUI() {
   allToggleDarkMode(listFilterIcon, "bi-funnel-fill-darkmode", isDark);
 
   if (darkMode === "dark") {
-    brightIcon.classList.remove("bright-icon-darkmode");
-    darkIcon.classList.remove("dark-icon-darkmode");
+    brightIcon.classList.remove("active");
+    darkIcon.classList.add("active");
   } else {
-    brightIcon.classList.add("bright-icon-darkmode");
-    darkIcon.classList.add("dark-icon-darkmode");
+    brightIcon.classList.add("active");
+    darkIcon.classList.remove("active");
   }
 }
 
