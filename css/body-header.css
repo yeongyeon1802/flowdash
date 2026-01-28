@@ -60,30 +60,50 @@ body {
 }
 
 .theme-btn {
-  position: relative;
+  width: 100px;
+  border-radius: 99px;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
+  background-color: rgba(105, 105, 105, 0.2);
+  position: relative;
 }
 
-.theme-btn>svg {
-  width: 50%;
-  height: 50%;
+.toggle-btn {
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  border-radius: 99px;
 }
 
-.bright-icon {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+span.active {
+  justify-content: center;
+}
+
+.active {
+  width: 55%;
+  background-color: #5f42f0;
+}
+
+span:not(.active).toggle-btn>svg {
+  fill: rgba(105, 105, 105, 0.7);
+}
+
+.theme-btn svg {
+  color: white;
+  width: 20px;
+  height: 20px;
+}
+
+svg.bi-moon-stars-fill {
+  width: 18px;
+  height: 18px;
 }
 
 .todo-main {
   width: 100%;
   display: flex;
+  padding: 0 10px;
   flex-direction: column;
   gap: 32px;
 }
