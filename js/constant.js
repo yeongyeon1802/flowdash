@@ -33,7 +33,7 @@ const smallTextDarkMode = document.querySelectorAll(".small-text");
 const todoListDakrMode = document.querySelectorAll(".todo-list-box");
 const searchIcon = document.querySelector(".bi-search");
 const popupDarkMode = document.querySelector(".popup");
-const arrow = document.querySelectorAll(".bi-chevron-down");
+const listFilterIcon = document.querySelectorAll(".bi-funnel-fill");
 const popupTitleDarkMode = document.querySelector(".popup-content-title");
 const popupDescDarkMode = document.querySelector(".popup-description");
 const itemCountDarkMode = document.querySelectorAll(".items-count");
@@ -65,6 +65,7 @@ const datebtntext = document.querySelector(".date-filter-button>p");
 const prioritybtntext = document.querySelector(".priority-filter-button>p");
 const warning = document.querySelector(".warning");
 const delbtns = document.getElementsByClassName("element-delete-button");
+const formDarkMode = document.querySelector(".form-container");
 
 const priorityObj = {
   0: "우선순위",
