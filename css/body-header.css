@@ -12,6 +12,7 @@
 
 body {
   margin-top: 48px;
+  position: relative;
 }
 
 .whole-container {
@@ -355,6 +356,29 @@ button.asc-desc-button:hover,
   border: 1px solid rgb(255, 50, 50);
   border-radius: 8px;
 }
+
+.go-top-btn-box {
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  opacity: 0;
+  z-index: 9999;
+}
+
+.go-top-btn {
+  width: 50%;
+  height: 50%;
+  border: 1px solid;
+  border-radius: 50%;
+  background-color: white;
+
+}
+
 
 @media (max-width: 1199px) and (min-width: 768px) {
   .whole-container {
