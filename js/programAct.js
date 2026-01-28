@@ -1,33 +1,35 @@
-document.addEventListener("DOMContentLoaded", render);
+document.addEventListener('DOMContentLoaded', render);
 
-dateFilter.addEventListener("click", (e) => {
+createbtn.addEventListener('click', clickNewBtn);
+
+dateFilter.addEventListener('click', (e) => {
   e.stopPropagation();
-  priorityFilterList.classList.add("hidden");
-  dateFilterList.classList.toggle("hidden");
+  priorityFilterList.classList.add('hidden');
+  dateFilterList.classList.toggle('hidden');
 });
 
-priorityFilter.addEventListener("click", (e) => {
+priorityFilter.addEventListener('click', (e) => {
   e.stopPropagation();
-  dateFilterList.classList.add("hidden");
-  priorityFilterList.classList.toggle("hidden");
+  dateFilterList.classList.add('hidden');
+  priorityFilterList.classList.toggle('hidden');
 });
 
-document.addEventListener("click", (e) => {
+document.addEventListener('click', (e) => {
   if (!dateFilter.contains(e.target) || !priorityFilter.contains(e.target)) {
-    dateFilterList.classList.add("hidden");
-    priorityFilterList.classList.add("hidden");
+    dateFilterList.classList.add('hidden');
+    priorityFilterList.classList.add('hidden');
   }
 });
 
-ascbtn.addEventListener("click", () => {
+ascbtn.addEventListener('click', () => {
   const filter = getStorage(FLOWDASH_FILTER);
 
   if (filter.sort == 0) {
-    ascbtn.textContent = sortObj["1"];
+    ascbtn.textContent = sortObj['1'];
     filter.sort = 1;
     setStorage(FLOWDASH_FILTER, filter);
   } else {
-    ascbtn.textContent = sortObj["0"];
+    ascbtn.textContent = sortObj['0'];
     filter.sort = 0;
     setStorage(FLOWDASH_FILTER, filter);
   }
@@ -36,7 +38,7 @@ ascbtn.addEventListener("click", () => {
 });
 
 dateFilterItem.forEach((n, i) => {
-  n.addEventListener("click", () => {
+  n.addEventListener('click', () => {
     const text = n.textContent;
     const filter = getStorage(FLOWDASH_FILTER);
 
@@ -49,7 +51,7 @@ dateFilterItem.forEach((n, i) => {
 });
 
 priorityFilterItem.forEach((n, i) => {
-  n.addEventListener("click", () => {
+  n.addEventListener('click', () => {
     const text = n.textContent;
     const filter = getStorage(FLOWDASH_FILTER);
 
@@ -61,4 +63,4 @@ priorityFilterItem.forEach((n, i) => {
   });
 });
 
-document.addEventListener("DOMContentLoaded", render);
+document.addEventListener('DOMContentLoaded', render);
