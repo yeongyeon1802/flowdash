@@ -9,37 +9,18 @@ body {
 
 .theme-btn {
   border: 1px solid #e0e5eb;
-  transition: border 0.3s ease-in-out;
+  transition:
+    border 0.3s ease-in-out,
+    background-color 0.3s ease-in-out;
 }
 
 .theme-btn-darkmode {
+  background-color: rgb(33, 42, 54);
   border: 1px solid #5462747a;
-}
-
-.dark-icon {
-  position: absolute;
-  top: 50%;
-  left: 75%;
-  opacity: 1;
-  transform: translate(-75%, -50%);
-  transition:
-    opacity 0.3s ease-in-out,
-    left 0.3s ease-in-out;
-}
-
-.dark-icon-darkmode {
-  left: 25%;
-  opacity: 0;
 }
 
 .bright-icon {
   fill: #f1f2f4;
-  opacity: 0;
-  transition: opacity 0.3s ease-in-out;
-}
-
-.bright-icon-darkmode {
-  opacity: 1;
 }
 
 .big-element {
@@ -71,14 +52,6 @@ body {
 
 .big-text-darkmode {
   color: #f1f2f4;
-}
-
-.active {
-  transition: transform 0.3s ease-in-out;
-}
-
-.active-darkmode {
-  transform: translateX(81%);
 }
 
 .small-text {
