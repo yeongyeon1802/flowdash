@@ -1,4 +1,4 @@
-.greeting-box > h1 {
+.greeting-box>h1 {
   font-size: clamp(16px, 5vw, 28px);
 }
 
@@ -59,7 +59,7 @@ body {
   color: #5f42f0;
 }
 
-.theme-btn {
+button.theme-btn {
   width: 100px;
   border-radius: 100px;
   display: flex;
@@ -71,6 +71,7 @@ body {
 
 .toggle-btn {
   padding: 10px;
+  height: 33px;
   display: flex;
   align-items: center;
   border-radius: 99px;
@@ -78,6 +79,7 @@ body {
 
 span.active {
   justify-content: center;
+  height: 33px;
 }
 
 .active {
@@ -85,8 +87,12 @@ span.active {
   background-color: #5f42f0;
 }
 
-span:not(.active).toggle-btn > svg {
+span:not(.active).toggle-btn>svg {
   fill: rgba(105, 105, 105, 0.7);
+}
+
+span.active.toggle-btn>svg {
+  fill: white;
 }
 
 .theme-btn svg {
@@ -129,11 +135,11 @@ svg.bi-moon-stars-fill {
   box-shadow: 0 8px 8px rgba(120, 106, 174, 0.25);
 }
 
-.status > h3 {
+.status>h3 {
   font-weight: 600;
 }
 
-.status > span {
+.status>span {
   font-size: 32px;
   font-weight: 700;
 }
@@ -282,22 +288,24 @@ button.asc-desc-button:hover,
   padding: 5px;
   border: 1px solid #e0e5eb;
   border-radius: 8px;
-  background-color: rgba(255, 255, 255, 0.7);
-  backdrop-filter: blur(15px);
+  background-color: rgba(255, 255, 255, 1);
+  /* backdrop-filter: blur(4px); */
   z-index: 100;
 }
 
-.date-filter > li,
-.priority-filter > li {
+.date-filter>li,
+.priority-filter>li {
   background-color: transparent;
   padding: 10px;
   position: relative;
   border-radius: 8px;
   z-index: 100;
+  background-color: none;
+  transition: background-color 0.3s;
 }
 
-.date-filter > li:not(:last-child)::after,
-.priority-filter > li:not(:last-child)::after {
+.date-filter>li:not(:last-child)::after,
+.priority-filter>li:not(:last-child)::after {
   content: "";
   width: 90%;
   height: 1px;
@@ -306,10 +314,10 @@ button.asc-desc-button:hover,
   position: absolute;
 }
 
-.date-filter > li:hover,
-.priority-filter > li:hover {
-  background-color: #5f42f0;
-  color: white;
+.date-filter>li:hover,
+.priority-filter>li:hover {
+  background-color: #5f42f01a;
+
 }
 
 .sort-container {
@@ -332,7 +340,7 @@ button.asc-desc-button:hover,
   border-radius: 99px;
 }
 
-.sort-list-badge > p > span {
+.sort-list-badge>p>span {
   color: #5f42f0;
   font-weight: 600;
 }
