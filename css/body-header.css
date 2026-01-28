@@ -72,7 +72,7 @@ button.theme-btn {
 
 span.active {
   justify-content: center;
-  height: 33px;
+  height: 100%;
 }
 
 .active {
@@ -436,10 +436,12 @@ button.asc-desc-button:hover,
 
   .greeting-box {
     gap: 30px;
+    align-items: baseline;
   }
 
   button.theme-btn {
     width: 80px;
+    height: 28px;
   }
 
   .theme-btn svg {

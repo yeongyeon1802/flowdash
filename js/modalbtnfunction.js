@@ -4,21 +4,16 @@ function modalreset() {
   defaultpriority.checked = true;
   defaultstatus.checked = true;
   warning.classList.add("hidden");
+  document.body.style.overflow = "unset";
 }
 
 function savebtnTodo() {
   const timestamp = Date.now();
   const title = document.querySelector("#popup-todo-title").value.trim();
 
-  const content = document
-    .querySelector("#popup-todo-description")
-    .value.trim();
-  const priority = document.querySelector(
-    "input[name='priority']:checked",
-  ).value;
-  const statusvalue = document.querySelector(
-    "input[name='status']:checked",
-  ).value;
+  const content = document.querySelector("#popup-todo-description").value.trim();
+  const priority = document.querySelector("input[name='priority']:checked").value;
+  const statusvalue = document.querySelector("input[name='status']:checked").value;
   const todos = getStorage(FLOWDASH_TODOS);
 
   const titleinputed = document.querySelector("#popup-todo-title");
