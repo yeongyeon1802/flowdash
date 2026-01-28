@@ -14,7 +14,7 @@ body {
     background-color 0.3s ease-in-out;
 }
 
-.theme-btn-darkmode {
+button.theme-btn-darkmode {
   background-color: rgb(33, 42, 54);
   border: 1px solid #5462747a;
 }
@@ -37,7 +37,7 @@ body {
   border: 1px solid #263140;
 }
 
-#filter-form > .form-container {
+#filter-form>.form-container {
   transition: background 0.3s ease-in-out;
 }
 
@@ -72,7 +72,7 @@ body {
   fill: #737d8c;
 }
 
-.search-box > input {
+.search-box>input {
   background-color: rgba(255, 255, 255, 0.7);
   border: 1px solid #e0e5eb;
   color: #1b2432;
@@ -82,7 +82,7 @@ body {
     border 0.3s ease-in-out;
 }
 
-.body-darkmode .search-box > input {
+.body-darkmode .search-box>input {
   color: #f1f2f4;
 }
 
@@ -135,26 +135,27 @@ body .asc-desc-button-darkmode {
   border: 1px solid #263140;
 }
 
-.sort-list-badge > p {
+.sort-list-badge>p {
   color: #1b2432;
   transition: color 0.3s ease-in-out;
 }
 
-.body-darkmode .sort-list-badge > p {
+.body-darkmode .sort-list-badge>p {
   color: #f1f2f4;
 }
+
 .todo-list-box {
   background-color: #00000005;
   transition: background-color 0.3s ease-in-out;
 }
 
-.todo-arrange-box > .todo-list-box-darkmode {
+.todo-arrange-box>.todo-list-box-darkmode {
   background-color: #ffffff05;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   transition: box-shadow 0.3s ease-in-out;
 }
 
-.todo-arrange-box > .todo-list-box-darkmode:hover {
+.todo-arrange-box>.todo-list-box-darkmode:hover {
   box-shadow: 0 0 10px #abb1ba33;
 }
 
@@ -200,7 +201,7 @@ body .asc-desc-button-darkmode {
   background-color: #171d26;
 }
 
-.popup-content-title > input {
+.popup-content-title>input {
   background-color: #fff;
   border: 1px solid #e0e5eb;
   border-radius: 8px;
@@ -209,7 +210,7 @@ body .asc-desc-button-darkmode {
     border 0.3s ease-in-out;
 }
 
-.popup-content-title-darkmode > input {
+.popup-content-title-darkmode>input {
   background-color: #171d26;
   border: 1px solid #263140;
   color: #fff;
@@ -219,21 +220,21 @@ body .asc-desc-button-darkmode {
     border 0.3s ease-in-out;
 }
 
-.popup-description > textarea {
+.popup-description>textarea {
   background-color: #fff;
   border: 1px solid #e0e5eb;
   border-radius: 8px;
 }
 
-.popup-description-darkmode > textarea {
+.popup-description-darkmode>textarea {
   background-color: #171d26;
   border: 1px solid #263140;
   color: #fff;
   border-radius: 8px;
 }
 
-.priority-item > label,
-.status-item > label {
+.priority-item>label,
+.status-item>label {
   background-color: #fff;
   border: 1px solid #e0e5eb;
   border-radius: 40px;
@@ -242,8 +243,8 @@ body .asc-desc-button-darkmode {
     border 0.3s ease-in-out;
 }
 
-.priority-item-darkmode > label,
-.status-item-darkmode > label {
+.priority-item-darkmode>label,
+.status-item-darkmode>label {
   background-color: #171d26;
   border: 1px solid #263140;
   border-radius: 40px;
@@ -320,10 +321,10 @@ body .asc-desc-button-darkmode {
   stroke: #e0e5eb;
 }
 
-.element-list > li:hover {
+.element-list>li:hover {
   box-shadow: 0 0 10px #8478c178;
 }
 
-.element-list-darkmode > li:hover {
+.element-list-darkmode>li:hover {
   box-shadow: 0 0 10px #8478c131;
 }

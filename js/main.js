@@ -27,12 +27,15 @@ function setStorage(strKey, data) {
 const callback = (entries, observer) => {
   entries.forEach((entry) => {
     if (!entry.isIntersecting) {
-      topBtn.style.opacity = 1;
-      topBtn.style.top = 10 + "vh";
-      topBtn.style.right = 5 + "vh";
+      topBtn.classList.add("show");
+    } else {
+      topBtn.classList.remove("show");
     }
   });
 };
+
+const observer = new IntersectionObserver(callback, { threshold: 0 });
+observer.observe(observe);
 
 function render() {
   const todos = getStorage(FLOWDASH_TODOS);
