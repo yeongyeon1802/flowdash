@@ -179,6 +179,7 @@ body .asc-desc-button-darkmode {
 }
 
 .list-todo.list-todo-darkmode::after,
+.list-doing::after,
 .list-done.list-done-darkmode::after {
   background-color: #abb1ba;
 }
@@ -266,8 +267,9 @@ body .asc-desc-button-darkmode {
   transition: background-color 0.3s ease-in-out;
 }
 
-.todo-element-darkmode {
+li.todo-element-darkmode {
   background-color: #1b2432;
+  border: 1px solid rgba(48, 50, 52, 0.46);
 }
 
 .element-title {

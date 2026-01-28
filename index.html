@@ -94,7 +94,7 @@
         </section>
         <!-- 할일 추가 등 유틸리티 영역 -->
         <section class="todo-utlitity-box">
-          <h2 class="invisible-heading">할일 추가 영역</h2>
+          <h2 class="hidden">할일 추가 영역</h2>
           <form id="filter-form" class="big-element">
             <div class="form-container">
               <div class="search-box">
@@ -181,7 +181,7 @@
         </section>
         <!-- 정렬 상태 표시 및 초기화 버튼 영역 -->
         <section class="sort-container">
-          <h2 class="invisible-heading">정렬 상태 표시 및 초기화 버튼 영역</h2>
+          <h2 class="hidden">정렬 상태 표시 및 초기화 버튼 영역</h2>
           <div class="sort-box">
             <!-- 현재 적용된 정렬 필터 목록, JS로 제어 예정 -->
             <ul class="sort-list"></ul>
@@ -264,7 +264,7 @@
           </section>
           <!-- 우선순위 및 진행 상태 -->
           <section class="popup-utlities">
-            <h2 class="invisible-heading">우선순위 및 진행 상태 버튼 영역</h2>
+            <h2 class="hidden">우선순위 및 진행 상태 버튼 영역</h2>
             <!-- 우선순위 버튼 목록 -->
             <fieldset class="popup-priority">
               <legend class="big-text">우선순위</legend>
@@ -333,20 +333,20 @@
     <div class="go-top-btn-box">
       <button class="go-top-btn" type="button">
         <svg
+          class="arrow bi-chevron-down"
           xmlns="http://www.w3.org/2000/svg"
-          width="16"
-          height="16"
-          fill="currentColor"
-          class="bi bi-chevron-double-up top-icon"
+          width="12"
+          height="12"
           viewBox="0 0 16 16"
+          fill="currentColor"
+          stroke="currentColor"
+          stroke-width="1.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
         >
           <path
             fill-rule="evenodd"
-            d="M7.646 2.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 3.707 2.354 9.354a.5.5 0 1 1-.708-.708z"
-          />
-          <path
-            fill-rule="evenodd"
-            d="M7.646 6.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 7.707l-5.646 5.647a.5.5 0 0 1-.708-.708z"
+            d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"
           />
         </svg>
       </button>
