@@ -1,13 +1,5 @@
-.greeting-box>h1 {
-  font-size: clamp(16px, 5vw, 28px);
-}
-
 .hidden {
   display: none !important;
-}
-
-.invisible-heading {
-  display: none;
 }
 
 body {
@@ -53,7 +45,7 @@ body {
 }
 
 .greeting {
-  font-size: 28px;
+  font-size: clamp(16px, 5vw, 28px);
 }
 
 .nickname {
@@ -107,6 +99,10 @@ svg.bi-moon-stars-fill {
   height: 18px;
 }
 
+.now-date {
+  font-size: clamp(12px, 4vw, 16px);
+}
+
 .todo-main {
   width: 100%;
   display: flex;
@@ -138,10 +134,11 @@ svg.bi-moon-stars-fill {
 
 .status>h3 {
   font-weight: 600;
+  font-size: clamp(12px, 3vw, 16px);
 }
 
 .status>span {
-  font-size: 32px;
+  font-size: clamp(18px, 5vw, 32px);
   font-weight: 700;
 }
 
@@ -214,6 +211,8 @@ button.asc-desc-button:hover,
   align-items: center;
   position: relative;
   z-index: 1;
+  container-name: filter-box;
+  container-type: inline-size;
 }
 
 .big-element.date-filter-box {
@@ -278,6 +277,7 @@ button.asc-desc-button:hover,
   width: 100%;
   height: 100%;
   color: white;
+  font-size: clamp(12px, 3vw, 16px);
 }
 
 .date-filter,
@@ -290,7 +290,6 @@ button.asc-desc-button:hover,
   border: 1px solid #e0e5eb;
   border-radius: 8px;
   background-color: rgba(255, 255, 255, 1);
-  /* backdrop-filter: blur(4px); */
   z-index: 100;
 }
 
@@ -318,7 +317,6 @@ button.asc-desc-button:hover,
 .date-filter>li:hover,
 .priority-filter>li:hover {
   background-color: #5f42f01a;
-
 }
 
 .sort-container {
@@ -339,6 +337,7 @@ button.asc-desc-button:hover,
   border: 1px solid #e0e5eb;
   background-color: rgba(255, 255, 255, 0.7);
   border-radius: 99px;
+  font-size: clamp(12px, 3vw, 16px);
 }
 
 .sort-list-badge>p>span {
@@ -350,6 +349,8 @@ button.asc-desc-button:hover,
   color: rgb(255, 50, 50);
   padding: 5px 10px;
   border: 1px solid transparent;
+  font-size: clamp(12px, 3vw, 16px);
+  word-break: keep-all;
 }
 
 .reset-button:hover {
@@ -380,20 +381,24 @@ button.asc-desc-button:hover,
 }
 
 .go-top-btn {
-  width: 50%;
-  height: 50%;
+  width: 42px;
+  height: 42px;
   border-radius: 50%;
   box-shadow: 0 0 5px #0000003b;
   background-color: #fbfbfc;
+  transition: width 0.3s, height 0.3s;
 }
 
 .arrow {
   transform: rotate(180deg);
-  color: #1b2432cc
+  color: #1b2432cc;
+  width: 24px;
+  height: 24px;
+  transition: width 0.3s, height 0.3s;
 }
 
 
-@media (max-width: 1199px) and (min-width: 768px) {
+@media (max-width: 1199px) {
   .whole-container {
     padding: 24px;
   }
@@ -404,19 +409,71 @@ button.asc-desc-button:hover,
   }
 }
 
+@media (max-width: 1085px) {
+
+  .sort-filter-box>.big-element>button>p,
+  .asc-desc-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: clamp(12px, 1.4vw, 16px);
+  }
+
+  .date-filter>li, .priority-filter>li {
+    font-size: clamp(12px, 1.4vw, 16px);
+  }
+
+  .sort-filter-box>.big-element>button svg {
+    width: 10px;
+    height: 10px;
+  }
+}
+
 @media (max-width: 767px) {
   .whole-container {
     padding: 16px;
   }
 
+  .greeting-box {
+    gap: 30px;
+  }
+
+  button.theme-btn {
+    width: 80px;
+  }
+
+  .theme-btn svg {
+    width: 16px;
+    height: 16px;
+  }
+
   .big-element.date-filter-box,
   .big-element.priority-filter-box,
   .asc-desc-button {
-    flex: 1 1 180px;
+    flex: 1 1 90px;
   }
 
-  .go-top-btn-box {
+  .sort-list {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .sort-list-badge {
+    padding: 3px 6px;
+  }
+
+  .sortlistbadge .go-top-btn-box {
     bottom: 30px;
     right: 5px;
+  }
+
+  .go-top-btn {
+    width: 36px;
+    height: 36px;
+  }
+
+  .arrow {
+    width: 18px;
+    height: 18px;
   }
 }
