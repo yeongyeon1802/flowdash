@@ -21,7 +21,7 @@
 }
 
 .todo-arrange-box>.todo-list-box:hover {
-  box-shadow: 0 0 10px #000;
+  box-shadow: 0 0 10px #43336e4d;
 }
 
 .list-title {
@@ -81,7 +81,7 @@
 
 .element-list>li:hover {
   transform: translateY(-3%);
-  box-shadow: 0 0 10px #5f42f0a6;
+  box-shadow: 0 0 10px #8478c178;
 }
 
 .element-list>li:hover .element-delete-button {
@@ -266,7 +266,7 @@
   }
 
   .todo-list-box {
-    width: 100%;
+    flex: 1 600px;
   }
 }
 
@@ -284,7 +284,7 @@
   }
 
   .todo-list-box {
-    width: 100%;
-    min-width: 320px;
+    min-width: 280px;
+    flex: 1 400px;
   }
 }
