@@ -50,6 +50,5 @@ function render() {
   if (savedSearchFilter) {
     serachBadge(savedSearchFilter)
   }
-  darkModeUI()
   filterListNumbers(filteredList)
 }
