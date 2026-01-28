@@ -1,4 +1,4 @@
-.greeting-box>h1 {
+.greeting-box > h1 {
   font-size: clamp(16px, 5vw, 28px);
 }
 
@@ -61,12 +61,13 @@ body {
 
 .theme-btn {
   width: 100px;
-  border-radius: 99px;
+  border-radius: 100px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   background-color: rgba(105, 105, 105, 0.2);
   position: relative;
+  overflow: hidden;
 }
 
 .toggle-btn {
@@ -85,8 +86,8 @@ span.active {
   background-color: #5f42f0;
 }
 
-span:not(.active).toggle-btn>svg {
-  fill: rgba(105, 105, 105, 0.7);
+span:not(.active).toggle-btn > svg {
+  fill: #f1f2f4;
 }
 
 .theme-btn svg {
@@ -122,7 +123,6 @@ svg.bi-moon-stars-fill {
   padding: 20px;
   border-radius: 12px;
   transform: translateY(0);
-  transition: transform 0.3s ease-in-out;
 }
 
 .big-element.status:hover {
@@ -130,11 +130,11 @@ svg.bi-moon-stars-fill {
   box-shadow: 0 8px 8px rgba(120, 106, 174, 0.25);
 }
 
-.status>h3 {
+.status > h3 {
   font-weight: 600;
 }
 
-.status>span {
+.status > span {
   font-size: 32px;
   font-weight: 700;
 }
@@ -162,9 +162,6 @@ form {
 }
 
 .search-box,
-.big-element.date-filter-box,
-.big-element.priority-filter-box,
-button.asc-desc-button,
 .add-todo-box {
   transform: translateY(0);
   transition: transform 0.3s;
@@ -291,8 +288,8 @@ button.asc-desc-button:hover,
   z-index: 100;
 }
 
-.date-filter>li,
-.priority-filter>li {
+.date-filter > li,
+.priority-filter > li {
   background-color: transparent;
   padding: 10px;
   position: relative;
@@ -300,8 +297,8 @@ button.asc-desc-button:hover,
   z-index: 100;
 }
 
-.date-filter>li:not(:last-child)::after,
-.priority-filter>li:not(:last-child)::after {
+.date-filter > li:not(:last-child)::after,
+.priority-filter > li:not(:last-child)::after {
   content: "";
   width: 90%;
   height: 1px;
@@ -310,8 +307,8 @@ button.asc-desc-button:hover,
   position: absolute;
 }
 
-.date-filter>li:hover,
-.priority-filter>li:hover {
+.date-filter > li:hover,
+.priority-filter > li:hover {
   background-color: #5f42f0;
   color: white;
 }
@@ -336,7 +333,7 @@ button.asc-desc-button:hover,
   border-radius: 99px;
 }
 
-.sort-list-badge>p>span {
+.sort-list-badge > p > span {
   color: #5f42f0;
   font-weight: 600;
 }
@@ -350,7 +347,6 @@ button.asc-desc-button:hover,
 .reset-button:hover {
   border: 1px solid rgb(255, 50, 50);
   border-radius: 8px;
-
 }
 
 @media (max-width: 1199px) and (min-width: 768px) {
