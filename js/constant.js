@@ -66,7 +66,8 @@ const prioritybtntext = document.querySelector(".priority-filter-button>p");
 const warning = document.querySelector(".warning");
 const delbtns = document.getElementsByClassName("element-delete-button");
 const formDarkMode = document.querySelector(".form-container");
-
+const observe = document.querySelector("header");
+const topBtn = document.querySelector(".go-top-btn-box");
 const priorityObj = {
   0: "우선순위",
   1: "높음",
