@@ -107,7 +107,7 @@ body {
 
 .big-element.status:hover {
   transform: translateY(-5%);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 8px 8px rgba(120, 106, 174, 0.25);
 }
 
 .status>h3 {
@@ -121,6 +121,8 @@ body {
 
 .todo-utlitity-box {
   width: 100%;
+  position: relative;
+  z-index: 10;
 }
 
 form {
@@ -154,7 +156,7 @@ button.asc-desc-button,
 button.asc-desc-button:hover,
 .add-todo-box:hover {
   transform: translateY(-5%);
-  box-shadow: 0 0 15px #5f42f0a4;
+  box-shadow: 0 0 10px #8478c178;
 }
 
 .search-box {
@@ -187,6 +189,8 @@ button.asc-desc-button:hover,
   gap: 15px;
   justify-content: space-between;
   align-items: center;
+  position: relative;
+  z-index: 1;
 }
 
 .big-element.date-filter-box {
@@ -197,6 +201,8 @@ button.asc-desc-button:hover,
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
+  z-index: 10;
 }
 
 .date-filter-button {
@@ -214,6 +220,8 @@ button.asc-desc-button:hover,
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
+  z-index: 5;
 }
 
 .priority-filter-button {
@@ -234,7 +242,7 @@ button.asc-desc-button:hover,
 }
 
 .add-todo-box {
-  flex: 1 1 260px;
+  flex: 1 1 300px;
   border-radius: 8px;
   height: 41px;
   display: flex;
@@ -245,6 +253,7 @@ button.asc-desc-button:hover,
 
 .add-todo-button {
   width: 100%;
+  height: 100%;
   color: white;
 }
 
@@ -254,17 +263,21 @@ button.asc-desc-button:hover,
   width: 100%;
   top: 120%;
   left: 0;
+  padding: 5px;
   border: 1px solid #e0e5eb;
   border-radius: 8px;
-  z-index: 1;
+  background-color: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(15px);
+  z-index: 100;
 }
 
 .date-filter>li,
 .priority-filter>li {
-  background-color: rgba(255, 255, 255, 0.7);
+  background-color: transparent;
   padding: 10px;
   position: relative;
   border-radius: 8px;
+  z-index: 100;
 }
 
 .date-filter>li:not(:last-child)::after,
@@ -286,6 +299,7 @@ button.asc-desc-button:hover,
 .sort-container {
   width: 100%;
   display: flex;
+  align-items: center;
   justify-content: space-between;
 }
 
@@ -298,6 +312,7 @@ button.asc-desc-button:hover,
   display: flex;
   padding: 5px 12px;
   border: 1px solid #e0e5eb;
+  background-color: rgba(255, 255, 255, 0.7);
   border-radius: 99px;
 }
 
@@ -307,8 +322,15 @@ button.asc-desc-button:hover,
 }
 
 .reset-button {
-  font-size: clamp(12px, 2vw, 16px);
-  color: red;
+  color: rgb(255, 50, 50);
+  padding: 5px 10px;
+  border: 1px solid transparent;
+}
+
+.reset-button:hover {
+  border: 1px solid rgb(255, 50, 50);
+  border-radius: 8px;
+
 }
 
 @media (max-width: 1199px) and (min-width: 768px) {
@@ -320,5 +342,11 @@ button.asc-desc-button:hover,
 @media (max-width: 767px) {
   .whole-container {
     padding: 16px;
+  }
+
+  .big-element.date-filter-box,
+  .big-element.priority-filter-box,
+  .asc-desc-button {
+    flex: 1 1 180px;
   }
 }
