@@ -370,6 +370,7 @@ button.asc-desc-button:hover,
   visibility: hidden;
   transition: all 0.3s ease-out;
   transform: translateY(40px);
+  z-index: 9999;
 }
 
 .go-top-btn-box.show {
@@ -381,15 +382,25 @@ button.asc-desc-button:hover,
 .go-top-btn {
   width: 50%;
   height: 50%;
-  border: 1px solid;
   border-radius: 50%;
-  background-color: white;
+  box-shadow: 0 0 5px #0000003b;
+  background-color: #fbfbfc;
+}
+
+.arrow {
+  transform: rotate(180deg);
+  color: #1b2432cc
 }
 
 
 @media (max-width: 1199px) and (min-width: 768px) {
   .whole-container {
     padding: 24px;
+  }
+
+  .go-top-btn-box {
+    bottom: 30px;
+    right: 5px;
   }
 }
 
@@ -402,5 +413,10 @@ button.asc-desc-button:hover,
   .big-element.priority-filter-box,
   .asc-desc-button {
     flex: 1 1 180px;
+  }
+
+  .go-top-btn-box {
+    bottom: 30px;
+    right: 5px;
   }
 }
