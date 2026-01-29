@@ -77,7 +77,7 @@ function removeElementbtn() {
   const todos = getStorage(FLOWDASH_TODOS);
 
   if (curId === "RESET") {
-    localStorage.removeItem(FLOWDASH_TODOS);
+    resetData();
   } else {
     //선택한 요소와 id값이 다른 요소들만 필터링
     const deletingTodos = todos.filter((todo) => todo.id !== curId);
