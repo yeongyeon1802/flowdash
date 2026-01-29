@@ -80,11 +80,11 @@ span.active {
   background-color: #5f42f0;
 }
 
-span:not(.active).toggle-btn>svg {
+span:not(.active).toggle-btn > svg {
   fill: rgba(105, 105, 105, 0.7);
 }
 
-span.active.toggle-btn>svg {
+span.active.toggle-btn > svg {
   fill: white;
 }
 
@@ -132,12 +132,12 @@ svg.bi-moon-stars-fill {
   box-shadow: 0 8px 8px rgba(120, 106, 174, 0.25);
 }
 
-.status>h3 {
+.status > h3 {
   font-weight: 600;
   font-size: clamp(12px, 3vw, 16px);
 }
 
-.status>span {
+.status > span {
   font-size: clamp(18px, 5vw, 32px);
   font-weight: 700;
 }
@@ -283,7 +283,7 @@ button.asc-desc-button:hover,
 .date-filter,
 .priority-filter {
   position: absolute;
-  width: 100%;
+  width: 150%;
   top: 120%;
   left: 0;
   padding: 5px;
@@ -293,8 +293,8 @@ button.asc-desc-button:hover,
   z-index: 100;
 }
 
-.date-filter>li,
-.priority-filter>li {
+.date-filter > li,
+.priority-filter > li {
   background-color: transparent;
   padding: 10px;
   position: relative;
@@ -304,19 +304,14 @@ button.asc-desc-button:hover,
   transition: background-color 0.3s;
 }
 
-.date-filter>li:not(:last-child)::after,
-.priority-filter>li:not(:last-child)::after {
+.date-filter > li:not(:last-child)::after,
+.priority-filter > li:not(:last-child)::after {
   content: "";
   width: 90%;
   height: 1px;
   top: 100%;
   left: 5%;
   position: absolute;
-}
-
-.date-filter>li:hover,
-.priority-filter>li:hover {
-  background-color: #5f42f01a;
 }
 
 .sort-container {
@@ -340,7 +335,7 @@ button.asc-desc-button:hover,
   font-size: clamp(12px, 3vw, 16px);
 }
 
-.sort-list-badge>p>span {
+.sort-list-badge > p > span {
   color: #5f42f0;
   font-weight: 600;
 }
@@ -386,7 +381,9 @@ button.asc-desc-button:hover,
   border-radius: 50%;
   box-shadow: 0 0 5px #0000003b;
   background-color: #fbfbfc;
-  transition: width 0.3s, height 0.3s;
+  transition:
+    width 0.3s,
+    height 0.3s;
 }
 
 .arrow {
@@ -394,9 +391,10 @@ button.asc-desc-button:hover,
   color: #1b243285;
   width: 24px;
   height: 24px;
-  transition: width 0.3s, height 0.3s;
+  transition:
+    width 0.3s,
+    height 0.3s;
 }
-
 
 @media (max-width: 1199px) {
   .whole-container {
@@ -410,8 +408,7 @@ button.asc-desc-button:hover,
 }
 
 @media (max-width: 1085px) {
-
-  .sort-filter-box>.big-element>button>p,
+  .sort-filter-box > .big-element > button > p,
   .asc-desc-button {
     display: flex;
     justify-content: center;
@@ -419,11 +416,12 @@ button.asc-desc-button:hover,
     font-size: clamp(12px, 3vw, 16px);
   }
 
-  .date-filter>li, .priority-filter>li {
+  .date-filter > li,
+  .priority-filter > li {
     font-size: clamp(12px, 3vw, 16px);
   }
 
-  .sort-filter-box>.big-element>button svg {
+  .sort-filter-box > .big-element > button svg {
     width: 10px;
     height: 10px;
   }
