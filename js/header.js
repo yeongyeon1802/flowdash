@@ -27,7 +27,7 @@ function nowDate() {
   const month = String(now.getMonth() + 1);
   const day = String(now.getDate());
 
-  const currentDate = `${year}년 ${month}월 ${day}일`
+  const currentDate = `${year}년 ${month}월 ${day}일`;
 
   date.textContent = currentDate;
 }
@@ -38,8 +38,8 @@ function inputEvent() {
     nickName.setAttribute("contenteditable", true);
     nickName.setAttribute("spellcheck", false);
     nickName.style.outline = "none";
-  })
-  
+  });
+
   nickName.addEventListener("keydown", (e) => {
     if (e.key === "Enter" || e.key === "Escape") {
       e.preventDefault();
@@ -66,5 +66,3 @@ setInterval(realTimeHour, 60000);
 setInterval(nowDate, 60000);
 inputEvent();
 realTimeHour();
-nowDate();
-

@@ -65,4 +65,5 @@ function render() {
     serachBadge(savedSearchFilter);
   }
   filterListNumbers(filteredList);
+  nowDate();
 }
