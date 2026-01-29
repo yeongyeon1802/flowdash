@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="./css/footer.css" />
     <link rel="stylesheet" href="./css/modal.css" />
     <link rel="stylesheet" href="./css/darkmode.css" />
+    <link rel="stylesheet" href="./css/element-delete.css" />
   </head>
   <body>
     <!-- 전체를 감싸는 박스 -->
@@ -165,7 +166,7 @@
                     </span>
                   </button>
                   <ul class="priority-filter hidden">
-                    <li class="big-text priority-all">전체</li>
+                    <li class="big-text priority-all">전체 우선순위</li>
                     <li class="big-text priority-high">높음</li>
                     <li class="big-text priority-mid">중간</li>
                     <li class="big-text priority-low">낮음</li>
@@ -351,7 +352,18 @@
         </svg>
       </button>
     </div>
-
+    <div class="todo-delete-modal hidden">
+      <section class="todo-delete-popup">
+        <div class="message-box">
+          <h2 class="delete-title big-text"></h2>
+          <p class="delete-message big-text"></p>
+        </div>
+        <div class="delete-button-box">
+          <button type="button" class="delete-confirm-button">삭제</button>
+          <button type="button" class="delete-cancel-button">취소</button>
+        </div>
+      </section>
+    </div>
     <script src="./js/constant.js"></script>
     <script src="./js/main.js"></script>
     <script src="./js/modalbtnfunction.js"></script>
