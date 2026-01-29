@@ -17,6 +17,11 @@ const darkModeToggleBtn = document.querySelector(".active");
 function darkModeUI() {
   const isDark = darkMode === "dark";
 
+  const dateFilterDarkMode = document.querySelector(".date-filter");
+  const priorityFilterDarkMode = document.querySelector(".priority-filter");
+  const deletePopupDarkMode = document.querySelector(".todo-delete-popup");
+  const deletePopupBtnDarkMode = document.querySelector(".delete-confirm-button");
+  const cancelDeletePopupBtnDarkMode = document.querySelector(".delete-cancel-button");
   const todoElementDarkMode = document.querySelectorAll(".todo-element");
   const elementTitleDarkMode = document.querySelectorAll(".element-title");
   const elementDescDarkMode = document.querySelectorAll(".element-description");
@@ -24,6 +29,11 @@ function darkModeUI() {
   const elementDeleteIcon = document.querySelectorAll(".bi-x-lg");
   const elementHoverShadow = document.querySelectorAll(".element-list");
   const doneElementBorderDarkMode = document.querySelectorAll(".element-done");
+  const highPriority = document.querySelectorAll(".high");
+  const midPriority = document.querySelectorAll(".mid");
+  const lowPriority = document.querySelectorAll(".low");
+  const goTopBtn = document.querySelector(".go-top-btn");
+  const arrow = document.querySelector(".arrow");
   //querySelector 요소
   toggleDarkMode(document.body, "body-darkmode", isDark);
   toggleDarkMode(footerBorderDarkMode, "todo-footer-darkmode", isDark);
@@ -34,6 +44,13 @@ function darkModeUI() {
   toggleDarkMode(cancelbtn, "popup-cancel-button-darkmode", isDark);
   toggleDarkMode(formDarkMode, "form-container-darkmode", isDark);
   toggleDarkMode(darkModeBtn, "theme-btn-darkmode", isDark);
+  toggleDarkMode(dateFilterDarkMode, "date-filter-darkmode", isDark);
+  toggleDarkMode(priorityFilterDarkMode, "priority-filter-darkmode", isDark);
+  toggleDarkMode(deletePopupDarkMode, "todo-delete-popup-darkmode", isDark);
+  toggleDarkMode(deletePopupBtnDarkMode, "delete-confirm-button-darkmode", isDark);
+  toggleDarkMode(cancelDeletePopupBtnDarkMode, "delete-cancel-button-darkmode", isDark);
+  toggleDarkMode(goTopBtn, "go-top-btn-darkmode", isDark);
+  toggleDarkMode(arrow, "arrow-darkmode", isDark);
   //querySelectorAll 요소
   allToggleDarkMode(elementDarkMode, "big-element-darkmode", isDark);
   allToggleDarkMode(bigTextDarkMode, "big-text-darkmode", isDark);
@@ -48,10 +65,13 @@ function darkModeUI() {
   allToggleDarkMode(elementTitleDarkMode, "element-title-darkmode", isDark);
   allToggleDarkMode(elementDescDarkMode, "element-description-darkmode", isDark);
   allToggleDarkMode(elementDeleteBtn, "element-delete-button-darkmode", isDark);
-  allToggleDarkMode(elementDeleteIcon, "b1-x-1g-darkmode", isDark);
+  allToggleDarkMode(elementDeleteIcon, "bi-x-lg-darkmode", isDark);
   allToggleDarkMode(elementHoverShadow, "element-list-darkmode", isDark);
   allToggleDarkMode(doneElementBorderDarkMode, "element-done-darkmode", isDark);
   allToggleDarkMode(listFilterIcon, "bi-funnel-fill-darkmode", isDark);
+  allToggleDarkMode(highPriority, "high-darkmode", isDark);
+  allToggleDarkMode(midPriority, "mid-darkmode", isDark);
+  allToggleDarkMode(lowPriority, "low-darkmode", isDark);
 
   if (darkMode === "dark") {
     brightIcon.classList.remove("active");

@@ -11,7 +11,7 @@
   justify-content: space-between;
 }
 
-.todo-arrange-box>.todo-list-box {
+.todo-arrange-box > .todo-list-box {
   width: 360px;
   min-height: 400px;
   padding: 16px;
@@ -20,7 +20,7 @@
   transition: box-shadow 0.3s;
 }
 
-.todo-arrange-box>.todo-list-box:hover {
+.todo-arrange-box > .todo-list-box:hover {
   box-shadow: 0 0 10px #43336e4d;
 }
 
@@ -32,7 +32,7 @@
 }
 
 .list-title::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: 0;
   left: 0;
@@ -44,7 +44,7 @@
   background-color: #1b2432;
 }
 
-.list-title>h3 {
+.list-title > h3 {
   font-size: 1.1rem;
   font-weight: 600;
   line-height: 26.4px;
@@ -71,30 +71,32 @@
   z-index: 0;
 }
 
-.element-list>li {
+.element-list > li {
   cursor: pointer;
   position: relative;
   border: 1px solid #e0e5eb;
   background-color: rgba(255, 255, 255, 0.7);
   z-index: 1;
   transform: translateY(0);
-  transition: transform 0.3s;
+  transition:
+    transform 0.3s,
+    fill 0.3s ease-in-out,
+    stroke 0.3s ease-in-out,
+    border 0.3s ease-in-out;
 }
 
-.element-list>li:hover {
+.element-list > li:hover {
   transform: translateY(-3%);
   box-shadow: 0 0 10px #8478c178;
 }
 
-.element-list>li:hover .element-delete-button {
+.element-list > li:hover .element-delete-button {
   opacity: 1;
-  background-color: #ffebeb;
-  border: none;
 }
 
-.element-list>li:hover .bi-x-lg {
-  fill: #f25a5a;
-  stroke: #f25a5a;
+.element-list > li:hover .bi-x-lg {
+  fill: #263140;
+  stroke: #263140;
 }
 
 .card-top {
@@ -103,10 +105,10 @@
   align-items: center;
 }
 
-.card-top>button {
+.card-top > button {
   width: 25px;
   height: 25px;
-  border-radius: 50%;
+  border-radius: 6px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -142,21 +144,6 @@ li.element-done {
   font-weight: 700;
 }
 
-.high {
-  background-color: #fff5f5;
-  color: #f25a5a;
-}
-
-.mid {
-  background-color: #ffebeb;
-  color: #f49d25;
-}
-
-.low {
-  background-color: #f0f9f4;
-  color: #29a366;
-}
-
 .elements-box {
   display: flex;
   flex-direction: column;
@@ -181,7 +168,7 @@ li.element-done {
   margin-top: auto;
 }
 
-.todo-element>svg {
+.todo-element > svg {
   width: 14px;
   height: 14px;
 }
@@ -202,48 +189,48 @@ li.element-done {
   gap: 6px;
 }
 
-.date-box>div {
+.date-box > div {
   display: flex;
   gap: 4px;
   align-items: center;
 }
 
-.date-box>div:hover svg {
+.date-box > div:hover svg {
   fill: #5f42f0a6;
   stroke: #5f42f0a6;
 }
 
-.date-box>div:hover .bi-calendar-date path,
-.date-box>div:hover .bi-check2-square path {
+.date-box > div:hover .bi-calendar-date path,
+.date-box > div:hover .bi-check2-square path {
   fill: #5f42f0a6;
 }
 
-.date-box>div:hover>span,
-.date-box>div:hover>span.done-date {
+.date-box > div:hover > span,
+.date-box > div:hover > span.done-date {
   color: #5f42f0a6;
   font-weight: bold;
 }
 
-.check-box:hover>.done-date {
+.check-box:hover > .done-date {
   color: #5f42f0a6;
   font-weight: bold;
 }
 
-.date-box>div>span,
+.date-box > div > span,
 .done-date {
   font-size: 12px;
   color: #aaa;
 }
 
-.todo-list-box:hover>.list-title>h3 {
+.todo-list-box:hover > .list-title > h3 {
   color: #4d3bac;
 }
 
-.todo-list-box:hover>.list-title::after {
+.todo-list-box:hover > .list-title::after {
   background-color: #5f42f0a6;
 }
 
-.todo-list-box:hover>.list-title>span {
+.todo-list-box:hover > .list-title > span {
   border: 1px solid #5f42f0a6;
   background-color: #5f42f0a6;
   color: white;

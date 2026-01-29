@@ -68,6 +68,11 @@ const delbtns = document.getElementsByClassName("element-delete-button");
 const formDarkMode = document.querySelector(".form-container");
 const observe = document.querySelector("header");
 const topBtn = document.querySelector(".go-top-btn-box");
+const deleteModal = document.querySelector(".todo-delete-modal");
+const elementDeleteBtn = document.querySelector(".delete-confirm-button");
+const deleteCancelBtn = document.querySelector(".delete-cancel-button");
+const goTopBtn = document.querySelector(".go-top-gtn");
+const arrow = document.querySelector(".arrow");
 const priorityObj = {
   0: "우선순위",
   1: "높음",
