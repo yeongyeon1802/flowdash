@@ -54,12 +54,14 @@ function savebtnTodo() {
   }
 
   setStorage(FLOWDASH_TODOS, todos);
+  document.body.style.overflow = "unset";
   dimmed.classList.toggle("hidden");
   modalreset();
   render();
 }
 
 function cancelbtnTodo() {
+  document.body.style.overflow = "unset";
   dimmed.classList.toggle("hidden");
   modalreset();
 }
