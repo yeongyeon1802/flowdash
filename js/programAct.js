@@ -1,7 +1,5 @@
 document.addEventListener("DOMContentLoaded", render);
 
-createbtn.addEventListener("click", clickNewBtn);
-
 dateFilter.addEventListener("click", (e) => {
   e.stopPropagation();
   priorityFilterList.classList.add("hidden");
