@@ -17,23 +17,17 @@ const darkModeToggleBtn = document.querySelector(".active");
 function darkModeUI() {
   const isDark = darkMode === "dark";
 
-  const dateFilterDarkMode = document.querySelector(".date-filter");
-  const priorityFilterDarkMode = document.querySelector(".priority-filter");
-  const deletePopupDarkMode = document.querySelector(".todo-delete-popup");
-  const deletePopupBtnDarkMode = document.querySelector(".delete-confirm-button");
-  const cancelDeletePopupBtnDarkMode = document.querySelector(".delete-cancel-button");
+  //createCard.js로 생성하는 요소들은 내부에 배치
   const todoElementDarkMode = document.querySelectorAll(".todo-element");
   const elementTitleDarkMode = document.querySelectorAll(".element-title");
   const elementDescDarkMode = document.querySelectorAll(".element-description");
-  const elementDeleteBtn = document.querySelectorAll(".card-top > button");
+  const cardDeleteBtn = document.querySelectorAll(".card-top > button");
   const elementDeleteIcon = document.querySelectorAll(".bi-x-lg");
   const elementHoverShadow = document.querySelectorAll(".element-list");
   const doneElementBorderDarkMode = document.querySelectorAll(".element-done");
   const highPriority = document.querySelectorAll(".high");
   const midPriority = document.querySelectorAll(".mid");
   const lowPriority = document.querySelectorAll(".low");
-  const goTopBtn = document.querySelector(".go-top-btn");
-  const arrow = document.querySelector(".arrow");
   //querySelector 요소
   toggleDarkMode(document.body, "body-darkmode", isDark);
   toggleDarkMode(footerBorderDarkMode, "todo-footer-darkmode", isDark);
@@ -44,11 +38,11 @@ function darkModeUI() {
   toggleDarkMode(cancelbtn, "popup-cancel-button-darkmode", isDark);
   toggleDarkMode(formDarkMode, "form-container-darkmode", isDark);
   toggleDarkMode(darkModeBtn, "theme-btn-darkmode", isDark);
-  toggleDarkMode(dateFilterDarkMode, "date-filter-darkmode", isDark);
-  toggleDarkMode(priorityFilterDarkMode, "priority-filter-darkmode", isDark);
+  toggleDarkMode(dateFilterList, "date-filter-darkmode", isDark);
+  toggleDarkMode(priorityFilterList, "priority-filter-darkmode", isDark);
   toggleDarkMode(deletePopupDarkMode, "todo-delete-popup-darkmode", isDark);
-  toggleDarkMode(deletePopupBtnDarkMode, "delete-confirm-button-darkmode", isDark);
-  toggleDarkMode(cancelDeletePopupBtnDarkMode, "delete-cancel-button-darkmode", isDark);
+  toggleDarkMode(elementDeleteBtn, "delete-confirm-button-darkmode", isDark);
+  toggleDarkMode(deleteCancelBtn, "delete-cancel-button-darkmode", isDark);
   toggleDarkMode(goTopBtn, "go-top-btn-darkmode", isDark);
   toggleDarkMode(arrow, "arrow-darkmode", isDark);
   //querySelectorAll 요소
@@ -64,7 +58,7 @@ function darkModeUI() {
   allToggleDarkMode(todoElementDarkMode, "todo-element-darkmode", isDark);
   allToggleDarkMode(elementTitleDarkMode, "element-title-darkmode", isDark);
   allToggleDarkMode(elementDescDarkMode, "element-description-darkmode", isDark);
-  allToggleDarkMode(elementDeleteBtn, "element-delete-button-darkmode", isDark);
+  allToggleDarkMode(cardDeleteBtn, "element-delete-button-darkmode", isDark);
   allToggleDarkMode(elementDeleteIcon, "bi-x-lg-darkmode", isDark);
   allToggleDarkMode(elementHoverShadow, "element-list-darkmode", isDark);
   allToggleDarkMode(doneElementBorderDarkMode, "element-done-darkmode", isDark);
