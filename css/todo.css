@@ -8,11 +8,11 @@
 .todo-arrange-box {
   display: flex;
   flex: 1;
-  justify-content: space-between;
+  gap: 32px;
 }
 
 .todo-arrange-box > .todo-list-box {
-  width: 360px;
+  width: 100%;
   min-height: 400px;
   padding: 16px;
   border-radius: 16px;
@@ -236,6 +236,7 @@ li.element-done {
   color: white;
 }
 
+/* todo.css 수정 부분 */
 @media (max-width: 1199px) and (min-width: 768px) {
   .todo-container {
     width: 100%;
@@ -243,33 +244,34 @@ li.element-done {
   }
 
   .todo-arrange-box {
-    width: 100%;
-    max-width: 1199px;
-    flex: 1;
     flex-wrap: wrap;
     gap: 32px;
   }
 
-  .todo-list-box {
-    flex: 1 600px;
+  .todo-list-box.todo-box,
+  .todo-list-box.doing-box {
+    flex: 1 1 340px;
+    min-width: 340px;
+  }
+
+  .todo-list-box.done-box {
+    flex: 1 1 100%;
   }
 }
 
 @media (max-width: 767px) {
   .todo-container {
     width: 100%;
-    max-width: 767px;
   }
 
   .todo-arrange-box {
     width: 100%;
-    max-width: 767px;
-    flex-wrap: wrap;
+    flex-direction: column;
     gap: 32px;
   }
 
   .todo-list-box {
+    width: 100%;
     min-width: 280px;
-    flex: 1 400px;
   }
 }
