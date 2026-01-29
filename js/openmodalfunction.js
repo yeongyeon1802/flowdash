@@ -1,4 +1,5 @@
 function clickNewBtn() {
+  curId = null;
   dimmed.classList.toggle("hidden");
   document.body.style.overflow = "hidden";
   maintitle.textContent = "새 할 일";
@@ -27,9 +28,61 @@ function clickTodoList(id) {
   curId = +id;
 }
 
+function deleteTodoList(id) {
+  const DeleteConfirmTitle = document.querySelector(".delete-title");
+  const DeleteConfirmMessage = document.querySelector(".delete-message");
+  const DeleteConfirmButton = document.querySelector(".delete-confirm-button");
+  DeleteConfirmTitle.textContent = "목록 삭제";
+  DeleteConfirmMessage.textContent = "정말 삭제 하시겠습니까?\n삭제 이후엔 되돌릴 수 없습니다.";
+  DeleteConfirmButton.textContent = "삭제";
+  deleteModal.classList.remove("hidden");
+  document.body.style.overflow = "hidden";
+  curId = +id;
+}
+
+elementDeleteBtn.addEventListener("click", () => {
+  const todos = getStorage(FLOWDASH_TODOS);
+
+  if (curId === "RESET") {
+    localStorage.removeItem(FLOWDASH_TODOS);
+  } else {
+    //선택한 요소와 id값이 다른 요소들만 필터링
+    const deletingTodos = todos.filter((todo) => todo.id !== curId);
+    //삭제 후 남은 요소가 없으면 로컬스토리지 제거
+    if (deletingTodos.length === 0) {
+      localStorage.removeItem(FLOWDASH_TODOS);
+      //남은 요소가 있을 경우 필터링한 요소들로 새롭게 요소 배치
+    } else {
+      setStorage(FLOWDASH_TODOS, deletingTodos);
+    }
+  }
+  //id값 초기화
+  curId = null;
+  deleteModal.classList.add("hidden");
+  document.body.style.overflow = "unset";
+  render();
+});
+
+deleteCancelBtn.addEventListener("click", () => {
+  curId = null;
+  deleteModal.classList.add("hidden");
+  document.body.style.overflow = "unset";
+});
+
 todolist.forEach((li) =>
   li.addEventListener("click", function (e) {
     const card = e.target.closest("li");
-    clickTodoList(card.dataset.id);
+    const button = e.target.closest("button");
+
+    //카드 없는 공간 클릭시 함수 종료
+    if (!card) return;
+
+    if (button) {
+      e.stopPropagation();
+      deleteTodoList(card.dataset.id);
+    } else {
+      e.stopPropagation();
+      clickTodoList(card.dataset.id);
+    }
   })
 );
