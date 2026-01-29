@@ -330,3 +330,7 @@ li.todo-element-darkmode {
 .element-list-darkmode>li:hover {
   box-shadow: 0 0 10px #8478c131;
 }
+
+.status:hover.big-element-darkmode {
+  box-shadow: 0 6px 10px rgba(98, 98, 98, 0.2);
+}
