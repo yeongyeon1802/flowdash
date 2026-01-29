@@ -71,8 +71,9 @@ const topBtn = document.querySelector(".go-top-btn-box");
 const deleteModal = document.querySelector(".todo-delete-modal");
 const elementDeleteBtn = document.querySelector(".delete-confirm-button");
 const deleteCancelBtn = document.querySelector(".delete-cancel-button");
-const goTopBtn = document.querySelector(".go-top-gtn");
+const goTopBtn = document.querySelector(".go-top-btn");
 const arrow = document.querySelector(".arrow");
+const deletePopupDarkMode = document.querySelector(".todo-delete-popup");
 const priorityObj = {
   0: "우선순위",
   1: "높음",
