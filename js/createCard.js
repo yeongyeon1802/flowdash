@@ -1,4 +1,3 @@
-// 매개변수 todo는 객체
 function createCard(todo) {
   const li = document.createElement("li");
   li.classList.add("todo-element");
@@ -21,14 +20,12 @@ function createCard(todo) {
   h3.textContent = prioritytextObj[todo.priority];
   cardTop.append(h3);
 
-  // 좀 더 손대야함
   const delbtn = document.createElement("button");
   delbtn.type = "button";
   delbtn.className = "element-delete-button";
   delbtn.innerHTML = getDelIcon();
 
   cardTop.append(delbtn);
-  //-----------------------
 
   const elementsBox = document.createElement("div");
   elementsBox.className = "elements-box";
@@ -42,8 +39,7 @@ function createCard(todo) {
 
   const elementDescription = document.createElement("span");
   elementDescription.classList.add("element-description");
-  if (todo.statusvalue === "done")
-    elementDescription.classList.add("done-description");
+  if (todo.statusvalue === "done") elementDescription.classList.add("done-description");
   elementDescription.textContent = todo.content;
   elementsBox.append(elementDescription);
 
