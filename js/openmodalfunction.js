@@ -40,35 +40,6 @@ function deleteTodoList(id) {
   curId = +id;
 }
 
-elementDeleteBtn.addEventListener("click", () => {
-  const todos = getStorage(FLOWDASH_TODOS);
-
-  if (curId === "RESET") {
-    localStorage.removeItem(FLOWDASH_TODOS);
-  } else {
-    //선택한 요소와 id값이 다른 요소들만 필터링
-    const deletingTodos = todos.filter((todo) => todo.id !== curId);
-    //삭제 후 남은 요소가 없으면 로컬스토리지 제거
-    if (deletingTodos.length === 0) {
-      localStorage.removeItem(FLOWDASH_TODOS);
-      //남은 요소가 있을 경우 필터링한 요소들로 새롭게 요소 배치
-    } else {
-      setStorage(FLOWDASH_TODOS, deletingTodos);
-    }
-  }
-  //id값 초기화
-  curId = null;
-  deleteModal.classList.add("hidden");
-  document.body.style.overflow = "unset";
-  render();
-});
-
-deleteCancelBtn.addEventListener("click", () => {
-  curId = null;
-  deleteModal.classList.add("hidden");
-  document.body.style.overflow = "unset";
-});
-
 todolist.forEach((li) =>
   li.addEventListener("click", function (e) {
     const card = e.target.closest("li");
