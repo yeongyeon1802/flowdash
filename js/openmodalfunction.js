@@ -10,7 +10,7 @@ function clickTodoList(id) {
   const list = todos.find((todo) => todo.id == id);
 
   dimmed.classList.toggle("hidden");
-  document.body.class.style.overflow = "hidden";
+  document.body.style.overflow = "hidden";
 
   maintitle.textContent = "할 일 수정";
   title.value = list.title;

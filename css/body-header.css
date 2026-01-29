@@ -391,7 +391,7 @@ button.asc-desc-button:hover,
 
 .arrow {
   transform: rotate(180deg);
-  color: #1b2432cc;
+  color: #1b243285;
   width: 24px;
   height: 24px;
   transition: width 0.3s, height 0.3s;
@@ -416,11 +416,11 @@ button.asc-desc-button:hover,
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: clamp(12px, 1.4vw, 16px);
+    font-size: clamp(12px, 3vw, 16px);
   }
 
   .date-filter>li, .priority-filter>li {
-    font-size: clamp(12px, 1.4vw, 16px);
+    font-size: clamp(12px, 3vw, 16px);
   }
 
   .sort-filter-box>.big-element>button svg {
