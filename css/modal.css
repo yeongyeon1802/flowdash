@@ -94,12 +94,16 @@
   display: flex;
   flex-direction: column;
   gap: 32px;
-  width: 500px;
-  height: 572px;
+  width: 100%;
+  max-width: 500px;
+  height: auto;
   padding: 25px;
   border-radius: 1rem;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -60%);
   z-index: 9999;
+  transition:
+    opacity 0.3s ease-in-out,
+    transform 0.3s ease-in-out;
 }
 
 .popup-main-title {
@@ -289,6 +293,7 @@ label[for="done"] {
   justify-content: right;
   align-items: flex-end;
   gap: 16px;
+  padding-top: 32px;
 }
 
 .popup-footer button {
@@ -332,10 +337,12 @@ label[for="done"] {
 @media (max-width: 1199px) and (min-width: 768px) {
 }
 
-@media (max-width: 767px) and (min-width: 320px) {
+@media (max-width: 767px) {
   .popup {
-    width: 390px;
-    height: 592px;
+    width: 100%;
+    max-width: 300px;
+    min-width: 280px;
+    height: auto;
     justify-content: space-between;
   }
 
@@ -344,29 +351,42 @@ label[for="done"] {
   }
 
   .popup-utlities {
-    flex: none;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    gap: 16px;
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
+    width: 100%;
+    margin-top: 0;
+  }
+
+  .popup-priority,
+  .popup-status {
+    width: 100%;
   }
 
   .popup-priority legend,
   .popup-status legend {
-    text-align: center;
+    text-align: left;
   }
 
   .priority-buttons,
   .status-buttons {
     display: flex;
-    flex-direction: column;
+    width: 100%;
+    justify-content: space-between;
   }
 
   .popup-footer {
+    width: 100%;
     height: 100%;
-    flex-direction: column-reverse;
+    flex-direction: row-reverse;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: space-between;
     flex-basis: auto;
+    padding-top: 8px;
   }
 
   .popup-cancel-button {
