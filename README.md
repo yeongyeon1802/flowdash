@@ -67,36 +67,38 @@ flowdash/
 │  ├─ element-delete.css
 │  └─ darkmode.css
 └─ js/
-   ├─ main.js
-   ├─ header.js
-   ├─ filter.js
-   ├─ count.js
+   ├─ components/
+   ├   ├─ createcard.js
+   ├   ├─ modalbtnfunction.js
+   ├   ├─ openmodalfunction.js
+   ├─ features/
+   ├   ├─ darkmode.js
+   ├   ├─ datareset.js
+   ├   ├─ header.js
+   ├─ filter/
+   ├   ├─ createfilterbadge.js
+   ├   ├─ filter.js
+   ├   ├─ search.js
+   ├─ app.js
    ├─ constant.js
-   ├─ createfilterbadge.js
-   ├─ createcard.js
-   ├─ modalbtnfunction.js
-   ├─ openmodalfunction.js
-   ├─ ProgramAct.js
-   ├─ search.js
-   ├─ datareset.js
-   └─ darkmode.js
+   └─ main.js
+    
 ```
 
 ### 3-2. 모듈 책임 분리
 
-- main.js : 로컬스토리지 데이터별 저장 및 불러오기 방식 전담, 렌더링 함수 로직
-- header.js : 헤더 닉네임 수정 및 로컬스토리지 저장, 실시간 인사말 및 현재 날짜 표시
-- filter.js : 설정한 필터 조건에 맞게 하단에 표시할 카드(할일 요소)를 골라내는 로직
-- count.js : 상단 대시보드 추가한 카드(할일 요소) 기준 실시간 업데이트 로직
-- constant.js : HTML에서 가져올 요소 선택자, 로컬스토리지에 저장할 키 값, 필터 및 정렬에 사용되는 객체 모음집
-- createFilterBadge.js : 사용자가 설정한 필터 상태를 화면에 배치
 - createCard.js : 할일 추가 팝업에서 할일 입력시 할일 카드(할일 요소) 생성
 - modalbtnfunction.js : 모달 내에서의 저장, 취소, 삭제 등등의 버튼 클릭시 실제 데이터 변경 및 삭제
 - openmodalfunction.js : '새 할 일' 버튼 클릭시 할일 추가 모달, 카드 클릭시 할일 수정 모달, 카드 내 X 버튼 클릭시 카드 삭제 모달, 전체 데이터 초기화 버튼 클릭시 카드 초기화 모달을 띄우는 역할
-- ProgramAct.js : 전체 화면 렌더링 진행, 필터 메뉴 클릭 상호작용 이벤트
-- search.js : 검색어 입력시 실시간 필터링 이벤트
-- datareset.js : 전체 카드(할일 요소) 초기화 담당
 - darkmode.js : 테마 설정 로컬스토리지 저장, 다크모드 토글 담당
+- datareset.js : 전체 카드(할일 요소) 초기화 담당
+- header.js : 헤더 닉네임 수정 및 로컬스토리지 저장, 실시간 인사말 및 현재 날짜 표시
+- createFilterBadge.js : 사용자가 설정한 필터 상태를 화면에 배치
+- filter.js : 설정한 필터 조건에 맞게 하단에 표시할 카드(할일 요소)를 골라내는 로직
+- search.js : 검색어 입력시 실시간 필터링 이벤트
+- app.js : 전체 화면 렌더링 진행, 필터 메뉴 클릭 상호작용 이벤트
+- constant.js : HTML에서 가져올 요소 선택자, 로컬스토리지에 저장할 키 값, 필터 및 정렬에 사용되는 객체 모음집
+- main.js : 로컬스토리지 데이터별 저장 및 불러오기 방식 전담, 렌더링 함수 로직
 
 ### 3-3. 데이터 흐름
 
@@ -206,12 +208,14 @@ User Action : 새할일 등록
 
 - 팝업 등장 애니메이션 및 카드 이동 애니메이션을 구현하지 못한 점
 - 코드 충돌은 적었으나, 초장기에 prettier 설정이 서로 다른 이유 때문에 충돌이 자주 일어났습니다. 이후 서로 prettier 설정을 통일화하여 해결하였습니다.
+- 인터섹션 옵저버를 통해 무한 스크롤 기능을 구현하면서 성능 최적화를 이루고 싶었으나 시간이 부족해서 진행하지 못한 점
 
 ### 7-3. 다음에 개선할 점
 
 - 검색 기능에 자동완성 기능 추가
 - 팝업 등장 애니메이션 및 카드 추가 및 삭제시 이동하는 애니메이션 추가
 - 테마 토글 애니메이션 구현
+- 강사님께 피드백 받은 내용으로 이 서비스를 여러 사람이 이용한다면 아이디 값으로 준 timestamp가 고유하지 않을 수 있습니다. 따라서 다음에 고도화 작업을 진행 할 때 crypto.randomUUID() 방식으로 해 볼 예정입니다.
   
 
 ## 8. 실행 방법
