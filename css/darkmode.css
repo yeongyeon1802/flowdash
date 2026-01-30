@@ -1,0 +1,443 @@
+body {
+  background-color: #f6f7f9;
+  transition: background-color 0.3s ease;
+}
+
+.body-darkmode {
+  background-color: #131820;
+}
+
+.theme-btn {
+  border: 1px solid #e0e5eb;
+  transition:
+    border 0.3s ease-in-out,
+    background-color 0.3s ease-in-out;
+}
+
+button.theme-btn-darkmode {
+  background-color: rgb(33, 42, 54);
+  border: 1px solid #5462747a;
+}
+
+.bright-icon {
+  fill: #f1f2f4;
+}
+
+.big-element {
+  background-color: rgba(255, 255, 255, 0.7);
+  border: 1px solid #e0e5eb;
+  transition:
+    transform 0.3s ease-in-out,
+    background-color 0.3s ease-in-out,
+    border 0.3s ease-in-out;
+}
+
+.big-element.big-element-darkmode {
+  background-color: #171d26;
+  border: 1px solid #263140;
+}
+
+#filter-form > .form-container {
+  transition: background 0.3s ease-in-out;
+}
+
+.form-container-darkmode {
+  background-color: #171d26;
+}
+
+.big-text {
+  color: #1b2432;
+  transition: color 0.3s ease-in-out;
+}
+
+.big-text-darkmode {
+  color: #f1f2f4;
+}
+
+.small-text {
+  color: #5c6f8a;
+  transition: color 0.3s ease-in-out;
+}
+
+.small-text-darkmode {
+  color: #abb1ba;
+}
+
+.bi-search {
+  fill: #98a4b3;
+  transition: fill 0.3s ease-in-out;
+}
+
+.bi-search-dark {
+  fill: #737d8c;
+}
+
+.search-box > input {
+  background-color: rgba(255, 255, 255, 0.7);
+  border: 1px solid #e0e5eb;
+  color: #1b2432;
+  transition:
+    color 0.3s ease-in-out,
+    background-color 0.3s ease-in-out,
+    border 0.3s ease-in-out;
+}
+
+.body-darkmode .search-box > input {
+  color: #f1f2f4;
+}
+
+.date-filter-box,
+.priority-filter-box {
+  background-color: rgba(255, 255, 255, 0.7);
+  border: 1px solid #e0e5eb;
+  transition:
+    transform 0.3s ease-in-out,
+    background-color 0.3s ease-in-out,
+    border 0.3s ease-in-out;
+}
+
+.asc-desc-button {
+  background-color: rgba(255, 255, 255, 0.7);
+  color: #1b2432;
+  border: 1px solid #e0e5eb;
+  transition:
+    background-color 0.3s ease-in-out,
+    color 0.3s ease-in-out,
+    border 0.3s ease-in-out,
+    transform 0.3s;
+}
+
+body .asc-desc-button-darkmode {
+  background-color: #171d26;
+  color: #f1f2f4;
+  border: 1px solid #263140;
+}
+
+.bi-funnel-fill {
+  fill: #1b2432;
+  transition: fill 0.3s ease-in-out;
+}
+
+.bi-funnel-fill-darkmode {
+  fill: #f1f2f4;
+}
+
+.sort-list-badge {
+  background-color: rgba(255, 255, 255, 0.7);
+  border: 1px solid #e0e5eb;
+  transition:
+    background-color 0.3s ease-in-out,
+    border 0.3s ease;
+}
+
+.body-darkmode .sort-list-badge {
+  background-color: #171d26;
+  border: 1px solid #263140;
+}
+
+.sort-list-badge > p {
+  color: #1b2432;
+  transition: color 0.3s ease-in-out;
+}
+
+.body-darkmode .sort-list-badge > p {
+  color: #f1f2f4;
+}
+
+.todo-list-box {
+  background-color: #00000005;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.todo-arrange-box > .todo-list-box-darkmode {
+  background-color: #ffffff05;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+.todo-arrange-box > .todo-list-box-darkmode:hover {
+  box-shadow: 0 0 10px #abb1ba33;
+}
+
+.items-count {
+  background-color: #fff;
+  color: #1b2432;
+  transition:
+    background-color 0.3s ease-in-out,
+    color 0.3s ease-in-out;
+}
+
+.items-count-darkmode {
+  background-color: #1f2733;
+  color: #f1f2f4;
+}
+
+.list-title::after {
+  background-color: #1b2432;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.list-title.list-title::after {
+  background-color: #abb1ba;
+}
+
+.todo-footer {
+  border-top: 1px solid #e0e5eb;
+  transition: border-top 0.3s ease-in-out;
+}
+
+.todo-footer-darkmode {
+  border-top: 1px solid #263140;
+}
+
+.popup {
+  background-color: #fff;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.popup-darkmode {
+  background-color: #171d26;
+}
+
+.popup-content-title > input {
+  background-color: #fff;
+  border: 1px solid #e0e5eb;
+  border-radius: 8px;
+  transition:
+    background-color 0.3s ease-in-out,
+    border 0.3s ease-in-out;
+}
+
+.popup-content-title-darkmode > input {
+  background-color: #171d26;
+  border: 1px solid #263140;
+  color: #fff;
+  border-radius: 8px;
+  transition:
+    background-color 0.3s ease-in-out,
+    border 0.3s ease-in-out;
+}
+
+.popup-description > textarea {
+  background-color: #fff;
+  border: 1px solid #e0e5eb;
+  border-radius: 8px;
+}
+
+.popup-description-darkmode > textarea {
+  background-color: #171d26;
+  border: 1px solid #263140;
+  color: #fff;
+  border-radius: 8px;
+}
+
+.priority-item > label,
+.status-item > label {
+  background-color: #fff;
+  border: 1px solid #e0e5eb;
+  border-radius: 40px;
+  transition:
+    background-color 0.3s ease-in-out,
+    border 0.3s ease-in-out;
+}
+
+.priority-item-darkmode > label,
+.status-item-darkmode > label {
+  background-color: #171d26;
+  border: 1px solid #263140;
+  border-radius: 40px;
+}
+
+.popup-cancel-button {
+  background-color: #e0e5eb;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.popup-cancel-button-darkmode {
+  background-color: #263140;
+}
+
+.go-top-btn-darkmode {
+  background-color: #131820;
+  box-shadow: 0 0 5px #fffef3;
+}
+
+.arrow-darkmode {
+  color: #ffffff61;
+}
+
+/* 필터 요소 다크모드 */
+
+.date-filter,
+.priority-filter {
+  background-color: #fff;
+  transition:
+    background-color 0.3s ease-in-out,
+    border 0.3s ease-in-out;
+}
+
+.date-filter-darkmode,
+.priority-filter-darkmode {
+  background-color: #171d26;
+  border: 1px solid #263140;
+}
+
+.date-filter > li:hover,
+.priority-filter > li:hover {
+  background-color: #5f42f01a;
+}
+
+.date-filter-darkmode > li:hover,
+.priority-filter-darkmode > li:hover {
+  background-color: #5f42f0;
+}
+
+/* 투두리스트 내부 요소 */
+
+.todo-element {
+  background-color: #f1f2f4;
+  transition: background-color 0.3s ease-in-out;
+}
+
+li.todo-element-darkmode {
+  background-color: #1b2432;
+  border: 1px solid rgba(48, 50, 52, 0.46);
+}
+
+.element-title {
+  color: #1b2432;
+  transition: color 0.3s ease-in-out;
+}
+
+.element-title-darkmode {
+  color: #f1f2f4;
+}
+
+.element-description {
+  color: #5c6f8a;
+  transition: color 0.3s ease-in-out;
+}
+
+.element-description-darkmode {
+  color: #abb1ba;
+}
+
+.element-done {
+  border: 1px solid #e0e5eb;
+  transition: border 0.3s ease-in-out;
+}
+
+.element-done-darkmode {
+  border: 1px solid #263140;
+}
+
+.element-done .element-title,
+.element-done .element-description {
+  color: #5c6f8a;
+}
+
+.element-delete-button {
+  border: 1px solid #263140;
+  transition: border 0.3s ease-in-out;
+}
+
+.element-delete-button-darkmode {
+  border: 1px solid #e0e5eb6b;
+}
+
+.bi-x-lg-darkmode {
+  fill: #e0e5eb6b;
+  stroke: #e0e5eb6b;
+}
+
+.element-list > li:hover .element-delete-button-darkmode {
+  opacity: 1;
+  border: 1px solid #e0e5eb96;
+}
+
+.element-list > li:hover .bi-x-lg-darkmode {
+  opacity: 1;
+  fill: #e0e5eb96;
+  stroke: #e0e5eb96;
+}
+
+.high {
+  background-color: #fff5f5;
+  color: #f25a5a;
+}
+
+.high-darkmode {
+  background-color: #422424;
+  color: #f25a5a;
+}
+
+.mid {
+  background-color: #ffebeb;
+  color: #f49d25;
+}
+
+.mid-darkmode {
+  background-color: #423624;
+  color: #f49d25;
+}
+
+.low {
+  background-color: #f0f9f4;
+  color: #29a366;
+}
+
+.low-darkmode {
+  background-color: #24422c;
+  color: #29a366;
+}
+
+.element-list > li:hover {
+  box-shadow: 0 0 10px #8478c178;
+}
+
+.element-list-darkmode > li:hover {
+  box-shadow: 0 0 10px #8478c131;
+}
+
+.status:hover.big-element-darkmode {
+  box-shadow: 0 6px 10px rgba(98, 98, 98, 0.2);
+}
+
+/* 삭제 팝업 다크모드 */
+
+.todo-delete-popup {
+  background-color: #fff;
+  border: 1px solid #e0e5eb;
+}
+
+body .todo-delete-popup-darkmode {
+  background-color: #1b222c;
+  border: 1px solid #263140;
+}
+
+.delete-confirm-button {
+  background-color: #f25a5a;
+  color: #fff;
+}
+
+.delete-confirm-button,
+.delete-cancel-button {
+  border: 1px solid #e0e5eb;
+}
+
+.delete-confirm-button-darkmode,
+.delete-cancel-button-darkmode {
+  border: 1px solid #263140;
+}
+
+.delete-confirm-button:hover {
+  background-color: #df3e3e;
+}
+
+body .delete-confirm-button-darkmode {
+  background-color: #5f42f0;
+}
+
+body .delete-confirm-button-darkmode:hover {
+  background-color: #4832c8;
+}
