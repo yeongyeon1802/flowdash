@@ -1,3 +1,4 @@
+// 필터뱃지를 만드는 함수
 function createFilterBadge() {
   const filter = getStorage(FLOWDASH_FILTER);
   const filterbtn = document.querySelector(".asc-desc-button");

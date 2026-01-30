@@ -17,6 +17,7 @@ function savebtnTodo() {
   const statusvalue = document.querySelector("input[name='status']:checked").value;
   const todos = getStorage(FLOWDASH_TODOS);
 
+  // 필수값인 제목이 없을때 수행
   if (!title) {
     warning.classList.remove("hidden");
     const titleFocus = document.querySelector("#popup-todo-title");
@@ -24,6 +25,7 @@ function savebtnTodo() {
     return;
   }
 
+  // 수정할 때 로직
   if (curId) {
     const list = todos.find((todo) => todo.id === curId);
     list.title = title;
@@ -34,6 +36,7 @@ function savebtnTodo() {
     list.completeAt = statusvalue === "done" ? timestamp : null;
     curId = null;
   } else {
+    // 새로운 객체 생성
     const todo = {
       id: timestamp,
       title,
