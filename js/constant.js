@@ -1,3 +1,4 @@
+// 인덱스 최상단 변수 선언 파일
 "use strict";
 const FLOWDASH_TODOS = "flowdash.todos";
 const FLOWDASH_NICKNAME = "flowdash.nickname";
@@ -74,6 +75,8 @@ const deleteCancelBtn = document.querySelector(".delete-cancel-button");
 const goTopBtn = document.querySelector(".go-top-btn");
 const arrow = document.querySelector(".arrow");
 const deletePopupDarkMode = document.querySelector(".todo-delete-popup");
+const titleinputed = document.querySelector("#popup-todo-title");
+const dataResetBtn = document.querySelector(".reset-button");
 const priorityObj = {
   0: "우선순위",
   1: "높음",

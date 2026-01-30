@@ -1,5 +1,4 @@
-const dataResetBtn = document.querySelector(".reset-button");
-
+// 데이터 리셋 함수
 function resetData() {
   sortList.innerHTML = "";
   localStorage.removeItem(FLOWDASH_SEARCH);
@@ -9,6 +8,7 @@ function resetData() {
   location.reload();
 }
 
+// 전체 초기화 버튼 클릭이벤트
 dataResetBtn.addEventListener("click", () => {
   const DeleteConfirmTitle = document.querySelector(".delete-title");
   const DeleteConfirmMessage = document.querySelector(".delete-message");

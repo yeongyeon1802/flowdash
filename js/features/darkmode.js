@@ -81,5 +81,3 @@ function toggleButton() {
   setStorage(FLOWDASH_THEME, darkMode);
   render();
 }
-
-darkModeBtn.addEventListener("click", toggleButton);

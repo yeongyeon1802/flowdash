@@ -1,3 +1,4 @@
+// 로컬스토리지에서 데이터를 받아와서 보더에 카드를 그리는 함수
 function createCard(todo) {
   const li = document.createElement("li");
   li.classList.add("todo-element");

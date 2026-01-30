@@ -1,3 +1,4 @@
+// 보이는 필터 텍스트
 function filterText() {
   const filter = getStorage(FLOWDASH_FILTER);
   datebtntext.textContent = periodObj[filter.date];
@@ -5,6 +6,24 @@ function filterText() {
   ascbtn.textContent = sortObj[filter.sort];
 }
 
+// 통계 출력
+function countTasks(todos) {
+  const total = todos.length;
+  const done = todos.filter((m) => m.statusvalue === "done").length;
+  totalTask.textContent = todos.length;
+
+  todoItems.textContent = todos.filter((m) => m.statusvalue === "todo").length;
+
+  doingItems.textContent = todos.filter((m) => m.statusvalue === "doing").length;
+
+  doneItems.textContent = todos.filter((m) => m.statusvalue === "done").length;
+
+  total
+    ? (achivement.textContent = Math.round((done / total) * 10000) / 100 + "%")
+    : (achivement.textContent = "-");
+}
+
+// 오름차순, 내림차순 정렬
 function sortTodos(todos, filter) {
   todos.sort((a, b) => {
     return filter.sort
@@ -19,6 +38,7 @@ function sortTodos(todos, filter) {
   });
 }
 
+// 로컬스토리지에서 조건 만족하는 배열 만드는 함수
 function getFilteredTodos(todos, filter) {
   const keyWord = getStorage(FLOWDASH_SEARCH).toLowerCase().trim();
   return todos.filter((todo) => {
@@ -42,6 +62,7 @@ function getFilteredTodos(todos, filter) {
   });
 }
 
+// 보더별 보이는 카드의 갯수 출력 함수
 function filterListNumbers(filteredList) {
   const todolistnum = document.querySelector(".list-todo >.items-count");
   const doinglistnum = document.querySelector(".list-doing > .items-count");
