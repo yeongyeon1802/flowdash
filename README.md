@@ -68,17 +68,17 @@ flowdash/
 │  └─ darkmode.css
 └─ js/
    ├─ components/
-   ├   ├─ createcard.js
-   ├   ├─ modalbtnfunction.js
-   ├   ├─ openmodalfunction.js
+   │   ├─ createcard.js
+   │   ├─ modalbtnfunction.js
+   │   ├─ openmodalfunction.js
    ├─ features/
-   ├   ├─ darkmode.js
-   ├   ├─ datareset.js
-   ├   ├─ header.js
+   │   ├─ darkmode.js
+   │   ├─ datareset.js
+   │   ├─ header.js
    ├─ filter/
-   ├   ├─ createfilterbadge.js
-   ├   ├─ filter.js
-   ├   ├─ search.js
+   │   ├─ createfilterbadge.js
+   │   ├─ filter.js
+   │   ├─ search.js
    ├─ app.js
    ├─ constant.js
    └─ main.js
