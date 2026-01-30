@@ -1,3 +1,4 @@
+// 새 할 일 클릭이벤트 함수
 function clickNewBtn() {
   curId = null;
   dimmed.classList.toggle("hidden");
@@ -6,6 +7,7 @@ function clickNewBtn() {
   title.focus();
 }
 
+// 보더 카드 클릭 이벤트 함수
 function clickTodoList(id) {
   const todos = getStorage(FLOWDASH_TODOS);
   const list = todos.find((todo) => todo.id == id);
@@ -28,6 +30,7 @@ function clickTodoList(id) {
   curId = +id;
 }
 
+// 삭제 버튼 클릭 이벤트 함수
 function deleteTodoList(id) {
   const DeleteConfirmTitle = document.querySelector(".delete-title");
   const DeleteConfirmMessage = document.querySelector(".delete-message");
@@ -39,21 +42,3 @@ function deleteTodoList(id) {
   document.body.style.overflow = "hidden";
   curId = +id;
 }
-
-todolist.forEach((li) =>
-  li.addEventListener("click", function (e) {
-    const card = e.target.closest("li");
-    const button = e.target.closest("button");
-
-    //카드 없는 공간 클릭시 함수 종료
-    if (!card) return;
-
-    if (button) {
-      e.stopPropagation();
-      deleteTodoList(card.dataset.id);
-    } else {
-      e.stopPropagation();
-      clickTodoList(card.dataset.id);
-    }
-  })
-);

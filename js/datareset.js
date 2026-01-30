@@ -1,5 +1,3 @@
-const dataResetBtn = document.querySelector(".reset-button");
-
 function resetData() {
   sortList.innerHTML = "";
   localStorage.removeItem(FLOWDASH_SEARCH);

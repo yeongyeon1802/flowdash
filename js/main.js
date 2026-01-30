@@ -1,5 +1,6 @@
 let curId = null;
 
+// 키를 입력받아 로컬스토리지 값
 function getStorage(strKey) {
   const data = localStorage.getItem(strKey);
   if (strKey === FLOWDASH_TODOS) return data ? JSON.parse(data) : [];
@@ -40,30 +41,29 @@ observer.observe(observe);
 function render() {
   const todos = getStorage(FLOWDASH_TODOS);
   const filter = getStorage(FLOWDASH_FILTER);
+  const savedNickNames = getStorage(FLOWDASH_NICKNAME);
+  const savedTheme = getStorage(FLOWDASH_THEME);
+  const savedSearchFilter = getStorage(FLOWDASH_SEARCH);
 
   todolist.forEach((li) => (li.innerHTML = ""));
-
   sortTodos(todos, filter);
-
   const filteredList = getFilteredTodos(todos, filter);
+
   filteredList.forEach((todo) => {
     createCard(todo);
   });
 
-  const savedNickNames = getStorage(FLOWDASH_NICKNAME);
   nickName.textContent = savedNickNames;
-
-  const savedTheme = getStorage(FLOWDASH_THEME);
-
-  const savedSearchFilter = getStorage(FLOWDASH_SEARCH);
 
   countTasks(todos);
   filterText();
   createFilterBadge();
   darkModeUI(savedTheme);
+
   if (savedSearchFilter) {
     serachBadge(savedSearchFilter);
   }
+
   filterListNumbers(filteredList);
   nowDate();
 }

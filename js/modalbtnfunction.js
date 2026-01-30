@@ -1,3 +1,4 @@
+// 모달 리셋 함수
 function modalreset() {
   title.value = "";
   content.value = "";
@@ -7,26 +8,19 @@ function modalreset() {
   document.body.style.overflow = "unset";
 }
 
+// 저장 버튼 클릭 이벤트 함수
 function savebtnTodo() {
   const timestamp = Date.now();
   const title = document.querySelector("#popup-todo-title").value.trim();
-
   const content = document.querySelector("#popup-todo-description").value.trim();
   const priority = document.querySelector("input[name='priority']:checked").value;
   const statusvalue = document.querySelector("input[name='status']:checked").value;
   const todos = getStorage(FLOWDASH_TODOS);
 
-  const titleinputed = document.querySelector("#popup-todo-title");
-  titleinputed.addEventListener("input", (e) => {
-    if (e.target.value.trim()) {
-      warning.classList.add("hidden");
-    } else {
-      warning.classList.remove("hidden");
-    }
-  });
-
   if (!title) {
     warning.classList.remove("hidden");
+    const titleFocus = document.querySelector("#popup-todo-title");
+    titleFocus.focus();
     return;
   }
 
@@ -61,12 +55,14 @@ function savebtnTodo() {
   render();
 }
 
+// 취소 버튼 클릭 이벤트 함수
 function cancelbtnTodo() {
   document.body.style.overflow = "unset";
   dimmed.classList.toggle("hidden");
   modalreset();
 }
 
+// 삭제 모달 초기화
 function deleteModalReset() {
   //id값 초기화
   curId = null;
@@ -74,6 +70,7 @@ function deleteModalReset() {
   document.body.style.overflow = "unset";
 }
 
+// 카드 삭제 버튼 클릭 이벤트 함수
 function removeElementbtn() {
   const todos = getStorage(FLOWDASH_TODOS);
 
@@ -93,9 +90,3 @@ function removeElementbtn() {
   deleteModalReset();
   render();
 }
-
-createbtn.addEventListener("click", clickNewBtn);
-savebtn.addEventListener("click", savebtnTodo);
-cancelbtn.addEventListener("click", cancelbtnTodo);
-elementDeleteBtn.addEventListener("click", removeElementbtn);
-deleteCancelBtn.addEventListener("click", deleteModalReset);
